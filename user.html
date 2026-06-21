@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">User Profile — Spark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 300; }
+
+        :root {
+            --bg1: #ffffff;
+            --bg2: #f4f4f5;
+            --bg3: #e4e4e7;
+            --text1: #18181b;
+            --text2: #71717a;
+            --text3: #a1a1aa;
+            --border: #d4d4d8;
+            --accent: #3B82F6;
+        }
+
+        body.dark {
+            --bg1: #09090b;
+            --bg2: #18181b;
+            --bg3: #27272a;
+            --text1: #f4f4f5;
+            --text2: #a1a1aa;
+            --text3: #71717a;
+            --border: #27272a;
+            --accent: #60A5FA;
+        }
+        
+        body { background: var(--bg1); color: var(--text1); }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .header h1 { font-size: 28px; }
+        .header a { color: var(--accent); text-decoration: none; font-size: 14px; }
+        .header a:hover { text-decoration: underline; }
+        
+        .profile {
+            margin-bottom: 40px;
+        }
+        
+        .profile-header {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            image-rendering: pixelated;
+        }
+        .avatar-wrap { position: relative; display: inline-block; }
+        .avatar-gen-btn {
+            display: none;
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--bg2);
+            border: 2px solid var(--border);
+            cursor: pointer;
+            font-size: 12px;
+            align-items: center;
+            justify-content: center;
+        }
+        .avatar-wrap.is-owner .avatar-gen-btn { display: flex; }
+        .avatar-msg {
+            font-size: 11px;
+            color: var(--text3);
+            margin-top: 4px;
+            min-height: 14px;
+        }
+        
+        .profile-info h2 { font-size: 24px; margin-bottom: 8px; }
+        .profile-info p { color: var(--text3); margin-bottom: 12px; }
+        
+        .stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 15px;
+        }
+        
+        .stat {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .stat-value { font-size: 24px; font-weight: 600; color: var(--accent); }
+        .stat-label { font-size: 12px; color: var(--text3); text-transform: uppercase; }
+        
+        .posts-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 40px 0 20px;
+            color: var(--text1);
+        }
+        
+        .post {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .post:hover {
+            background: var(--bg3);
+            border-color: var(--accent);
+        }
+        
+        .post-title { font-size: 18px; font-weight: 600; margin-bottom: 8px; color: var(--text1); }
+        .post-content { color: var(--text2); margin-bottom: 12px; font-size: 14px; line-height: 1.5; }
+        
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: var(--text3);
+        }
+        
+        .post-category {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        .post-score {
+            font-weight: 600;
+            color: var(--accent);
+        }
+        
+        .empty { text-align: center; color: var(--text3); padding: 40px 20px; }
+        
+        .error { color: #dc2626; text-align: center; padding: 40px 20px; }
+        
+        .loading { text-align: center; padding: 40px 20px; color: var(--text3); }
+        
+        .theme-btn {
+            background: none;
+            border: 1px solid var(--border);
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .theme-btn:hover { background: var(--bg2); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Spark</h1>
+            <div style="display: flex; gap: 15px;">
+                <button class="theme-btn" onclick="toggleTheme()">&#9790;</button>
+                <a href="/">← Back to Feed</a>
+            </div>
+        </div>
+        
+        <div id="content">Loading...</div>
+    </div>
+    
+    <script>
+        const API_BASE = window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('dark');
+            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+        }
+        
+        function getUsername() {
+            const path = window.location.pathname;
+            return decodeURIComponent(path.replace('/user/', ''));
+        }
+        
+        async function load() {
+            const username = getUsername();
+            try {
+                const res = await fetch(`${API_BASE}/api/user?username=${encodeURIComponent(username)}`);
+                if (!res.ok) {
+                    document.getElementById('content').innerHTML = `<div class="error">User not found</div>`;
+                    return;
+                }
+                const data = await res.json();
+                render(data.user, data.posts);
+            } catch (e) {
+                document.getElementById('content').innerHTML = `<div class="error">Failed to load profile</div>`;
+            }
+        }
+        
+        function generatePixelArtSVG() {
+            const palettes = [
+                ['#e63946','#457b9d','#1d3557'],
+                ['#7b2d8b','#c77dff','#e0aaff'],
+                ['#0077b6','#00b4d8','#90e0ef'],
+                ['#d62828','#f77f00','#fcbf49'],
+                ['#2d6a4f','#52b788','#b7e4c7'],
+            ];
+            const bgs = ['#111','#0d0d0d','#1a1a1a','#0f0f1a','#0a1a0a'];
+            const palette = palettes[Math.floor(Math.random() * palettes.length)];
+            const bg = bgs[Math.floor(Math.random() * bgs.length)];
+            const px = 8, size = 8, total = size * px;
+            const grid = Array.from({length: size}, () =>
+                Array.from({length: Math.ceil(size / 2)}, () =>
+                    Math.random() > 0.45 ? Math.floor(Math.random() * 3) : -1
+                )
+            );
+            let rects = '';
+            for (let row = 0; row < size; row++) {
+                for (let col = 0; col < size; col++) {
+                    const ci = grid[row][col < size / 2 ? col : size - 1 - col];
+                    if (ci >= 0) rects += `<rect x="${col*px}" y="${row*px}" width="${px}" height="${px}" fill="${palette[ci]}"/>`;
+                }
+            }
+            return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${total} ${total}" width="${total}" height="${total}" shape-rendering="crispEdges"><rect width="${total}" height="${total}" fill="${bg}"/>${rects}</svg>`;
+        }
+
+        async function generateAvatar() {
+            const btn = document.getElementById('avatarGenBtn');
+            const msg = document.getElementById('avatarMsg');
+            if (!btn || btn.disabled) return;
+            btn.disabled = true;
+            btn.textContent = '...';
+            if (msg) msg.textContent = 'Generating...';
+            try {
+                const svg = generatePixelArtSVG();
+                const base64 = btoa(unescape(encodeURIComponent(svg)));
+                const token = localStorage.getItem('spark_token');
+                const res = await fetch(`${API_BASE}/api/avatar`, {
+                    method: 'POST',
+                    credentials: 'include',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+                    },
+                    body: JSON.stringify({ image: base64, format: 'svg' }),
+                });
+                const data = await res.json();
+                if (data.ok && data.avatarUrl) {
+                    const img = document.getElementById('avatarImg');
+                    if (img) { img.src = data.avatarUrl + '?v=' + Date.now(); img.style.display = 'block'; }
+                    const initial = document.getElementById('avatarInitial');
+                    if (initial) initial.style.display = 'none';
+                    if (msg) { msg.textContent = 'New avatar saved'; setTimeout(() => { if (msg) msg.textContent = ''; }, 3000); }
+                } else {
+                    if (msg) msg.textContent = data.error || 'Failed';
+                }
+            } catch (e) {
+                if (msg) msg.textContent = 'Failed';
+            }
+            btn.disabled = false;
+            btn.textContent = '+';
+        }
+
+        function render(user, posts) {
+            document.getElementById('pageTitle').textContent = `${user.username} — Spark`;
+            const joined = new Date(user.joinedAt).toLocaleDateString();
+            const safeUsername = escapeHtml(user.username);
+            const initial = escapeHtml(user.username.charAt(0).toUpperCase());
+
+            const storedUser = (() => { try { return JSON.parse(localStorage.getItem('spark_user') || '{}'); } catch { return {}; } })();
+            const isOwner = storedUser.username === user.username;
+
+            const avatarInner = user.avatarUrl
+                ? `<img id="avatarImg" src="${escapeHtml(user.avatarUrl)}?v=1" alt="avatar" style="width:100%;height:100%;object-fit:cover;border-radius:50%;image-rendering:pixelated;" /><span id="avatarInitial" style="display:none">${initial}</span>`
+                : `<img id="avatarImg" src="" alt="" style="display:none" /><span id="avatarInitial">${initial}</span>`;
+
+            let html = `
+                <div class="profile">
+                    <div class="profile-header">
+                        <div>
+                            <div class="avatar-wrap${isOwner ? ' is-owner' : ''}">
+                                <div class="avatar">${avatarInner}</div>
+                                <button class="avatar-gen-btn" id="avatarGenBtn" onclick="generateAvatar()" title="Generate new pixel avatar">+</button>
+                            </div>
+                            <div class="avatar-msg" id="avatarMsg"></div>
+                        </div>
+                        <div class="profile-info">
+                            <h2>${safeUsername}</h2>
+                            <p>Joined ${joined}</p>
+                            <div class="stats">
+                                <div class="stat">
+                                    <span class="stat-value">${Number(user.postCount) || 0}</span>
+                                    <span class="stat-label">Posts</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value">${Number(user.totalUpvotes) || 0}</span>
+                                    <span class="stat-label">Upvotes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            if (posts.length > 0) {
+                html += `<div class="posts-title">Posts</div>`;
+                html += posts.map(p => `
+                    <div class="post" onclick="location.href='/'">
+                        <div style="display: flex; justify-content: space-between; align-items: start; gap: 10px;">
+                            <div style="flex: 1;">
+                                <div class="post-title">${escapeHtml(p.title)}</div>
+                                <div class="post-content">${escapeHtml(p.content)}</div>
+                            </div>
+                        </div>
+                        <div class="post-meta">
+                            <span class="post-category">${escapeHtml(p.category)}</span>
+                            <span class="post-score">&uarr; ${Number(p.score) || 0}</span>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                html += `<div class="empty">No posts yet</div>`;
+            }
+
+            document.getElementById('content').innerHTML = html;
+        }
+        
+        // Load theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark');
+        }
+        
+        load();
+    </script>
+</body>
+</html>
