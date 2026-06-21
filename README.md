@@ -50,7 +50,7 @@ alter table users add column if not exists avatar_url text;
 ## Roadmap
 
 - [ ] AI idea building — when a post is created, daemon auto-generates an implementation plan/code scaffold and attaches it (daemon exists at `daemon/spark-daemon.js`, needs enrichment prompt for builds)
-- [ ] Seed more custom ideas — populate Supabase with 20+ quality ideas across all categories
+- [x] Seed more custom ideas — populate Supabase with 20+ quality ideas across all categories
 - [ ] iOS app testing — run through custom idea creation, voting, comments end-to-end
 - [ ] SMTP email delivery for password reset
 - [ ] Real-time updates via Supabase Realtime
