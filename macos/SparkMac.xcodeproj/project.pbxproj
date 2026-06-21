@@ -1,0 +1,552 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0EEFE60C27CEE6B55A44F759 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436289A4D6A74C988487FC0E /* ProfileView.swift */; };
+		14456B07FFF1C9622E2B0BF0 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E3C9B418549FE7881B8C4 /* PostDetailView.swift */; };
+		297DC1ACAED1715EFA4964DF /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA990AD670E5BA9D470D97 /* FeedView.swift */; };
+		43348A6105ED5FAF2864DFE7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20CB0C43584A71B2FFB2FA /* Post.swift */; };
+		6242807D9A2560BE5A973A12 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4723C631395FB48011D97 /* User.swift */; };
+		68BBCB290ACC4FBCB50CC934 /* HotPostsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E5EF0D8EB58667708123AB /* HotPostsProvider.swift */; };
+		73D98289C5F8CEED0DA97F6F /* HotPostsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0814083A1ABF96ABA3BA65 /* HotPostsWidget.swift */; };
+		760794207D9A35DC2EE244C9 /* SparkWidgets.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 097EA01C2BE79648AFAD5147 /* SparkWidgets.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7B2A7C7F1AE9090F50B7496F /* NewPostsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C84ACE7E40E200C454E85A3 /* NewPostsWidget.swift */; };
+		81351D9F609077DDEBB71B47 /* StatsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54901EFF22CB542CB05CCA /* StatsProvider.swift */; };
+		86B6CBE189273AADF0799B75 /* SparkWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817F152BF8E3CCFFF20B488D /* SparkWidgets.swift */; };
+		93CFC2CA5A48F73AC163DE1F /* SparkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522B03AAD58279D1840F5F6B /* SparkApp.swift */; };
+		AC9EF4E1D5ABBC6EA9E00F44 /* StatsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F253D2425067A1CB6EA57BB /* StatsWidget.swift */; };
+		B2653A3427DFA660B989EDAE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416DA034C28B85A111885B06 /* ContentView.swift */; };
+		BA4A94E242691791828F32D1 /* NewPostsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9A75B8AC3EAC68A41357A /* NewPostsProvider.swift */; };
+		BD7802CB5DC12C5D6F4BECB0 /* SparkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45F610237B5860FE9BB69D9 /* SparkAPI.swift */; };
+		C02E26B12343FB6FEE1A065B /* WidgetModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3443B11DEB42C9E6A49EB683 /* WidgetModels.swift */; };
+		CD4E0341AC5DF7988CF24A97 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBFA647BDAE933A94716A26 /* AppState.swift */; };
+		E54FE9391743869220067E01 /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB7E7EDC215E9663953CFF2 /* CreateView.swift */; };
+		E7945CF26441BF152809F40E /* WidgetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ACA67ACA56C41B5D2ABA1B /* WidgetAPI.swift */; };
+		E97B22EC0244FC5E4DA1E8BD /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C41519D66928DE2043C7198 /* KeychainHelper.swift */; };
+		EE886D6001E74299C843BE41 /* SharedComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93876CF00A0760C0C3F840E /* SharedComponents.swift */; };
+		EFA46C8F2E8852FBBA4AD5E5 /* AuthSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E81CD2105DD2FB9C65A370 /* AuthSheet.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		404EBAD6D3BE9194BDE20AE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3F695D53BEEB21B71490DCF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF092152AAAF81C787981630;
+			remoteInfo = SparkWidgets;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A243B60264EB3CF6772A28B8 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				760794207D9A35DC2EE244C9 /* SparkWidgets.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		097EA01C2BE79648AFAD5147 /* SparkWidgets.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SparkWidgets.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F253D2425067A1CB6EA57BB /* StatsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsWidget.swift; sourceTree = "<group>"; };
+		0FB7E7EDC215E9663953CFF2 /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
+		3443B11DEB42C9E6A49EB683 /* WidgetModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetModels.swift; sourceTree = "<group>"; };
+		416DA034C28B85A111885B06 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		436289A4D6A74C988487FC0E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		4C84ACE7E40E200C454E85A3 /* NewPostsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostsWidget.swift; sourceTree = "<group>"; };
+		522B03AAD58279D1840F5F6B /* SparkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkApp.swift; sourceTree = "<group>"; };
+		52B9A75B8AC3EAC68A41357A /* NewPostsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostsProvider.swift; sourceTree = "<group>"; };
+		5BBFA647BDAE933A94716A26 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		5E36A7401B40D022F780B2BA /* SparkMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SparkMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A3E3C9B418549FE7881B8C4 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		817F152BF8E3CCFFF20B488D /* SparkWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkWidgets.swift; sourceTree = "<group>"; };
+		87E81CD2105DD2FB9C65A370 /* AuthSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSheet.swift; sourceTree = "<group>"; };
+		8C41519D66928DE2043C7198 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		8C6C3EC0391FB0ABA3C19D8E /* SparkWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SparkWidgets.entitlements; sourceTree = "<group>"; };
+		99F3A10E1AAEBDF3FDE2A8A4 /* SparkMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SparkMac.entitlements; sourceTree = "<group>"; };
+		CB54901EFF22CB542CB05CCA /* StatsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsProvider.swift; sourceTree = "<group>"; };
+		D4EA990AD670E5BA9D470D97 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		D5E5EF0D8EB58667708123AB /* HotPostsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPostsProvider.swift; sourceTree = "<group>"; };
+		DC20CB0C43584A71B2FFB2FA /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		DD0814083A1ABF96ABA3BA65 /* HotPostsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPostsWidget.swift; sourceTree = "<group>"; };
+		E45F610237B5860FE9BB69D9 /* SparkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkAPI.swift; sourceTree = "<group>"; };
+		E4A4723C631395FB48011D97 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E5ACA67ACA56C41B5D2ABA1B /* WidgetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetAPI.swift; sourceTree = "<group>"; };
+		E93876CF00A0760C0C3F840E /* SharedComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedComponents.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		00B5FC30055E605FF3C83C4C /* widgets-macos */ = {
+			isa = PBXGroup;
+			children = (
+				817F152BF8E3CCFFF20B488D /* SparkWidgets.swift */,
+				4B416628A6A4A0EA909FA2EA /* Models */,
+				C5D065A5D5D1A6C25390601B /* Providers */,
+				0F9FE4C9A428EEAAE0446D1C /* Views */,
+			);
+			name = "widgets-macos";
+			path = "../widgets-macos";
+			sourceTree = "<group>";
+		};
+		0F9FE4C9A428EEAAE0446D1C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DD0814083A1ABF96ABA3BA65 /* HotPostsWidget.swift */,
+				4C84ACE7E40E200C454E85A3 /* NewPostsWidget.swift */,
+				E93876CF00A0760C0C3F840E /* SharedComponents.swift */,
+				0F253D2425067A1CB6EA57BB /* StatsWidget.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A56C78D8ABED76A06A6DF72 = {
+			isa = PBXGroup;
+			children = (
+				D50811BE7CEB69E2F5A27385 /* API */,
+				9F1C402D1E7F418779325D5A /* macos */,
+				B01504BA707FBD0ECB844144 /* Models */,
+				616835C07406D803A5749B78 /* Views */,
+				00B5FC30055E605FF3C83C4C /* widgets-macos */,
+				91B929E12F76D18CEC4261EA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4B416628A6A4A0EA909FA2EA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E5ACA67ACA56C41B5D2ABA1B /* WidgetAPI.swift */,
+				3443B11DEB42C9E6A49EB683 /* WidgetModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		616835C07406D803A5749B78 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				87E81CD2105DD2FB9C65A370 /* AuthSheet.swift */,
+				0FB7E7EDC215E9663953CFF2 /* CreateView.swift */,
+				D4EA990AD670E5BA9D470D97 /* FeedView.swift */,
+				7A3E3C9B418549FE7881B8C4 /* PostDetailView.swift */,
+				436289A4D6A74C988487FC0E /* ProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		91B929E12F76D18CEC4261EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E36A7401B40D022F780B2BA /* SparkMac.app */,
+				097EA01C2BE79648AFAD5147 /* SparkWidgets.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F1C402D1E7F418779325D5A /* macos */ = {
+			isa = PBXGroup;
+			children = (
+				416DA034C28B85A111885B06 /* ContentView.swift */,
+				522B03AAD58279D1840F5F6B /* SparkApp.swift */,
+				99F3A10E1AAEBDF3FDE2A8A4 /* SparkMac.entitlements */,
+				8C6C3EC0391FB0ABA3C19D8E /* SparkWidgets.entitlements */,
+				D50811BE7CEB69E2F5A27385 /* API */,
+				B01504BA707FBD0ECB844144 /* Models */,
+				616835C07406D803A5749B78 /* Views */,
+			);
+			name = macos;
+			path = .;
+			sourceTree = "<group>";
+		};
+		B01504BA707FBD0ECB844144 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5BBFA647BDAE933A94716A26 /* AppState.swift */,
+				DC20CB0C43584A71B2FFB2FA /* Post.swift */,
+				E4A4723C631395FB48011D97 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C5D065A5D5D1A6C25390601B /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				D5E5EF0D8EB58667708123AB /* HotPostsProvider.swift */,
+				52B9A75B8AC3EAC68A41357A /* NewPostsProvider.swift */,
+				CB54901EFF22CB542CB05CCA /* StatsProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		D50811BE7CEB69E2F5A27385 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				8C41519D66928DE2043C7198 /* KeychainHelper.swift */,
+				E45F610237B5860FE9BB69D9 /* SparkAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1C31E35EDA3252DD4EEE78B1 /* SparkMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0BD4189F833B80460D25B49 /* Build configuration list for PBXNativeTarget "SparkMac" */;
+			buildPhases = (
+				308594EB6606674EC6425C19 /* Sources */,
+				A243B60264EB3CF6772A28B8 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				60614B7E103D4209CEC1F9D8 /* PBXTargetDependency */,
+			);
+			name = SparkMac;
+			packageProductDependencies = (
+			);
+			productName = SparkMac;
+			productReference = 5E36A7401B40D022F780B2BA /* SparkMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF092152AAAF81C787981630 /* SparkWidgets */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1A47427BA1D94258502F72A /* Build configuration list for PBXNativeTarget "SparkWidgets" */;
+			buildPhases = (
+				DCF4A98B169AF6452D4AE919 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SparkWidgets;
+			packageProductDependencies = (
+			);
+			productName = SparkWidgets;
+			productReference = 097EA01C2BE79648AFAD5147 /* SparkWidgets.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E3F695D53BEEB21B71490DCF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					1C31E35EDA3252DD4EEE78B1 = {
+						DevelopmentTeam = QMM486NPYC;
+						ProvisioningStyle = Automatic;
+					};
+					AF092152AAAF81C787981630 = {
+						DevelopmentTeam = QMM486NPYC;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2BBEF9A1F2E87BA4B05951D9 /* Build configuration list for PBXProject "SparkMac" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 2A56C78D8ABED76A06A6DF72;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 91B929E12F76D18CEC4261EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1C31E35EDA3252DD4EEE78B1 /* SparkMac */,
+				AF092152AAAF81C787981630 /* SparkWidgets */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		308594EB6606674EC6425C19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD4E0341AC5DF7988CF24A97 /* AppState.swift in Sources */,
+				EFA46C8F2E8852FBBA4AD5E5 /* AuthSheet.swift in Sources */,
+				B2653A3427DFA660B989EDAE /* ContentView.swift in Sources */,
+				E54FE9391743869220067E01 /* CreateView.swift in Sources */,
+				297DC1ACAED1715EFA4964DF /* FeedView.swift in Sources */,
+				E97B22EC0244FC5E4DA1E8BD /* KeychainHelper.swift in Sources */,
+				43348A6105ED5FAF2864DFE7 /* Post.swift in Sources */,
+				14456B07FFF1C9622E2B0BF0 /* PostDetailView.swift in Sources */,
+				0EEFE60C27CEE6B55A44F759 /* ProfileView.swift in Sources */,
+				BD7802CB5DC12C5D6F4BECB0 /* SparkAPI.swift in Sources */,
+				93CFC2CA5A48F73AC163DE1F /* SparkApp.swift in Sources */,
+				6242807D9A2560BE5A973A12 /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCF4A98B169AF6452D4AE919 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68BBCB290ACC4FBCB50CC934 /* HotPostsProvider.swift in Sources */,
+				73D98289C5F8CEED0DA97F6F /* HotPostsWidget.swift in Sources */,
+				BA4A94E242691791828F32D1 /* NewPostsProvider.swift in Sources */,
+				7B2A7C7F1AE9090F50B7496F /* NewPostsWidget.swift in Sources */,
+				EE886D6001E74299C843BE41 /* SharedComponents.swift in Sources */,
+				86B6CBE189273AADF0799B75 /* SparkWidgets.swift in Sources */,
+				81351D9F609077DDEBB71B47 /* StatsProvider.swift in Sources */,
+				AC9EF4E1D5ABBC6EA9E00F44 /* StatsWidget.swift in Sources */,
+				E7945CF26441BF152809F40E /* WidgetAPI.swift in Sources */,
+				C02E26B12343FB6FEE1A065B /* WidgetModels.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		60614B7E103D4209CEC1F9D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF092152AAAF81C787981630 /* SparkWidgets */;
+			targetProxy = 404EBAD6D3BE9194BDE20AE8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		67E97879373D91936E4078E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SparkWidgets.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Spark Widgets";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.spark.mac.widgets;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		71D0A4F79C57EA616CFC3FF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = QMM486NPYC;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		771380A0D5AB8ABDDCC25E43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = QMM486NPYC;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		79908210DB2162E7EEBD7208 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SparkWidgets.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Spark Widgets";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.spark.mac.widgets;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8AAC32CD8C5E3793B2524A49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SparkMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.spark.mac;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DA6BDF768962A6BA9DD1B976 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SparkMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.spark.mac;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2BBEF9A1F2E87BA4B05951D9 /* Build configuration list for PBXProject "SparkMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71D0A4F79C57EA616CFC3FF7 /* Debug */,
+				771380A0D5AB8ABDDCC25E43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B0BD4189F833B80460D25B49 /* Build configuration list for PBXNativeTarget "SparkMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA6BDF768962A6BA9DD1B976 /* Debug */,
+				8AAC32CD8C5E3793B2524A49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E1A47427BA1D94258502F72A /* Build configuration list for PBXNativeTarget "SparkWidgets" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67E97879373D91936E4078E9 /* Debug */,
+				79908210DB2162E7EEBD7208 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E3F695D53BEEB21B71490DCF /* Project object */;
+}

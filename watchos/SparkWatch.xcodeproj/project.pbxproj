@@ -1,0 +1,355 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0289FD0AA7D7F9A58BB80EDA /* SparkWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EEA0C6610903F80C98A98B /* SparkWatchApp.swift */; };
+		0631CC4953E563A78DD6E65F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D36C2C6900ED6404BCE3DF /* ContentView.swift */; };
+		0D70BDE63156E15AAF6D0C05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3983932A0487907227043F75 /* Assets.xcassets */; };
+		6A55F6767ABDD9082A6FD109 /* NewFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21203510698F4A369D281266 /* NewFeedView.swift */; };
+		721FD13441685D9B0975BA12 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BA1C996DD7C9D90EB2FA3E /* Colors.swift */; };
+		7C53CEDE572003BBA1874D51 /* WatchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB663EEF7DD8D28EEE24AA87 /* WatchAPI.swift */; };
+		80E4B7CD903093EFBE9D3DD9 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEF008162C34720F3179294 /* PostDetailView.swift */; };
+		9138DF617E9B9F1AED3F026D /* PostRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFD0EF70D631A06F67032DA /* PostRow.swift */; };
+		B88EC2EDD58DF92ADD9456E9 /* WatchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0E382C11023711DFE8B233 /* WatchModels.swift */; };
+		EDB623B6C5EAE05B13E2C812 /* ComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7989A723440E666B8255FD7 /* ComposeView.swift */; };
+		F9E7B20F3DEB733533404670 /* HotFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECD59B4030B9FDE1CFC2325 /* HotFeedView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0ECD59B4030B9FDE1CFC2325 /* HotFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotFeedView.swift; sourceTree = "<group>"; };
+		21203510698F4A369D281266 /* NewFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedView.swift; sourceTree = "<group>"; };
+		2EFD0EF70D631A06F67032DA /* PostRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRow.swift; sourceTree = "<group>"; };
+		3983932A0487907227043F75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49EEA0C6610903F80C98A98B /* SparkWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkWatchApp.swift; sourceTree = "<group>"; };
+		55A173A8932AA1FD3B5AB915 /* SparkWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SparkWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B0E382C11023711DFE8B233 /* WatchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchModels.swift; sourceTree = "<group>"; };
+		A7989A723440E666B8255FD7 /* ComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeView.swift; sourceTree = "<group>"; };
+		C4BA1C996DD7C9D90EB2FA3E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		CB663EEF7DD8D28EEE24AA87 /* WatchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchAPI.swift; sourceTree = "<group>"; };
+		DFEF008162C34720F3179294 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		E5D36C2C6900ED6404BCE3DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		19EE8DC29B29532B64A793F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CB663EEF7DD8D28EEE24AA87 /* WatchAPI.swift */,
+				8B0E382C11023711DFE8B233 /* WatchModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		801DE2A8A6BDE7D63DD1291F /* watchos */ = {
+			isa = PBXGroup;
+			children = (
+				3983932A0487907227043F75 /* Assets.xcassets */,
+				E5D36C2C6900ED6404BCE3DF /* ContentView.swift */,
+				49EEA0C6610903F80C98A98B /* SparkWatchApp.swift */,
+				19EE8DC29B29532B64A793F3 /* Models */,
+				90C451DAD2FE175AA2E79354 /* Views */,
+			);
+			name = watchos;
+			path = .;
+			sourceTree = "<group>";
+		};
+		8A64D3AB781652851E527438 = {
+			isa = PBXGroup;
+			children = (
+				19EE8DC29B29532B64A793F3 /* Models */,
+				90C451DAD2FE175AA2E79354 /* Views */,
+				801DE2A8A6BDE7D63DD1291F /* watchos */,
+				B1CBDAD67090C44DAAA33A94 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		90C451DAD2FE175AA2E79354 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4BA1C996DD7C9D90EB2FA3E /* Colors.swift */,
+				A7989A723440E666B8255FD7 /* ComposeView.swift */,
+				0ECD59B4030B9FDE1CFC2325 /* HotFeedView.swift */,
+				21203510698F4A369D281266 /* NewFeedView.swift */,
+				DFEF008162C34720F3179294 /* PostDetailView.swift */,
+				2EFD0EF70D631A06F67032DA /* PostRow.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B1CBDAD67090C44DAAA33A94 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55A173A8932AA1FD3B5AB915 /* SparkWatch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		059C337512C97B6FE1C5A017 /* SparkWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58C02C8919D2B399DC030F7A /* Build configuration list for PBXNativeTarget "SparkWatch" */;
+			buildPhases = (
+				EB0E5F0E933A841FCF03B814 /* Sources */,
+				47752035515A6C974A430ACE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SparkWatch;
+			packageProductDependencies = (
+			);
+			productName = SparkWatch;
+			productReference = 55A173A8932AA1FD3B5AB915 /* SparkWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C302116855358EC03343CE97 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					059C337512C97B6FE1C5A017 = {
+						DevelopmentTeam = QMM486NPYC;
+					};
+				};
+			};
+			buildConfigurationList = 5C4D7BF5742975E0113CD7F5 /* Build configuration list for PBXProject "SparkWatch" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 8A64D3AB781652851E527438;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B1CBDAD67090C44DAAA33A94 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				059C337512C97B6FE1C5A017 /* SparkWatch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		47752035515A6C974A430ACE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0D70BDE63156E15AAF6D0C05 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB0E5F0E933A841FCF03B814 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				721FD13441685D9B0975BA12 /* Colors.swift in Sources */,
+				EDB623B6C5EAE05B13E2C812 /* ComposeView.swift in Sources */,
+				0631CC4953E563A78DD6E65F /* ContentView.swift in Sources */,
+				F9E7B20F3DEB733533404670 /* HotFeedView.swift in Sources */,
+				6A55F6767ABDD9082A6FD109 /* NewFeedView.swift in Sources */,
+				80E4B7CD903093EFBE9D3DD9 /* PostDetailView.swift in Sources */,
+				9138DF617E9B9F1AED3F026D /* PostRow.swift in Sources */,
+				0289FD0AA7D7F9A58BB80EDA /* SparkWatchApp.swift in Sources */,
+				7C53CEDE572003BBA1874D51 /* WatchAPI.swift in Sources */,
+				B88EC2EDD58DF92ADD9456E9 /* WatchModels.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		62E42DA937EC759D6470F949 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.spark.watchos;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Release;
+		};
+		86E13C395B09D5EE9C846A3F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = QMM486NPYC;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		957A89FBCE87A67841BCB2AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.spark.watchos;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Debug;
+		};
+		CC5A2EACE6B42DB18C934914 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = QMM486NPYC;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		58C02C8919D2B399DC030F7A /* Build configuration list for PBXNativeTarget "SparkWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				957A89FBCE87A67841BCB2AC /* Debug */,
+				62E42DA937EC759D6470F949 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5C4D7BF5742975E0113CD7F5 /* Build configuration list for PBXProject "SparkWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC5A2EACE6B42DB18C934914 /* Debug */,
+				86E13C395B09D5EE9C846A3F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C302116855358EC03343CE97 /* Project object */;
+}
