@@ -2,7 +2,7 @@
 
 # Spark
 
-![version](https://img.shields.io/badge/version-v2.0.2-blue)
+![version](https://img.shields.io/badge/version-v2.0.2-blue) ![license](https://img.shields.io/badge/license-MIT-green) [![GitHub](https://img.shields.io/badge/GitHub-nulljosh%2Fspark-black?logo=github)](https://github.com/nulljosh/spark)
 
 Idea-sharing platform with upvoting and JWT auth.
 
