@@ -1,5 +1,5 @@
 # Spark iOS
-v2.1.0
+v2.1.1
 ## Rules
 - Portrait-only, UIRequiresFullScreen
 - Apple Liquid Glass: .ultraThinMaterial, blur, rounded corners, system font
@@ -18,3 +18,4 @@ xcodebuild -scheme Spark -destination 'platform=iOS Simulator,name=iPhone 16' te
 - ContentView.swift: Root tab navigation, feed/create/profile views, and auth sheet wiring.
 - Models/AppState.swift: Observable app state for auth, posts, voting, and error handling.
 - API/SparkAPI.swift: HTTP client for Spark auth and posts APIs, including token handling.
+- Changelog v2.1.1 (2026-06-28): Added SparkFloatingTabBar (regularMaterial capsule, haptics via UIImpactFeedbackGenerator). Added symbolEffect(.bounce) to vote buttons. System tab bar hidden.

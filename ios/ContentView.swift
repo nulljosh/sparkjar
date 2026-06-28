@@ -1,6 +1,7 @@
 import AuthenticationServices
 import LocalAuthentication
 import SwiftUI
+import UIKit
 
 // MARK: - Root
 
@@ -10,33 +11,42 @@ struct ContentView: View {
 
     var body: some View {
         @Bindable var appState = appState
-        ZStack(alignment: .top) {
-            TabView(selection: $selectedTab) {
-                FeedView()
-                    .tabItem { Label("Feed", systemImage: selectedTab == 0 ? "flame.fill" : "flame") }
-                    .tag(0)
-
-                CreateView(selectedTab: $selectedTab)
-                    .tabItem { Label("Create", systemImage: selectedTab == 1 ? "plus.circle.fill" : "plus.circle") }
-                    .tag(1)
-
-                ProfileView()
-                    .tabItem { Label("Profile", systemImage: selectedTab == 2 ? "person.circle.fill" : "person.circle") }
-                    .tag(2)
-
-                IdeaBaseView()
-                    .tabItem { Label("Ideas", systemImage: selectedTab == 3 ? "lightbulb.fill" : "lightbulb") }
-                    .tag(3)
-            }
-            .tint(.sparkBlue)
-            .sheet(isPresented: $appState.showAuth) {
-                AuthSheet()
-            }
-
+        TabView(selection: $selectedTab) {
+            FeedView()
+                .tabItem { Label("Feed", systemImage: selectedTab == 0 ? "flame.fill" : "flame") }
+                .tag(0)
+                .toolbar(.hidden, for: .tabBar)
+            CreateView(selectedTab: $selectedTab)
+                .tabItem { Label("Create", systemImage: selectedTab == 1 ? "plus.circle.fill" : "plus.circle") }
+                .tag(1)
+                .toolbar(.hidden, for: .tabBar)
+            ProfileView()
+                .tabItem { Label("Profile", systemImage: selectedTab == 2 ? "person.circle.fill" : "person.circle") }
+                .tag(2)
+                .toolbar(.hidden, for: .tabBar)
+            IdeaBaseView()
+                .tabItem { Label("Ideas", systemImage: selectedTab == 3 ? "lightbulb.fill" : "lightbulb") }
+                .tag(3)
+                .toolbar(.hidden, for: .tabBar)
+        }
+        .toolbar(.hidden, for: .tabBar)
+        .tint(.sparkBlue)
+        .onChange(of: selectedTab) { _, _ in
+            UIImpactFeedbackGenerator(style: .light).impactOccurred()
+        }
+        .sheet(isPresented: $appState.showAuth) {
+            AuthSheet()
+        }
+        .overlay(alignment: .top) {
             if appState.errorBanner != nil {
                 ErrorBanner()
                     .transition(.move(edge: .top).combined(with: .opacity))
+                    .padding(.top, 4)
             }
+        }
+        .overlay(alignment: .bottom) {
+            SparkFloatingTabBar(selectedTab: $selectedTab)
+                .padding(.bottom, 8)
         }
         .animation(.spring(duration: 0.3), value: appState.errorBanner != nil)
     }
@@ -295,6 +305,7 @@ struct VoteButton: View {
                 Image(systemName: icon)
                     .font(.subheadline)
                     .foregroundStyle(appState.isLoggedIn ? Color.sparkBlue : Color.secondary)
+                    .symbolEffect(.bounce, value: isVoting)
             }
         }
         .buttonStyle(.plain)
@@ -778,6 +789,50 @@ enum DateFormatting {
         guard let date = isoFormatter.date(from: iso)
                 ?? isoFormatterNoFraction.date(from: iso) else { return "" }
         return relativeFormatter.localizedString(for: date, relativeTo: Date())
+    }
+}
+
+// MARK: - Floating Tab Bar
+
+private struct SparkFloatingTabBar: View {
+    @Binding var selectedTab: Int
+
+    private let tabs: [(icon: String, fill: String, label: String)] = [
+        ("flame", "flame.fill", "Feed"),
+        ("plus.circle", "plus.circle.fill", "Create"),
+        ("person.circle", "person.circle.fill", "Profile"),
+        ("lightbulb", "lightbulb.fill", "Ideas"),
+    ]
+
+    var body: some View {
+        HStack(spacing: 0) {
+            ForEach(tabs.indices, id: \.self) { index in
+                Button {
+                    selectedTab = index
+                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                } label: {
+                    Image(systemName: selectedTab == index ? tabs[index].fill : tabs[index].icon)
+                        .font(.system(size: 20, weight: .medium))
+                        .foregroundStyle(selectedTab == index ? Color.sparkBlue : Color.secondary)
+                        .symbolEffect(.bounce, value: selectedTab == index)
+                        .frame(width: 50, height: 40)
+                        .background {
+                            if selectedTab == index {
+                                Capsule().fill(Color.sparkBlue.opacity(0.1))
+                            }
+                        }
+                }
+                .frame(maxWidth: .infinity)
+                .buttonStyle(.plain)
+                .accessibilityLabel(tabs[index].label)
+            }
+        }
+        .padding(.horizontal, 10)
+        .padding(.vertical, 10)
+        .frame(maxWidth: 320)
+        .background(.regularMaterial, in: Capsule())
+        .overlay(Capsule().stroke(Color.primary.opacity(0.08), lineWidth: 1))
+        .shadow(color: .black.opacity(0.1), radius: 12, y: 4)
     }
 }
 

@@ -1,6 +1,6 @@
 ![Spark iOS](icon.svg)
 # Spark iOS
-![version](https://img.shields.io/badge/version-v2.1.0-blue)
+![version](https://img.shields.io/badge/version-v2.1.1-blue)
 Native iOS companion for [Spark](https://spark.heyitsmejosh.com) -- idea sharing with voting.
 ## Features
 - Browse posts with pull-to-refresh, search, and category filter
