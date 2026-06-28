@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		019EA4C965F96C93DB82477E /* SparkAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B2E282198ED9D5CCE10C83 /* SparkAPITests.swift */; };
+		08125EF0204EB82912058BF8 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = C7196DDDC55BB4DD4A0CA7B9 /* PrivacyInfo.xcprivacy */; };
 		0DA8464B782EC5057443201A /* TestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6DEB697386AA92D534E1F /* TestConfig.swift */; };
 		0E2765A7FD73D38A2AF87709 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FCF2189B78982DF62F743E /* User.swift */; };
 		13956E653D003D1210154E9E /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA0EC06F704242AF7E70B0 /* UserProfile.swift */; };
@@ -68,6 +69,7 @@
 		A95B026567C272F91FC1DB10 /* SparkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkApp.swift; sourceTree = "<group>"; };
 		B888EDFCBF793441DF737D48 /* UserProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTests.swift; sourceTree = "<group>"; };
 		B965FAC4CDC7FEF516075210 /* CommentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTests.swift; sourceTree = "<group>"; };
+		C7196DDDC55BB4DD4A0CA7B9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		D097456B9B4019A62DAFD19A /* MockSparkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSparkAPI.swift; sourceTree = "<group>"; };
 		DF0AE766ACE7A24B15BEB2FF /* IntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
 		E5DA0EC06F704242AF7E70B0 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				7C960C5A9D0E4A37C066CE8E /* Assets.xcassets */,
 				255A33F3F797DB0BCEA702E8 /* ContentView.swift */,
 				6A9AC5F477D30E64C39B5538 /* Info.plist */,
+				C7196DDDC55BB4DD4A0CA7B9 /* PrivacyInfo.xcprivacy */,
 				A95B026567C272F91FC1DB10 /* SparkApp.swift */,
 				37A7F3C1514EFD03DEFEE1BA /* API */,
 				87226969E9F919EE002A3916 /* Models */,
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AA8B6E58C3E58DFFB03C361 /* Assets.xcassets in Resources */,
+				08125EF0204EB82912058BF8 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

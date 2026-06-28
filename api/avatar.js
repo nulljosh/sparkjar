@@ -42,7 +42,7 @@ module.exports = async function handler(req, res) {
     });
 
     await supabaseRequest(
-      `users?user_id=eq.${encodeURIComponent(user.userId)}`,
+      `users?id=eq.${encodeURIComponent(user.userId)}`,
       { method: 'PATCH', body: { avatar_url: blob.url }, useServiceRole: true }
     );
 

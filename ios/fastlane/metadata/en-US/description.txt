@@ -1,0 +1,14 @@
+Spark is the place to share ideas, vote on what matters, and explore what others are building.
+
+Post your idea in seconds. Browse the feed by trending or newest. Vote up the ideas you love. Dive into AI-generated specs and implementation plans for the most popular posts.
+
+Features:
+- Clean, fast feed with Hot and New sorting
+- Category filters: Technology, Design, Business, Science, and more  
+- Upvote and downvote with live scores
+- AI enrichment: every popular post gets a generated spec and plan
+- Idea Bases: generate a cluster of ideas on any topic with AI
+- Comment threads on every post
+- Sign in with Face ID or Touch ID
+- Full offline support via PWA
+- Native companion apps for iPhone, Mac, and Apple Watch

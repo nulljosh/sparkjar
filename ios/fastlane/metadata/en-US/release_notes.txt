@@ -1,0 +1,7 @@
+What's New in v2.1.0
+
+- Native iPhone, Mac, and Apple Watch companion apps
+- AI Idea Bases: generate idea clusters on any topic
+- Improved feed sorting and category filters
+- Face ID and Touch ID sign-in
+- Performance improvements and bug fixes
