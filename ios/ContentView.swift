@@ -1,5 +1,6 @@
-import SwiftUI
+import AuthenticationServices
 import LocalAuthentication
+import SwiftUI
 
 // MARK: - Root
 
@@ -587,6 +588,41 @@ struct AuthSheet: View {
                     .tint(.sparkBlue)
                     .padding(.horizontal)
                 }
+
+                VStack(spacing: 12) {
+                    SignInWithAppleButton(.signIn) { request in
+                        request.requestedScopes = [.email, .fullName]
+                    } onCompletion: { result in
+                        Task { await appState.handleAppleSignIn(result: result) }
+                    }
+                    .signInWithAppleButtonStyle(.black)
+                    .frame(height: 50)
+                    .padding(.horizontal)
+
+                    // ponytail: stubs — enable when OAuth credentials added to Vercel
+                    Button {} label: {
+                        HStack { Image(systemName: "globe"); Text("Continue with Google") }
+                            .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.bordered)
+                    .disabled(true)
+                    .padding(.horizontal)
+
+                    Button {} label: {
+                        HStack { Image(systemName: "f.circle.fill"); Text("Continue with Facebook") }
+                            .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.bordered)
+                    .disabled(true)
+                    .padding(.horizontal)
+                }
+
+                HStack {
+                    Rectangle().frame(height: 1).foregroundStyle(.quaternary)
+                    Text("or").font(.caption).foregroundStyle(.secondary)
+                    Rectangle().frame(height: 1).foregroundStyle(.quaternary)
+                }
+                .padding(.horizontal, 32)
 
                 VStack(spacing: 14) {
                     TextField("Username", text: $username)

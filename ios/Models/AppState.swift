@@ -1,6 +1,7 @@
+import AuthenticationServices
 import Foundation
-import Observation
 import LocalAuthentication
+import Observation
 
 @MainActor
 @Observable
@@ -71,6 +72,18 @@ final class AppState {
             try await self.api.login(username: username, password: password)
         } onSuccess: {
             self.saveBiometricCredentials(username: username, password: password)
+        }
+    }
+
+    func handleAppleSignIn(result: Result<ASAuthorization, Error>) async {
+        switch result {
+        case .failure(let err):
+            error = err.localizedDescription
+        case .success(let auth):
+            guard let cred = auth.credential as? ASAuthorizationAppleIDCredential else { return }
+            // ponytail: stub — /api/auth/apple returns 501 until APPLE_CLIENT_ID/TEAM_ID set in Vercel
+            error = "Apple Sign In coming soon — use username/password for now."
+            _ = cred // suppress unused warning
         }
     }
 
