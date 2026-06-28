@@ -71,12 +71,29 @@ Screenshots ready in `screenshots/ios/` (feed, sign-in, profile, ideas). Metadat
 
 ## Roadmap
 
-- [ ] Submit to App Store — blocked on Xcode 26 stable (beta SDK rejected by ASC)
-- [ ] AI idea building — daemon auto-generates implementation plan/scaffold on post create
-- [x] Seed more custom ideas — 20+ quality ideas across all categories
+**App Store**
+- [ ] Submit iOS to App Store — blocked on Xcode 26 stable (beta SDK rejected by ASC); IPA + ASC record ready
+- [ ] Submit macOS to Mac App Store — archive + upload once Xcode stable ships
+- [ ] Add marketing landing page at `/landing` (currently feed is the homepage)
+- [ ] 1 more iOS screenshot (post detail with AI enrichment) for 5-screenshot requirement
+
+**Auth & Accounts**
 - [ ] SMTP email delivery for password reset
+- [ ] watchOS login UI (currently view-only without iOS pre-auth)
+
+**Features**
+- [ ] AI idea building — daemon auto-generates implementation plan/scaffold on post create
 - [ ] Real-time updates via Supabase Realtime
+- [ ] Infinite scroll / pagination (feed currently loads all posts)
 - [ ] Moderation tools
+
+**Done**
+- [x] iOS + macOS + watchOS companion apps
+- [x] AI enrichment (SPEC + PLAN via Claude daemon)
+- [x] Idea Bases (AI topic clustering)
+- [x] Comment threads
+- [x] Seed 20+ quality ideas across all categories
+- [x] ASC app record, PrivacyInfo.xcprivacy, fastlane metadata, screenshots
 
 ## Changelog
 
