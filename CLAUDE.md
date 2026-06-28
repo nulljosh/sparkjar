@@ -1,6 +1,6 @@
 # Spark
 
-Version: v2.0.2
+Version: v2.1.0
 
 ## Recovery note (2026-06-21)
 Local checkout and GitHub repo both went missing before this date (cause unconfirmed — no Time Machine/APFS snapshot/trash copy existed to check). Source was recovered from Vercel's deployment-files API (`GET /v8/deployments/{id}/files/{fileId}`, v6 of the same endpoint is disabled) against the latest deployment, plus the live-served frontend at spark.heyitsmejosh.com as a cross-check (the frontend is unbundled, so the served files are the actual source). Risk: any local edits made between the last deploy and the original deletion are not captured — this is the latest deployed snapshot, not necessarily the latest *written* code.
@@ -61,6 +61,16 @@ vercel env add SPARK_DAEMON_SECRET
 # value: generate with `openssl rand -hex 32` -- never commit it.
 # Must match the value in ~/.spark/daemon.env (used by the local daemon).
 ```
+
+## Native Companions
+
+| Platform | Dir | Bundle ID | Status |
+|---|---|---|---|
+| iOS | ios/ | com.heyitsmejosh.spark | Submission in progress, v2.1.0 build 2 |
+| macOS | macos/ | com.heyitsmejosh.spark.mac | Submission in progress, v1.0.0 |
+| watchOS | watchos/ | com.heyitsmejosh.spark.watchos | Bundled with iOS; no login UI (view-only without iOS pre-auth) |
+
+Build with `xcodegen generate` in each platform dir. Screenshots in `screenshots/`.
 
 ## Migration
 

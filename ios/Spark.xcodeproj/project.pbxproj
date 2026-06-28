@@ -14,6 +14,7 @@
 		1821FA9110E0C2C3CBC5FE8D /* AuthResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D348ED375049F4C67B5FF78 /* AuthResponseTests.swift */; };
 		1F51D19D0D3960BB3465082C /* MockSparkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D097456B9B4019A62DAFD19A /* MockSparkAPI.swift */; };
 		28617124CC44BDFAF05DAAF3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FA48B378FBAE5DEC3C7E7 /* Post.swift */; };
+		32FA9FE2244CB26B974C339C /* IdeaBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C9C82E1E93666E8871938C /* IdeaBaseView.swift */; };
 		3AA8B6E58C3E58DFFB03C361 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C960C5A9D0E4A37C066CE8E /* Assets.xcassets */; };
 		406DB6B6C2317DDE3A7A0A46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255A33F3F797DB0BCEA702E8 /* ContentView.swift */; };
 		47A294EE4FE183EBBF7397CD /* UserProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888EDFCBF793441DF737D48 /* UserProfileTests.swift */; };
@@ -26,6 +27,7 @@
 		D96B6B932EA576313377BD54 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 853643D321C111724EAABB6E /* PostDetailView.swift */; };
 		D9CE52F15DCEE57F1C52005E /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C6AE8F06520FF46047DC42 /* AppState.swift */; };
 		DE4910D8269C9AEAE75D98EA /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60FC9FCE7C2CE1C146107688 /* CommentsView.swift */; };
+		EA7BD427F8A1AD4589F89CFD /* IdeaBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705DF762743CB17D523378AB /* IdeaBase.swift */; };
 		F3249EC16F76847B4ABE6791 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496019FB70124614FA299B74 /* KeychainHelper.swift */; };
 		F3D3F06901EA346A79B0768D /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0AE766ACE7A24B15BEB2FF /* IntegrationTests.swift */; };
 		FE88C42776901721A0504CC8 /* SparkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B026567C272F91FC1DB10 /* SparkApp.swift */; };
@@ -55,11 +57,13 @@
 		6634073CA4721A8AA0746825 /* PostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTests.swift; sourceTree = "<group>"; };
 		669DF90C12CC52B9665EF8A4 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		6A9AC5F477D30E64C39B5538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		705DF762743CB17D523378AB /* IdeaBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaBase.swift; sourceTree = "<group>"; };
 		7C1FA48B378FBAE5DEC3C7E7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		7C960C5A9D0E4A37C066CE8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DA6DEB697386AA92D534E1F /* TestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfig.swift; sourceTree = "<group>"; };
 		8066DE0FCE569DFBA806F45A /* SparkTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SparkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		853643D321C111724EAABB6E /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		85C9C82E1E93666E8871938C /* IdeaBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaBaseView.swift; sourceTree = "<group>"; };
 		898137529EC29A57F6260C07 /* VotingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingTests.swift; sourceTree = "<group>"; };
 		A95B026567C272F91FC1DB10 /* SparkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkApp.swift; sourceTree = "<group>"; };
 		B888EDFCBF793441DF737D48 /* UserProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTests.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				60FC9FCE7C2CE1C146107688 /* CommentsView.swift */,
+				85C9C82E1E93666E8871938C /* IdeaBaseView.swift */,
 				853643D321C111724EAABB6E /* PostDetailView.swift */,
 			);
 			path = Views;
@@ -131,6 +136,7 @@
 			children = (
 				04C6AE8F06520FF46047DC42 /* AppState.swift */,
 				669DF90C12CC52B9665EF8A4 /* Comment.swift */,
+				705DF762743CB17D523378AB /* IdeaBase.swift */,
 				7C1FA48B378FBAE5DEC3C7E7 /* Post.swift */,
 				20FCF2189B78982DF62F743E /* User.swift */,
 				E5DA0EC06F704242AF7E70B0 /* UserProfile.swift */,
@@ -249,6 +255,8 @@
 				54E0B9930C9FD58228F4CDB9 /* Comment.swift in Sources */,
 				DE4910D8269C9AEAE75D98EA /* CommentsView.swift in Sources */,
 				406DB6B6C2317DDE3A7A0A46 /* ContentView.swift in Sources */,
+				EA7BD427F8A1AD4589F89CFD /* IdeaBase.swift in Sources */,
+				32FA9FE2244CB26B974C339C /* IdeaBaseView.swift in Sources */,
 				F3249EC16F76847B4ABE6791 /* KeychainHelper.swift in Sources */,
 				28617124CC44BDFAF05DAAF3 /* Post.swift in Sources */,
 				D96B6B932EA576313377BD54 /* PostDetailView.swift in Sources */,

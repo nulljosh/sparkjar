@@ -2,26 +2,38 @@
 
 # Spark
 
-![version](https://img.shields.io/badge/version-v2.0.2-blue) ![license](https://img.shields.io/badge/license-MIT-green) [![GitHub](https://img.shields.io/badge/GitHub-nulljosh%2Fspark-black?logo=github)](https://github.com/nulljosh/spark)
+![version](https://img.shields.io/badge/version-v2.1.0-blue) ![license](https://img.shields.io/badge/license-MIT-green) [![GitHub](https://img.shields.io/badge/GitHub-nulljosh%2Fspark-black?logo=github)](https://github.com/nulljosh/spark)
 
-Idea-sharing platform with upvoting and JWT auth.
+Idea-sharing platform with upvoting, comments, JWT auth, and AI enrichment. Native companions for iOS, macOS, and watchOS.
 
 [Live](https://spark.heyitsmejosh.com)
+
+## Platforms
+
+| Platform | Version | Status |
+|---|---|---|
+| Web (PWA) | v2.1.0 | Live |
+| iOS | v2.1.0 | App Store submission in progress |
+| macOS | v1.0.0 | App Store submission in progress |
+| watchOS | v1.0.0 | Bundled with iOS |
+
+<img src="screenshots/ios/01-feed.jpg" width="280">
 
 ## Features
 
 - Vanilla JS -- single `index.html`, no build step
-- JWT auth with sign up, login, forgot password
+- JWT auth with sign up, login, biometric (Face ID / Touch ID on iOS)
 - Category filters and Hot/New sorting
-- Upvoting and trending
+- Upvoting and trending with optimistic UI
+- LLM enrichment (SPEC + PLAN) via Claude daemon
+- Idea Bases: AI-generated idea clusters from a topic
+- Comment threads on posts, markdown export
 - Dark/light theme toggle
 - PWA with offline support
 - Vercel serverless + Supabase PostgreSQL (RLS enabled)
 - Responsive grid layout (2-col desktop, 1-col mobile)
-- Notification bell with unread badges
 - Post tags (tech, design, business, random) with filter bar
-- Curated seed ideas for new users (12 humanized posts)
-- Comment threads on posts
+- Curated seed ideas for new users
 
 ## Run
 
