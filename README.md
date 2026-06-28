@@ -106,4 +106,4 @@ Screenshots ready in `screenshots/ios/` (feed, sign-in, profile, ideas). Metadat
 MIT 2026 Joshua Trommel
 
 ## From Spark.pdf (imported 2026-06-28)
-- [x] Renamed ASC app from "Spark - spark" → "Spark: Budget" (2026-06-28, "Spark" was taken)
+- [x] Renamed ASC app from "Spark - spark" → "Spark: Ideas" (2026-06-28)
