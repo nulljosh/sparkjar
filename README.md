@@ -59,14 +59,23 @@ alter table users add column if not exists avatar_url text;
 
 - [ ] Purge old `.env` from git history (was committed in 3 old commits, no longer tracked): `brew install git-filter-repo && git filter-repo --path spark/.env --invert-paths` then force-push
 
+## App Store Submission
+
+ASC app record created (id: 6785162492). IPA built and exported. Upload blocked by Xcode 26 beta SDK — App Store rejects beta builds. Once Xcode 26 stable ships, run:
+
+```bash
+asc builds upload --app 6785162492 --ipa /tmp/SparkExport/Spark.ipa --wait
+```
+
+Screenshots ready in `screenshots/ios/` (feed, sign-in, profile, ideas). Metadata in `ios/fastlane/metadata/en-US/`.
+
 ## Roadmap
 
-- [ ] AI idea building — when a post is created, daemon auto-generates an implementation plan/code scaffold and attaches it (daemon exists at `daemon/spark-daemon.js`, needs enrichment prompt for builds)
-- [x] Seed more custom ideas — populate Supabase with 20+ quality ideas across all categories
-- [ ] iOS app testing — run through custom idea creation, voting, comments end-to-end
+- [ ] Submit to App Store — blocked on Xcode 26 stable (beta SDK rejected by ASC)
+- [ ] AI idea building — daemon auto-generates implementation plan/scaffold on post create
+- [x] Seed more custom ideas — 20+ quality ideas across all categories
 - [ ] SMTP email delivery for password reset
 - [ ] Real-time updates via Supabase Realtime
-- [ ] User profiles with post history
 - [ ] Moderation tools
 
 ## Changelog
