@@ -104,3 +104,6 @@ Screenshots ready in `screenshots/ios/` (feed, sign-in, profile, ideas). Metadat
 ## License
 
 MIT 2026 Joshua Trommel
+
+## From Spark.pdf (imported 2026-06-28)
+- [ ] Rename ASC app name from "Spark - spark" — BLOCKED: "Spark" is taken by another account; pick a unique name (e.g. "Spark - Budget", "Spark by Josh") then run: asc localizations update --app 6785162492 --type app-info --locale en-US --name "YOUR NAME"
