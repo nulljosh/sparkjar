@@ -71,6 +71,11 @@ Screenshots ready in `screenshots/ios/` (feed, sign-in, profile, ideas). Metadat
 
 ## Roadmap
 
+**App Store — icons (2026-06-28)**
+- [x] App icon alpha channel stripped (was why ASC showed blank icon — Apple drops icons with alpha); macOS icon set created + wired in project.yml. Use `~/.agents/skills/icon/`.
+- [ ] **Ship fresh iOS + macOS builds** — icons are fixed on disk but ASC only updates the icon from a newly *processed* build. `xcodegen generate` in ios/ and macos/, then archive + upload (`ship` / asc-xcode-build), wait ~5–30 min.
+- [ ] Pick a mononame (rename "Spark Ideas") — cascades into bundle IDs + ASC records, do as its own task
+
 **App Store**
 - [ ] Submit iOS to App Store — blocked on Xcode 26 stable (beta SDK rejected by ASC); IPA + ASC record ready
 - [ ] Submit macOS to Mac App Store — archive + upload once Xcode stable ships
