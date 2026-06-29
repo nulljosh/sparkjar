@@ -1084,5 +1084,32 @@
             navigator.serviceWorker.register('/sw.js');
         }
     </script>
+    <div id="whats-new-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:var(--modal-bg);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);align-items:center;justify-content:center;">
+        <div onclick="event.stopPropagation()" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:28px 32px;max-width:360px;width:90%;position:relative;">
+            <button onclick="dismissWhatsNew()" style="position:absolute;top:12px;right:12px;background:transparent;border:none;color:var(--text2);font-size:20px;cursor:pointer;padding:4px;line-height:1;">×</button>
+            <div style="font-size:16px;font-weight:600;margin-bottom:14px;color:var(--text);">What's New in v2.2.0</div>
+            <ul style="padding-left:18px;line-height:1.8;margin-bottom:20px;color:var(--text2);font-size:13px;">
+                <li>GitHub Sign In / Sign Up</li>
+                <li>Terms of Service on registration</li>
+                <li>AI-powered idea enrichment daemon</li>
+                <li>Notifications &amp; comments</li>
+            </ul>
+            <button onclick="dismissWhatsNew()" style="width:100%;padding:10px 0;background:var(--text);color:var(--bg);border:none;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600;font-family:var(--font);">Got it</button>
+        </div>
+    </div>
+    <script>
+        (function() {
+            const KEY = 'spark_whats_new_seen', VER = '2.2.0';
+            if (localStorage.getItem(KEY) !== VER) {
+                const m = document.getElementById('whats-new-modal');
+                m.style.display = 'flex';
+                m.addEventListener('click', dismissWhatsNew);
+            }
+        })();
+        function dismissWhatsNew() {
+            localStorage.setItem('spark_whats_new_seen', '2.2.0');
+            document.getElementById('whats-new-modal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
