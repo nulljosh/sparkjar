@@ -1,13 +1,15 @@
 # Spark
 
-Version: v2.1.0
+Version: v2.2.0
 
 ## Recovery note (2026-06-21)
 Local checkout and GitHub repo both went missing before this date (cause unconfirmed — no Time Machine/APFS snapshot/trash copy existed to check). Source was recovered from Vercel's deployment-files API (`GET /v8/deployments/{id}/files/{fileId}`, v6 of the same endpoint is disabled) against the latest deployment, plus the live-served frontend at spark.heyitsmejosh.com as a cross-check (the frontend is unbundled, so the served files are the actual source). Risk: any local edits made between the last deploy and the original deletion are not captured — this is the latest deployed snapshot, not necessarily the latest *written* code.
 
-## Pending (2026-06-28)
-- [ ] Run `migrations/006_github_oauth.sql` in Supabase SQL editor (adds `github_id` + `avatar_url` columns, makes password cols nullable for OAuth users)
-- GITHUB_CLIENT_ID + GITHUB_CLIENT_SECRET already set in Vercel production
+## Shipped (2026-06-28)
+- [x] ToS checkbox required on register (blocks submit if unchecked) — `index.html`, `/tos.html`
+- [x] GitHub Sign In/Up — `api/auth/github.js`, `api/auth/github-callback.js`
+- [x] Supabase migration `006_github_oauth.sql` applied (github_id, avatar_url columns)
+- [x] GITHUB_CLIENT_ID + GITHUB_CLIENT_SECRET set in Vercel production
 
 ## Rules
 
