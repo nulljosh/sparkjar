@@ -302,6 +302,8 @@
                 <div id="loginForm">
                     <h2 style="margin-bottom:20px">Login</h2>
                     <div id="loginError" class="error"></div>
+                    <a href="/api/auth/github" class="btn" style="display:block;text-align:center;background:#24292e;color:#fff;text-decoration:none;margin-bottom:12px">Sign in with GitHub</a>
+                    <div style="text-align:center;color:var(--text3);font-size:13px;margin-bottom:12px">or</div>
                     <input type="text" id="loginUsername" placeholder="Username">
                     <input type="password" id="loginPassword" placeholder="Password">
                     <button class="btn" onclick="login()">Login</button>
@@ -321,10 +323,15 @@
                 <h2 style="margin-bottom:20px">Register</h2>
                 <div id="registerError" class="error"></div>
                 <div id="registerSuccess" class="success"></div>
+                <a href="/api/auth/github" class="btn" style="display:block;text-align:center;background:#24292e;color:#fff;text-decoration:none;margin-bottom:12px">Sign up with GitHub</a>
+                <div style="text-align:center;color:var(--text3);font-size:13px;margin-bottom:12px">or</div>
                 <input type="text" id="registerUsername" placeholder="Username">
                 <input type="email" id="registerEmail" placeholder="Email (optional)">
                 <input type="password" id="registerPassword" placeholder="Password">
                 <input type="password" id="registerConfirm" placeholder="Confirm Password">
+                <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text3);margin:4px 0 12px">
+                    <input type="checkbox" id="registerTos"> I agree to the <a href="/tos.html" target="_blank" style="color:var(--text2)">Terms of Service</a>
+                </label>
                 <button class="btn" onclick="register()">Register</button>
             </div>
         </div>
@@ -545,6 +552,7 @@
             errorEl.textContent = '';
             successEl.textContent = '';
             if (!username || !password || !confirm) { errorEl.textContent = 'Please fill in all required fields'; return; }
+            if (!document.getElementById('registerTos').checked) { errorEl.textContent = 'You must agree to the Terms of Service'; return; }
             if (password !== confirm) { errorEl.textContent = 'Passwords do not match'; return; }
             if (password.length < 6) { errorEl.textContent = 'Password must be at least 6 characters'; return; }
             try {
@@ -1048,6 +1056,24 @@
                 document.getElementById('notifDropdown').classList.remove('open');
             }
         });
+
+        // Handle GitHub OAuth callback token
+        (function() {
+            const params = new URLSearchParams(location.search);
+            const ghToken = params.get('github_token');
+            const authErr = params.get('auth_error');
+            if (ghToken) {
+                setToken(ghToken);
+                // Fetch user info from token
+                fetch(`${API_BASE}/api/user`, { headers: { Authorization: 'Bearer ' + ghToken } })
+                    .then(r => r.json()).then(d => { if (d.username) setUser({ username: d.username, userId: d.userId }); }).catch(() => {});
+                history.replaceState({}, '', '/');
+            }
+            if (authErr) {
+                history.replaceState({}, '', '/');
+                alert('GitHub sign-in failed (' + authErr + ')');
+            }
+        })();
 
         // Initialize
         updateAuthUI();
