@@ -33,6 +33,7 @@ targets:
       MACOSX_DEPLOYMENT_TARGET: "14.0"
       CODE_SIGN_STYLE: Automatic
       ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+      INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.productivity
     entitlements:
       path: SparkMac.entitlements
     dependencies:
@@ -50,6 +51,7 @@ targets:
       CODE_SIGN_STYLE: Automatic
       INFOPLIST_KEY_CFBundleDisplayName: Spark Widgets
       INFOPLIST_KEY_NSHumanReadableCopyright: ""
+      INFOPLIST_KEY_NSExtensionPointIdentifier: com.apple.widgetkit-extension
       LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks"
     entitlements:
       path: SparkWidgets.entitlements
