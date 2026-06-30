@@ -84,9 +84,11 @@ final class AppState {
         isFeedLoading = false
     }
 
-    func createPost(title: String, content: String, category: String, linkedRepo: String? = nil) async throws {
+    @discardableResult
+    func createPost(title: String, content: String, category: String, linkedRepo: String? = nil) async throws -> Post {
         let post = try await api.createPost(title: title, content: content, category: category, linkedRepo: linkedRepo)
         posts.insert(post, at: 0)
+        return post
     }
 
     func requestEnrichment(postId: String) async {

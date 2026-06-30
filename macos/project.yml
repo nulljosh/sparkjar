@@ -23,6 +23,9 @@ targets:
           - "CLAUDE.md"
           - "icon.svg"
           - "architecture.svg"
+          - ".asc"
+          - "fastlane"
+          - "ExportOptions.plist"
     settings:
       INFOPLIST_FILE: ""
       PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.spark.mac
