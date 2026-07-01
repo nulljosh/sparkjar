@@ -10,6 +10,7 @@ struct SparkApp: App {
             ZStack {
                 ContentView()
                     .environment(appState)
+                    .overlay { WhatsNewSheet() }
 
                 if showSplash {
                     SplashView()

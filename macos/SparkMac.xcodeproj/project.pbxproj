@@ -11,6 +11,7 @@
 		14456B07FFF1C9622E2B0BF0 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3E3C9B418549FE7881B8C4 /* PostDetailView.swift */; };
 		297DC1ACAED1715EFA4964DF /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EA990AD670E5BA9D470D97 /* FeedView.swift */; };
 		43348A6105ED5FAF2864DFE7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC20CB0C43584A71B2FFB2FA /* Post.swift */; };
+		53CC98910CFEEFE2DCBC89D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2A7FFFF165AC6C43A0ACAFC /* Assets.xcassets */; };
 		6242807D9A2560BE5A973A12 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4723C631395FB48011D97 /* User.swift */; };
 		68BBCB290ACC4FBCB50CC934 /* HotPostsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E5EF0D8EB58667708123AB /* HotPostsProvider.swift */; };
 		73D98289C5F8CEED0DA97F6F /* HotPostsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0814083A1ABF96ABA3BA65 /* HotPostsWidget.swift */; };
@@ -76,6 +77,7 @@
 		8C41519D66928DE2043C7198 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		8C6C3EC0391FB0ABA3C19D8E /* SparkWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SparkWidgets.entitlements; sourceTree = "<group>"; };
 		99F3A10E1AAEBDF3FDE2A8A4 /* SparkMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SparkMac.entitlements; sourceTree = "<group>"; };
+		B2A7FFFF165AC6C43A0ACAFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB54901EFF22CB542CB05CCA /* StatsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsProvider.swift; sourceTree = "<group>"; };
 		D4EA990AD670E5BA9D470D97 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		D5E5EF0D8EB58667708123AB /* HotPostsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPostsProvider.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		9F1C402D1E7F418779325D5A /* macos */ = {
 			isa = PBXGroup;
 			children = (
+				B2A7FFFF165AC6C43A0ACAFC /* Assets.xcassets */,
 				416DA034C28B85A111885B06 /* ContentView.swift */,
 				522B03AAD58279D1840F5F6B /* SparkApp.swift */,
 				99F3A10E1AAEBDF3FDE2A8A4 /* SparkMac.entitlements */,
@@ -206,6 +209,7 @@
 			buildConfigurationList = B0BD4189F833B80460D25B49 /* Build configuration list for PBXNativeTarget "SparkMac" */;
 			buildPhases = (
 				308594EB6606674EC6425C19 /* Sources */,
+				7E225D21CF728BC2726A41D2 /* Resources */,
 				A243B60264EB3CF6772A28B8 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
@@ -276,6 +280,17 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		7E225D21CF728BC2726A41D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53CC98910CFEEFE2DCBC89D0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		308594EB6606674EC6425C19 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -331,9 +346,7 @@
 				CODE_SIGN_ENTITLEMENTS = SparkWidgets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Spark Widgets";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = "SparkWidgets-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.spark.mac.widgets;
@@ -472,9 +485,7 @@
 				CODE_SIGN_ENTITLEMENTS = SparkWidgets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Spark Widgets";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = "SparkWidgets-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.spark.mac.widgets;
@@ -491,6 +502,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -510,6 +522,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

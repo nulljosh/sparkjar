@@ -11,17 +11,30 @@
 		08125EF0204EB82912058BF8 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = C7196DDDC55BB4DD4A0CA7B9 /* PrivacyInfo.xcprivacy */; };
 		0DA8464B782EC5057443201A /* TestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA6DEB697386AA92D534E1F /* TestConfig.swift */; };
 		0E2765A7FD73D38A2AF87709 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FCF2189B78982DF62F743E /* User.swift */; };
+		0E9CB1BB3FE19692B7CCB8C5 /* NewPostsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F6B874CE38A15C77FA7334 /* NewPostsWidget.swift */; };
+		110A21C331C9C6EF1D8E6461 /* NewPostsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C29F6CD9F1775D89699528F /* NewPostsProvider.swift */; };
 		13956E653D003D1210154E9E /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DA0EC06F704242AF7E70B0 /* UserProfile.swift */; };
 		1821FA9110E0C2C3CBC5FE8D /* AuthResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D348ED375049F4C67B5FF78 /* AuthResponseTests.swift */; };
 		1F51D19D0D3960BB3465082C /* MockSparkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D097456B9B4019A62DAFD19A /* MockSparkAPI.swift */; };
 		28617124CC44BDFAF05DAAF3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FA48B378FBAE5DEC3C7E7 /* Post.swift */; };
+		28FD9EA8F9BB77D913CA88B1 /* WidgetModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E258503065A71D2CA27D42 /* WidgetModels.swift */; };
+		32501213DC283CD99DC24F76 /* StatsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7377E7C3D073081F7F4E862 /* StatsWidget.swift */; };
 		32FA9FE2244CB26B974C339C /* IdeaBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C9C82E1E93666E8871938C /* IdeaBaseView.swift */; };
+		34962B500B415E5392E8955B /* HotPostsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D5DF75DDDFC297BA58F06B /* HotPostsProvider.swift */; };
 		3AA8B6E58C3E58DFFB03C361 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C960C5A9D0E4A37C066CE8E /* Assets.xcassets */; };
+		3AB763D6EB79A52825C41A0B /* WidgetAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36144F6E413872BCE8C0CF6 /* WidgetAPI.swift */; };
 		406DB6B6C2317DDE3A7A0A46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255A33F3F797DB0BCEA702E8 /* ContentView.swift */; };
 		47A294EE4FE183EBBF7397CD /* UserProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888EDFCBF793441DF737D48 /* UserProfileTests.swift */; };
+		4EFC1638CAD5D0389BB4B23D /* SparkWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252262F74DC4F74094B9E99F /* SparkWidgets.swift */; };
 		54E0B9930C9FD58228F4CDB9 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669DF90C12CC52B9665EF8A4 /* Comment.swift */; };
+		5BB9DD6838440BC8EADDA9B3 /* WhatsNewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C2205B519C65D90BAA74 /* WhatsNewSheet.swift */; };
+		5CD2F5C284CF86DFA30CE546 /* SparkWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FCC6BAE9EE29681504AD6344 /* SparkWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		65886B3F202242BC42C24F3E /* StatsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58021A007F206C0665C9B3B0 /* StatsProvider.swift */; };
 		76E656D417133C9C6FAAB2B7 /* AppStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07602A28278D31BE34810E4E /* AppStateTests.swift */; };
+		793707E228BE00F04A985F48 /* HotPostsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7310D140B001AC5985973BDC /* HotPostsWidget.swift */; };
 		7FE504150AE2C080933FDAFF /* SparkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F0D485B81F57126B109C50 /* SparkAPI.swift */; };
+		A4AF77286922A3F3F7B7D679 /* ExportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 942F904930D3F346344AB231 /* ExportOptions.plist */; };
+		B45EEEB0763CE5F9E10D504E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38B305B02C1805F1432B0604 /* Assets.xcassets */; };
 		BD2E236DE4521AB57EE48AB1 /* CommentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B965FAC4CDC7FEF516075210 /* CommentTests.swift */; };
 		C3308327E1F1154C3173124A /* VotingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898137529EC29A57F6260C07 /* VotingTests.swift */; };
 		D3123D41C0F32D9A96549332 /* PostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6634073CA4721A8AA0746825 /* PostTests.swift */; };
@@ -42,47 +55,118 @@
 			remoteGlobalIDString = 876303B57E6FD004BCF64818;
 			remoteInfo = Spark;
 		};
+		38594060535259E9B411B653 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B892AFA3F6F32DFDE1F2917B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40D76FD763A5379E193137FA;
+			remoteInfo = SparkWidgetsExtension;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		58609D7F09301476EFA7D113 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5CD2F5C284CF86DFA30CE546 /* SparkWidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		00F6B874CE38A15C77FA7334 /* NewPostsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostsWidget.swift; sourceTree = "<group>"; };
 		04C6AE8F06520FF46047DC42 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		07602A28278D31BE34810E4E /* AppStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateTests.swift; sourceTree = "<group>"; };
 		0D348ED375049F4C67B5FF78 /* AuthResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponseTests.swift; sourceTree = "<group>"; };
 		14BFFB055F5D3AFB05491CA4 /* Spark.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Spark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20FCF2189B78982DF62F743E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		23E258503065A71D2CA27D42 /* WidgetModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetModels.swift; sourceTree = "<group>"; };
+		252262F74DC4F74094B9E99F /* SparkWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkWidgets.swift; sourceTree = "<group>"; };
 		255A33F3F797DB0BCEA702E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		38B305B02C1805F1432B0604 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		496019FB70124614FA299B74 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		53B2E282198ED9D5CCE10C83 /* SparkAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkAPITests.swift; sourceTree = "<group>"; };
+		58021A007F206C0665C9B3B0 /* StatsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsProvider.swift; sourceTree = "<group>"; };
 		60FC9FCE7C2CE1C146107688 /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
+		6198C2205B519C65D90BAA74 /* WhatsNewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewSheet.swift; sourceTree = "<group>"; };
 		64F0D485B81F57126B109C50 /* SparkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkAPI.swift; sourceTree = "<group>"; };
 		6634073CA4721A8AA0746825 /* PostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTests.swift; sourceTree = "<group>"; };
 		669DF90C12CC52B9665EF8A4 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		6A9AC5F477D30E64C39B5538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		705DF762743CB17D523378AB /* IdeaBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaBase.swift; sourceTree = "<group>"; };
+		7310D140B001AC5985973BDC /* HotPostsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPostsWidget.swift; sourceTree = "<group>"; };
 		7C1FA48B378FBAE5DEC3C7E7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		7C960C5A9D0E4A37C066CE8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DA6DEB697386AA92D534E1F /* TestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfig.swift; sourceTree = "<group>"; };
 		8066DE0FCE569DFBA806F45A /* SparkTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SparkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8491F451139C7AAA18A06A55 /* SparkWidgets.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SparkWidgets.entitlements; sourceTree = "<group>"; };
 		853643D321C111724EAABB6E /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
 		85C9C82E1E93666E8871938C /* IdeaBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaBaseView.swift; sourceTree = "<group>"; };
 		898137529EC29A57F6260C07 /* VotingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VotingTests.swift; sourceTree = "<group>"; };
+		8C29F6CD9F1775D89699528F /* NewPostsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostsProvider.swift; sourceTree = "<group>"; };
+		93D5DF75DDDFC297BA58F06B /* HotPostsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPostsProvider.swift; sourceTree = "<group>"; };
+		942F904930D3F346344AB231 /* ExportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = ExportOptions.plist; sourceTree = "<group>"; };
 		A95B026567C272F91FC1DB10 /* SparkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkApp.swift; sourceTree = "<group>"; };
 		B888EDFCBF793441DF737D48 /* UserProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTests.swift; sourceTree = "<group>"; };
 		B965FAC4CDC7FEF516075210 /* CommentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTests.swift; sourceTree = "<group>"; };
+		C36144F6E413872BCE8C0CF6 /* WidgetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetAPI.swift; sourceTree = "<group>"; };
 		C7196DDDC55BB4DD4A0CA7B9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		D097456B9B4019A62DAFD19A /* MockSparkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSparkAPI.swift; sourceTree = "<group>"; };
+		D7377E7C3D073081F7F4E862 /* StatsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsWidget.swift; sourceTree = "<group>"; };
 		DF0AE766ACE7A24B15BEB2FF /* IntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
+		E188B5AB14AB56062C850BD7 /* Spark.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spark.entitlements; sourceTree = "<group>"; };
 		E5DA0EC06F704242AF7E70B0 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		FCC6BAE9EE29681504AD6344 /* SparkWidgetsExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = SparkWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		08445ACA7FEB0E48333A5C86 /* widgets-ios */ = {
+			isa = PBXGroup;
+			children = (
+				38B305B02C1805F1432B0604 /* Assets.xcassets */,
+				8491F451139C7AAA18A06A55 /* SparkWidgets.entitlements */,
+				252262F74DC4F74094B9E99F /* SparkWidgets.swift */,
+				D605AE80E87DBCD981E02CCB /* Models */,
+				32C5FE673A4F741E7FAD499E /* Providers */,
+				2A58E908387570E105AC5A04 /* Views */,
+			);
+			name = "widgets-ios";
+			path = "../widgets-ios";
+			sourceTree = "<group>";
+		};
 		195613032D04F7C348176821 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				14BFFB055F5D3AFB05491CA4 /* Spark.app */,
 				8066DE0FCE569DFBA806F45A /* SparkTests.xctest */,
+				FCC6BAE9EE29681504AD6344 /* SparkWidgetsExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2A58E908387570E105AC5A04 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7310D140B001AC5985973BDC /* HotPostsWidget.swift */,
+				00F6B874CE38A15C77FA7334 /* NewPostsWidget.swift */,
+				D7377E7C3D073081F7F4E862 /* StatsWidget.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		32C5FE673A4F741E7FAD499E /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				93D5DF75DDDFC297BA58F06B /* HotPostsProvider.swift */,
+				8C29F6CD9F1775D89699528F /* NewPostsProvider.swift */,
+				58021A007F206C0665C9B3B0 /* StatsProvider.swift */,
+			);
+			path = Providers;
 			sourceTree = "<group>";
 		};
 		3389F4D949ECD1C4C7A3FC0B = {
@@ -93,6 +177,7 @@
 				87226969E9F919EE002A3916 /* Models */,
 				675B56332E65ED375F3CF6D7 /* SparkTests */,
 				349D5D918C2486E46D5280D3 /* Views */,
+				08445ACA7FEB0E48333A5C86 /* widgets-ios */,
 				195613032D04F7C348176821 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -151,9 +236,12 @@
 			children = (
 				7C960C5A9D0E4A37C066CE8E /* Assets.xcassets */,
 				255A33F3F797DB0BCEA702E8 /* ContentView.swift */,
+				942F904930D3F346344AB231 /* ExportOptions.plist */,
 				6A9AC5F477D30E64C39B5538 /* Info.plist */,
 				C7196DDDC55BB4DD4A0CA7B9 /* PrivacyInfo.xcprivacy */,
+				E188B5AB14AB56062C850BD7 /* Spark.entitlements */,
 				A95B026567C272F91FC1DB10 /* SparkApp.swift */,
+				6198C2205B519C65D90BAA74 /* WhatsNewSheet.swift */,
 				37A7F3C1514EFD03DEFEE1BA /* API */,
 				87226969E9F919EE002A3916 /* Models */,
 				349D5D918C2486E46D5280D3 /* Views */,
@@ -162,9 +250,36 @@
 			path = .;
 			sourceTree = "<group>";
 		};
+		D605AE80E87DBCD981E02CCB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C36144F6E413872BCE8C0CF6 /* WidgetAPI.swift */,
+				23E258503065A71D2CA27D42 /* WidgetModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		40D76FD763A5379E193137FA /* SparkWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE71508E01117778EEE5521D /* Build configuration list for PBXNativeTarget "SparkWidgetsExtension" */;
+			buildPhases = (
+				0A20316B0393AF992C3C73C0 /* Sources */,
+				15290C3031F99A0CD78D1A32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SparkWidgetsExtension;
+			packageProductDependencies = (
+			);
+			productName = SparkWidgetsExtension;
+			productReference = FCC6BAE9EE29681504AD6344 /* SparkWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		6DCB7D5BCB215413B6058CD8 /* SparkTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F450E97A1AFDBE38F05AF8F3 /* Build configuration list for PBXNativeTarget "SparkTests" */;
@@ -189,10 +304,12 @@
 			buildPhases = (
 				35CFAA8ABEFC095E746ED425 /* Sources */,
 				8518FFAA5F6806D554342A0F /* Resources */,
+				58609D7F09301476EFA7D113 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DB4B00704A2F24EAF08EE007 /* PBXTargetDependency */,
 			);
 			name = Spark;
 			packageProductDependencies = (
@@ -210,6 +327,10 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					40D76FD763A5379E193137FA = {
+						DevelopmentTeam = QMM486NPYC;
+						ProvisioningStyle = Automatic;
+					};
 					6DCB7D5BCB215413B6058CD8 = {
 						DevelopmentTeam = QMM486NPYC;
 					};
@@ -234,16 +355,26 @@
 			targets = (
 				876303B57E6FD004BCF64818 /* Spark */,
 				6DCB7D5BCB215413B6058CD8 /* SparkTests */,
+				40D76FD763A5379E193137FA /* SparkWidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		15290C3031F99A0CD78D1A32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B45EEEB0763CE5F9E10D504E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8518FFAA5F6806D554342A0F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3AA8B6E58C3E58DFFB03C361 /* Assets.xcassets in Resources */,
+				A4AF77286922A3F3F7B7D679 /* ExportOptions.plist in Resources */,
 				08125EF0204EB82912058BF8 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +382,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0A20316B0393AF992C3C73C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34962B500B415E5392E8955B /* HotPostsProvider.swift in Sources */,
+				793707E228BE00F04A985F48 /* HotPostsWidget.swift in Sources */,
+				110A21C331C9C6EF1D8E6461 /* NewPostsProvider.swift in Sources */,
+				0E9CB1BB3FE19692B7CCB8C5 /* NewPostsWidget.swift in Sources */,
+				4EFC1638CAD5D0389BB4B23D /* SparkWidgets.swift in Sources */,
+				65886B3F202242BC42C24F3E /* StatsProvider.swift in Sources */,
+				32501213DC283CD99DC24F76 /* StatsWidget.swift in Sources */,
+				3AB763D6EB79A52825C41A0B /* WidgetAPI.swift in Sources */,
+				28FD9EA8F9BB77D913CA88B1 /* WidgetModels.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		35CFAA8ABEFC095E746ED425 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,6 +415,7 @@
 				FE88C42776901721A0504CC8 /* SparkApp.swift in Sources */,
 				0E2765A7FD73D38A2AF87709 /* User.swift in Sources */,
 				13956E653D003D1210154E9E /* UserProfile.swift in Sources */,
+				5BB9DD6838440BC8EADDA9B3 /* WhatsNewSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +444,11 @@
 			target = 876303B57E6FD004BCF64818 /* Spark */;
 			targetProxy = 14815985FB55CDD61F7D300B /* PBXContainerItemProxy */;
 		};
+		DB4B00704A2F24EAF08EE007 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40D76FD763A5379E193137FA /* SparkWidgetsExtension */;
+			targetProxy = 38594060535259E9B411B653 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -304,6 +457,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Spark.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -311,6 +465,48 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.spark;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3357B55C7D3B6000D7D9EC1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "../widgets-ios/SparkWidgets.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Spark Widgets";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2026 Joshua Trommel";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.spark.widgets;
+				PRODUCT_NAME = SparkWidgets;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7362AFCABAA166DCDF8C3025 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "../widgets-ios/SparkWidgets.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Spark Widgets";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2026 Joshua Trommel";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.spark.widgets;
+				PRODUCT_NAME = SparkWidgets;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -367,7 +563,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = QMM486NPYC;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -381,7 +577,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 2.1.0;
+				MARKETING_VERSION = 2.1.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,7 +639,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = QMM486NPYC;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -463,7 +659,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 2.1.0;
+				MARKETING_VERSION = 2.1.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -480,6 +676,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Spark.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -495,6 +692,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AE71508E01117778EEE5521D /* Build configuration list for PBXNativeTarget "SparkWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7362AFCABAA166DCDF8C3025 /* Debug */,
+				3357B55C7D3B6000D7D9EC1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		DFD23EDBCF774EB77CF7AB33 /* Build configuration list for PBXNativeTarget "Spark" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

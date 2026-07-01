@@ -2,7 +2,7 @@ import Foundation
 
 struct SparkWidgetAPI {
     static let baseURL = "https://spark.heyitsmejosh.com"
-    private nonisolated(unsafe) static let defaults = UserDefaults(suiteName: "group.com.heyitsmejosh.spark")
+    private nonisolated(unsafe) static let defaults = UserDefaults(suiteName: "group.com.jt.spark")
 
     private static var session: URLSession {
         let config = URLSessionConfiguration.default

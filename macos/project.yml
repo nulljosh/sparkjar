@@ -26,6 +26,7 @@ targets:
           - ".asc"
           - "fastlane"
           - "ExportOptions.plist"
+          - "SparkWidgets-Info.plist"
     settings:
       INFOPLIST_FILE: ""
       PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.spark.mac
@@ -36,6 +37,11 @@ targets:
       INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.productivity
     entitlements:
       path: SparkMac.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.network.client: true
+        com.apple.security.application-groups:
+          - group.com.jt.spark
     dependencies:
       - target: SparkWidgets
 
@@ -46,12 +52,13 @@ targets:
       - path: ../widgets-macos
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.spark.mac.widgets
-      GENERATE_INFOPLIST_FILE: YES
+      INFOPLIST_FILE: SparkWidgets-Info.plist
       MACOSX_DEPLOYMENT_TARGET: "14.0"
       CODE_SIGN_STYLE: Automatic
-      INFOPLIST_KEY_CFBundleDisplayName: Spark Widgets
-      INFOPLIST_KEY_NSHumanReadableCopyright: ""
-      INFOPLIST_KEY_NSExtensionPointIdentifier: com.apple.widgetkit-extension
       LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks"
     entitlements:
       path: SparkWidgets.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.application-groups:
+          - group.com.jt.spark
