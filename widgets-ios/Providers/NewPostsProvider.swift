@@ -10,9 +10,9 @@ struct NewPostsEntry: TimelineEntry {
         NewPostsEntry(
             date: .now,
             posts: [
-                SparkPost(id: "1", title: "WebSocket support for live updates", content: "", category: "Feature", votes: 5, author: "josh", createdAt: "2026-03-25T12:00:00Z"),
-                SparkPost(id: "2", title: "Mobile app gesture nav", content: "", category: "UX", votes: 3, author: "alex", createdAt: "2026-03-25T11:30:00Z"),
-                SparkPost(id: "3", title: "Export posts as markdown", content: "", category: "Feature", votes: 1, author: "sam", createdAt: "2026-03-25T11:00:00Z"),
+                SparkPost(id: "1", title: "WebSocket support for live updates", content: "", category: "Feature", votes: 5, author: "josh", createdAt: "2026-03-25T12:00:00Z", enriched: nil),
+                SparkPost(id: "2", title: "Mobile app gesture nav", content: "", category: "UX", votes: 3, author: "alex", createdAt: "2026-03-25T11:30:00Z", enriched: nil),
+                SparkPost(id: "3", title: "Export posts as markdown", content: "", category: "Feature", votes: 1, author: "sam", createdAt: "2026-03-25T11:00:00Z", enriched: nil),
             ],
             isPlaceholder: true
         )
@@ -33,7 +33,7 @@ struct NewPostsProvider: TimelineProvider {
         completion(NewPostsEntry(date: .now, posts: cached, isPlaceholder: false))
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<NewPostsEntry>) -> Void) {
+    func getTimeline(in context: Context, completion: @escaping @Sendable (Timeline<NewPostsEntry>) -> Void) {
         Task {
             let posts: [SparkPost]
             do {

@@ -29,7 +29,7 @@ struct StatsProvider: TimelineProvider {
         completion(StatsEntry(date: .now, stats: cached, isPlaceholder: false))
     }
 
-    func getTimeline(in context: Context, completion: @escaping (Timeline<StatsEntry>) -> Void) {
+    func getTimeline(in context: Context, completion: @escaping @Sendable (Timeline<StatsEntry>) -> Void) {
         Task {
             let stats: SparkStats
             do {
