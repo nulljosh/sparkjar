@@ -78,7 +78,7 @@ Screenshots ready in `screenshots/ios/` (feed, sign-in, profile, ideas). Metadat
 
 **App Store**
 - [ ] Submit iOS to App Store — blocked on Xcode 26 stable (beta SDK rejected by ASC); IPA + ASC record ready
-- [ ] Submit macOS to Mac App Store — archive + upload once Xcode stable ships
+- [ ] Submit macOS to Mac App Store — widget embed error fixed 2026-07-01 (SparkWidgets appex was missing CFBundleIdentifier; GENERATE_INFOPLIST_FILE now on), build succeeds locally. Remaining: create ASC app record for com.heyitsmejosh.spark.mac (no Mac app entry exists — use asc-app-create-ui), then archive + upload
 - [ ] Add marketing landing page at `/landing` (currently feed is the homepage)
 - [ ] 1 more iOS screenshot (post detail with AI enrichment) for 5-screenshot requirement
 
