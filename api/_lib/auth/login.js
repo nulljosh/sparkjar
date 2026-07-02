@@ -4,7 +4,7 @@ const {
   issueToken,
   setSessionCookie,
   verifyPassword
-} = require('../_lib/store');
+} = require('../store');
 
 const RATE_LIMIT_WINDOW_MS = 5 * 60 * 1000;
 const RATE_LIMIT_MAX_ATTEMPTS = 10;

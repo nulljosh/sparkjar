@@ -1,7 +1,7 @@
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
-const { findUserByUsername, findUserByEmail, setResetToken, findUserByResetToken, updatePassword, clearResetToken } = require('../_lib/store');
-const { getIp, checkRateLimit } = require('../_lib/ratelimit');
+const { findUserByUsername, findUserByEmail, setResetToken, findUserByResetToken, updatePassword, clearResetToken } = require('../store');
+const { getIp, checkRateLimit } = require('../ratelimit');
 
 const GENERIC_MESSAGE = 'If an account exists with that info, a reset link has been sent.';
 

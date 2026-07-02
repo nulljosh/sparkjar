@@ -1,4 +1,4 @@
-const { createSession, createUser, issueToken, setSessionCookie } = require('../_lib/store');
+const { createSession, createUser, issueToken, setSessionCookie } = require('../store');
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {

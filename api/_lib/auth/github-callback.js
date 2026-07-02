@@ -1,5 +1,5 @@
-const { supabaseRequest } = require('../_lib/supabase');
-const { createSession, issueToken, setSessionCookie } = require('../_lib/store');
+const { supabaseRequest } = require('../supabase');
+const { createSession, issueToken, setSessionCookie } = require('../store');
 
 const SITE_URL = process.env.SITE_URL || 'https://spark.heyitsmejosh.com';
 
