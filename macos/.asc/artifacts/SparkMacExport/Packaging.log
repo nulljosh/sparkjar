@@ -1,0 +1,160 @@
+2026-06-30 02:46:49 +0000 [MT] Initial pipeline context: <IDEDistributionProcessingPipelineContext: 0x8f4131500; archive(resolved)="<IDEArchive: 0x8f41bc1c0>", distributionTask(resolved)="2", distributionDestination(resolved)="1", distributionMethod(resolved)="<IDEDistributionMethodMacAppStoreDistribution: 0x8f263b9e0>", team(resolved)="<IDEProvisioningBasicTeam: 0x8f41e65e0; teamID='QMM486NPYC', teamName='Joshua Trommel'>">
+	Chain (15, self inclusive):
+	<IDEDistributionProcessingPipelineContext: 0x8f4131500; archive = "<IDEArchive: 0x8f41bc1c0>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x8f263b9e0>", team="<IDEProvisioningBasicTeam: 0x8f41e65e0; teamID='QMM486NPYC', teamName='Joshua Trommel'>">
+	<IDEDistributionProcessingPipelineContext: 0x8f4131800; archive = "<IDEArchive: 0x8f41bc1c0>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x8f263b9e0>", team="<IDEProvisioningBasicTeam: 0x8f41e65e0; teamID='QMM486NPYC', teamName='Joshua Trommel'>">
+	<IDEDistributionContext: 0x8f27cea80; archive = "<IDEArchive: 0x8f41bc1c0>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x8f263b9e0>", team="<IDEProvisioningBasicTeam: 0x8f41e65e0; teamID='QMM486NPYC', teamName='Joshua Trommel'>">
+	<IDEDistributionContext: 0x8f27ced00; archive = "<IDEArchive: 0x8f41bc1c0>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x8f263b9e0>", team="<IDEProvisioningBasicTeam: 0x8f41e65e0; teamID='QMM486NPYC', teamName='Joshua Trommel'>">
+	<IDEDistributionContext: 0x8f27cef80; archive = "<IDEArchive: 0x8f41bc1c0>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x8f263b9e0>", team="<IDEProvisioningBasicTeam: 0x8f41e65e0; teamID='QMM486NPYC', teamName='Joshua Trommel'>">
+	<IDEDistributionContext: 0x8f27cf200; archive = "<IDEArchive: 0x8f41bc1c0>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x8f263b9e0>", team="<IDEProvisioningBasicTeam: 0x8f41e65e0; teamID='QMM486NPYC', teamName='Joshua Trommel'>">
+	<IDEDistributionContext: 0x8f27cf480; archive = "<IDEArchive: 0x8f41bc1c0>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x8f263b9e0>", team="<IDEProvisioningBasicTeam: 0x8f41e65e0; teamID='QMM486NPYC', teamName='Joshua Trommel'>">
+	<IDEDistributionContext: 0x8f27cf700; archive = "<IDEArchive: 0x8f41bc1c0>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x8f263b9e0>", team="<IDEProvisioningBasicTeam: 0x8f41e65e0; teamID='QMM486NPYC', teamName='Joshua Trommel'>">
+	<IDEDistributionContext: 0x8f27cd680; archive = "<IDEArchive: 0x8f41bc1c0>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x8f263b9e0>", team="<IDEProvisioningBasicTeam: 0x8f41e65e0; teamID='QMM486NPYC', teamName='Joshua Trommel'>">
+	<IDEDistributionContext: 0x8f27cd180; archive = "<IDEArchive: 0x8f41bc1c0>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x8f263b9e0>", team="<IDEProvisioningBasicTeam: 0x8f41e65e0; teamID='QMM486NPYC', teamName='Joshua Trommel'>">
+	<IDEDistributionContext: 0x8f27ccf00; archive = "<IDEArchive: 0x8f41bc1c0>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x8f263b9e0>", team="<IDEProvisioningBasicTeam: 0x8f41e65e0; teamID='QMM486NPYC', teamName='Joshua Trommel'>">
+	<IDEDistributionContext: 0x8f27ccc80; archive = "<IDEArchive: 0x8f41bc1c0>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x8f263b9e0>", team="<IDEProvisioningBasicTeam: 0x8f41e65e0; teamID='QMM486NPYC', teamName='Joshua Trommel'>">
+	<IDEDistributionContext: 0x8f27cca00; archive = "<IDEArchive: 0x8f41bc1c0>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x8f263b9e0>", team="(null)">
+	<IDEDistributionContext: 0x8f27cc280; archive = "<IDEArchive: 0x8f41bc1c0>", distributionMethod="<IDEDistributionMethodMacAppStoreDistribution: 0x8f263b9e0>", team="(null)">
+	<IDEDistributionContext: 0x10087bcf0; archive = "<IDEArchive: 0x8f41bc1c0>", distributionMethod="(null)", team="(null)">
+</IDEDistributionProcessingPipelineContext: 0x8f4131500>
+2026-06-30 02:46:49 +0000 [MT] Processing step: IDEDistributionCreateDestRootStep
+2026-06-30 02:46:49 +0000 [MT] Processing step: IDEDistributionCopyItemStep
+2026-06-30 02:46:49 +0000 [MT] Running /usr/bin/ditto '-V' '/Users/joshua/Documents/Code/spark/macos/.asc/artifacts/SparkMac.xcarchive/Products/Applications/SparkMac.app' '/var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Root/Applications/SparkMac.app'
+2026-06-30 02:46:49 +0000  >>> Copying /Users/joshua/Documents/Code/spark/macos/.asc/artifacts/SparkMac.xcarchive/Products/Applications/SparkMac.app 
+2026-06-30 02:46:49 +0000  copying file ./Contents/_CodeSignature/CodeResources ... 
+2026-06-30 02:46:49 +0000  3077 bytes for ./Contents/_CodeSignature/CodeResources
+2026-06-30 02:46:49 +0000  copying file ./Contents/MacOS/SparkMac ... 
+2026-06-30 02:46:49 +0000  1020848 bytes for ./Contents/MacOS/SparkMac
+2026-06-30 02:46:49 +0000  copying file ./Contents/PlugIns/SparkWidgets.appex/Contents/_CodeSignature/CodeResources ... 
+2026-06-30 02:46:49 +0000  2200 bytes for ./Contents/PlugIns/SparkWidgets.appex/Contents/_CodeSignature/CodeResources
+2026-06-30 02:46:49 +0000  copying file ./Contents/PlugIns/SparkWidgets.appex/Contents/MacOS/SparkWidgets ... 
+2026-06-30 02:46:49 +0000  550528 bytes for ./Contents/PlugIns/SparkWidgets.appex/Contents/MacOS/SparkWidgets
+2026-06-30 02:46:49 +0000  copying file ./Contents/PlugIns/SparkWidgets.appex/Contents/Info.plist ... 
+2026-06-30 02:46:49 +0000  1364 bytes for ./Contents/PlugIns/SparkWidgets.appex/Contents/Info.plist
+2026-06-30 02:46:49 +0000  copying file ./Contents/Resources/AppIcon.icns ... 
+2026-06-30 02:46:49 +0000  17379 bytes for ./Contents/Resources/AppIcon.icns
+2026-06-30 02:46:49 +0000  copying file ./Contents/Resources/Assets.car ... 
+2026-06-30 02:46:49 +0000  90552 bytes for ./Contents/Resources/Assets.car
+2026-06-30 02:46:49 +0000  copying file ./Contents/Info.plist ... 
+2026-06-30 02:46:49 +0000  1394 bytes for ./Contents/Info.plist
+2026-06-30 02:46:49 +0000  copying file ./Contents/PkgInfo ... 
+2026-06-30 02:46:49 +0000  8 bytes for ./Contents/PkgInfo
+2026-06-30 02:46:49 +0000 [MT] /usr/bin/ditto exited with 0
+2026-06-30 02:46:49 +0000 [MT] Processing step: IDEDistributionEmbedProfileStep
+2026-06-30 02:46:49 +0000 [MT] Skipping profile for item: <IDEDistributionItem: 0x8f4340480; bundleID='com.heyitsmejosh.spark.mac.widgets', path='<DVTFilePath:0x8f41bd730:'/Users/joshua/Documents/Code/spark/macos/.asc/artifacts/SparkMac.xcarchive/Products/Applications/SparkMac.app/Contents/PlugIns/SparkWidgets.appex'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x8f43404e0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x8f1a6c600; name='Apple Development: trommatic@icloud.com (8VQ3Z7494A)', hash='DCF40745BE43EDF323978FBAEB96BAC4C4FA93E2', serialNumber='AD882848985F58FD0F83487E38FA44C', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2026-06-12 02:06:14 +0000''>', entitlements='{
+}', teamID='QMM486NPYC', identifier='com.heyitsmejosh.spark.mac.widgets', executablePath='<DVTFilePath:0x8f4193720:'/Users/joshua/Documents/Code/spark/macos/.asc/artifacts/SparkMac.xcarchive/Products/Applications/SparkMac.app/Contents/PlugIns/SparkWidgets.appex/Contents/MacOS/SparkWidgets'>', hardenedRuntime='0'>'>
+2026-06-30 02:46:49 +0000 [MT] Processing step: IDEDistributionInfoPlistStep
+2026-06-30 02:46:49 +0000 [MT] Skipping setting DTXcodeBuildDistribution because toolsBuildVersionName was nil.
+2026-06-30 02:46:49 +0000 [MT] Skipping setting DTXcodeBuildDistribution because toolsBuildVersionName was nil.
+2026-06-30 02:46:49 +0000 [MT] Processing step: IDEDistributionItemRemovalStep
+2026-06-30 02:46:49 +0000 [MT] Processing step: IDEDistributionAppThinningPlistStep
+2026-06-30 02:46:49 +0000 [MT] Processing step: IDEDistributionSymbolsStep
+2026-06-30 02:46:49 +0000 [MT] Writing /var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Symbols/D6457354-53E0-3090-9094-EA46C7DAD7B4.symbols
+2026-06-30 02:46:49 +0000 [MT] Writing /var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Symbols/6DBA7379-2F80-3C4A-AEC1-16AB1A6BD50E.symbols
+2026-06-30 02:46:49 +0000 [MT] Writing /var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Symbols/D6457354-53E0-3090-9094-EA46C7DAD7B4.symbols
+2026-06-30 02:46:49 +0000 [MT] Writing /var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Symbols/6DBA7379-2F80-3C4A-AEC1-16AB1A6BD50E.symbols
+2026-06-30 02:46:49 +0000 [MT] Writing /var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Symbols/60B8772A-402A-378E-AD93-D3FED2EB7A78.symbols
+2026-06-30 02:46:49 +0000 [MT] Writing /var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Symbols/786A0112-2547-35C6-B397-472DE4F41B60.symbols
+2026-06-30 02:46:49 +0000 [MT] Writing /var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Symbols/60B8772A-402A-378E-AD93-D3FED2EB7A78.symbols
+2026-06-30 02:46:49 +0000 [MT] Writing /var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Symbols/786A0112-2547-35C6-B397-472DE4F41B60.symbols
+2026-06-30 02:46:49 +0000 [MT] Processing step: IDEDistributionCopyAppleProvidedContentStep
+2026-06-30 02:46:49 +0000 [MT] Processing step: IDEDistributionAppThinningStep
+2026-06-30 02:46:49 +0000 [MT] Skipping step: IDEDistributionAppThinningStep because it said so
+2026-06-30 02:46:49 +0000 [MT] Processing step: IDEDistributionArchThinningStep
+2026-06-30 02:46:49 +0000 [MT] Archs to thin for item /Users/joshua/Documents/Code/spark/macos/.asc/artifacts/SparkMac.xcarchive/Products/Applications/SparkMac.app/Contents/PlugIns/SparkWidgets.appex are []
+2026-06-30 02:46:49 +0000 [MT] Archs to thin for item /Users/joshua/Documents/Code/spark/macos/.asc/artifacts/SparkMac.xcarchive/Products/Applications/SparkMac.app are []
+2026-06-30 02:46:49 +0000 [MT] Processing step: IDEDistributionODRStep
+2026-06-30 02:46:49 +0000 [MT] Processing step: IDEDistributionStripXattrsStep
+2026-06-30 02:46:49 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-06-30 02:46:49 +0000 [MT] Skipping stripping extended attributes because the codesign step will strip them.
+2026-06-30 02:46:49 +0000 [MT] Processing step: IDEDistributionCodesignStep
+2026-06-30 02:46:49 +0000 [MT] Entitlements for <IDEDistributionItem: 0x8f4340480; bundleID='com.heyitsmejosh.spark.mac.widgets', path='<DVTFilePath:0x8f41bd730:'/Users/joshua/Documents/Code/spark/macos/.asc/artifacts/SparkMac.xcarchive/Products/Applications/SparkMac.app/Contents/PlugIns/SparkWidgets.appex'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x8f43404e0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x8f1a6c600; name='Apple Development: trommatic@icloud.com (8VQ3Z7494A)', hash='DCF40745BE43EDF323978FBAEB96BAC4C4FA93E2', serialNumber='AD882848985F58FD0F83487E38FA44C', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2026-06-12 02:06:14 +0000''>', entitlements='{
+}', teamID='QMM486NPYC', identifier='com.heyitsmejosh.spark.mac.widgets', executablePath='<DVTFilePath:0x8f4193720:'/Users/joshua/Documents/Code/spark/macos/.asc/artifacts/SparkMac.xcarchive/Products/Applications/SparkMac.app/Contents/PlugIns/SparkWidgets.appex/Contents/MacOS/SparkWidgets'>', hardenedRuntime='0'>'>: {
+}
+2026-06-30 02:46:49 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-06-30 02:46:49 +0000 [MT] Entitlements for <IDEDistributionItem: 0x8f4340480; bundleID='com.heyitsmejosh.spark.mac.widgets', path='<DVTFilePath:0x8f41bd730:'/Users/joshua/Documents/Code/spark/macos/.asc/artifacts/SparkMac.xcarchive/Products/Applications/SparkMac.app/Contents/PlugIns/SparkWidgets.appex'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x8f43404e0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x8f1a6c900; name='Apple Development: trommatic@icloud.com (8VQ3Z7494A)', hash='DCF40745BE43EDF323978FBAEB96BAC4C4FA93E2', serialNumber='AD882848985F58FD0F83487E38FA44C', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2026-06-12 02:06:14 +0000''>', entitlements='{
+}', teamID='QMM486NPYC', identifier='com.heyitsmejosh.spark.mac.widgets', executablePath='<DVTFilePath:0x8f4193720:'/Users/joshua/Documents/Code/spark/macos/.asc/artifacts/SparkMac.xcarchive/Products/Applications/SparkMac.app/Contents/PlugIns/SparkWidgets.appex/Contents/MacOS/SparkWidgets'>', hardenedRuntime='0'>'> are: {
+}
+2026-06-30 02:46:49 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0x8f4340480; bundleID='com.heyitsmejosh.spark.mac.widgets', path='<DVTFilePath:0x8f41bd730:'/Users/joshua/Documents/Code/spark/macos/.asc/artifacts/SparkMac.xcarchive/Products/Applications/SparkMac.app/Contents/PlugIns/SparkWidgets.appex'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x8f43404e0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x8f1a6c900; name='Apple Development: trommatic@icloud.com (8VQ3Z7494A)', hash='DCF40745BE43EDF323978FBAEB96BAC4C4FA93E2', serialNumber='AD882848985F58FD0F83487E38FA44C', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2026-06-12 02:06:14 +0000''>', entitlements='{
+}', teamID='QMM486NPYC', identifier='com.heyitsmejosh.spark.mac.widgets', executablePath='<DVTFilePath:0x8f4193720:'/Users/joshua/Documents/Code/spark/macos/.asc/artifacts/SparkMac.xcarchive/Products/Applications/SparkMac.app/Contents/PlugIns/SparkWidgets.appex/Contents/MacOS/SparkWidgets'>', hardenedRuntime='0'>'> to: /var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/entitlements~~~jTndPi
+2026-06-30 02:46:49 +0000 [MT] invoking codesign: <NSConcreteTask: 0x8f4623660; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    841ED832F5CB2EA83C5EE8C502992F8B46BBBC32,
+    "--entitlements",
+    "/var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/entitlements~~~jTndPi",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Root/Applications/SparkMac.app/Contents/PlugIns/SparkWidgets.appex"
+)'>
+2026-06-30 02:46:49 +0000 [MT] codesign output: /var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Root/Applications/SparkMac.app/Contents/PlugIns/SparkWidgets.appex: replacing existing signature
+/var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Root/Applications/SparkMac.app/Contents/PlugIns/SparkWidgets.appex: signed bundle with Mach-O universal (x86_64 arm64) [com.heyitsmejosh.spark.mac.widgets]
+2026-06-30 02:46:49 +0000 [MT] Entitlements for <IDEDistributionItem: 0x8f4340420; bundleID='com.heyitsmejosh.spark.mac', path='<DVTFilePath:0x8f4191920:'/Users/joshua/Documents/Code/spark/macos/.asc/artifacts/SparkMac.xcarchive/Products/Applications/SparkMac.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x8f43403c0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x8f1a6c600; name='Apple Development: trommatic@icloud.com (8VQ3Z7494A)', hash='DCF40745BE43EDF323978FBAEB96BAC4C4FA93E2', serialNumber='AD882848985F58FD0F83487E38FA44C', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2026-06-12 02:06:14 +0000''>', entitlements='{
+}', teamID='QMM486NPYC', identifier='com.heyitsmejosh.spark.mac', executablePath='<DVTFilePath:0x8f4193180:'/Users/joshua/Documents/Code/spark/macos/.asc/artifacts/SparkMac.xcarchive/Products/Applications/SparkMac.app/Contents/MacOS/SparkMac'>', hardenedRuntime='0'>'>: {
+    "com.apple.application-identifier" = "QMM486NPYC.com.heyitsmejosh.spark.mac";
+    "com.apple.developer.team-identifier" = QMM486NPYC;
+}
+2026-06-30 02:46:49 +0000 [MT] Associated App Clip Identifiers Filter: Skipping because "com.apple.developer.associated-appclip-app-identifiers" is not present
+2026-06-30 02:46:49 +0000 [MT] Entitlements for <IDEDistributionItem: 0x8f4340420; bundleID='com.heyitsmejosh.spark.mac', path='<DVTFilePath:0x8f4191920:'/Users/joshua/Documents/Code/spark/macos/.asc/artifacts/SparkMac.xcarchive/Products/Applications/SparkMac.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x8f43403c0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x8f1a6c900; name='Apple Development: trommatic@icloud.com (8VQ3Z7494A)', hash='DCF40745BE43EDF323978FBAEB96BAC4C4FA93E2', serialNumber='AD882848985F58FD0F83487E38FA44C', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2026-06-12 02:06:14 +0000''>', entitlements='{
+}', teamID='QMM486NPYC', identifier='com.heyitsmejosh.spark.mac', executablePath='<DVTFilePath:0x8f4193180:'/Users/joshua/Documents/Code/spark/macos/.asc/artifacts/SparkMac.xcarchive/Products/Applications/SparkMac.app/Contents/MacOS/SparkMac'>', hardenedRuntime='0'>'> are: {
+    "com.apple.application-identifier" = "QMM486NPYC.com.heyitsmejosh.spark.mac";
+    "com.apple.developer.team-identifier" = QMM486NPYC;
+}
+2026-06-30 02:46:49 +0000 [MT] Writing entitlements for <IDEDistributionItem: 0x8f4340420; bundleID='com.heyitsmejosh.spark.mac', path='<DVTFilePath:0x8f4191920:'/Users/joshua/Documents/Code/spark/macos/.asc/artifacts/SparkMac.xcarchive/Products/Applications/SparkMac.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x8f43403c0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x8f1a6c900; name='Apple Development: trommatic@icloud.com (8VQ3Z7494A)', hash='DCF40745BE43EDF323978FBAEB96BAC4C4FA93E2', serialNumber='AD882848985F58FD0F83487E38FA44C', certificateKinds='(
+    "1.2.840.113635.100.6.1.12",
+    "1.2.840.113635.100.6.1.2"
+), issueDate='2026-06-12 02:06:14 +0000''>', entitlements='{
+}', teamID='QMM486NPYC', identifier='com.heyitsmejosh.spark.mac', executablePath='<DVTFilePath:0x8f4193180:'/Users/joshua/Documents/Code/spark/macos/.asc/artifacts/SparkMac.xcarchive/Products/Applications/SparkMac.app/Contents/MacOS/SparkMac'>', hardenedRuntime='0'>'> to: /var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/entitlements~~~Fw02V7
+2026-06-30 02:46:49 +0000 [MT] invoking codesign: <NSConcreteTask: 0x8f46237a0; launchPath='/usr/bin/codesign', arguments='(
+    "-f",
+    "-s",
+    841ED832F5CB2EA83C5EE8C502992F8B46BBBC32,
+    "--entitlements",
+    "/var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/entitlements~~~Fw02V7",
+    "--preserve-metadata=identifier,flags,runtime,launch-constraints,library-constraints",
+    "--generate-entitlement-der",
+    "--strip-disallowed-xattrs",
+    "-vvv",
+    "/var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Root/Applications/SparkMac.app"
+)'>
+2026-06-30 02:46:49 +0000 [MT] codesign output: /var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Root/Applications/SparkMac.app: replacing existing signature
+/var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Root/Applications/SparkMac.app: signed app bundle with Mach-O universal (x86_64 arm64) [com.heyitsmejosh.spark.mac]
+2026-06-30 02:46:49 +0000 [MT] Processing step: IDEDistributionZipODRItemStep
+2026-06-30 02:46:49 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-06-30 02:46:49 +0000 [MT] Skipping step: IDEDistributionZipODRItemStep because it said so
+2026-06-30 02:46:49 +0000 [MT] Processing step: IDEDistributionCreatePKGStep
+2026-06-30 02:46:49 +0000 [MT] Running /usr/bin/productbuild '--sign' '3rd Party Mac Developer Installer: Joshua Trommel (QMM486NPYC)' '--symbolication' '/var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Symbols' '--component' '/var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Root/Applications/SparkMac.app' '/Applications' '/var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Packages/SparkMac.pkg'
+2026-06-30 02:46:50 +0000  productbuild: Adding component at /var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Root/Applications/SparkMac.app
+productbuild: Signing product with identity "3rd Party Mac Developer Installer: Joshua Trommel (QMM486NPYC)" from keychain /Users/joshua/Library/Keychains/login.keychain-db
+productbuild: Adding certificate "Apple Worldwide Developer Relations Certification Authority"
+productbuild: Adding certificate "Apple Root CA"
+productbuild: Wrote product to /var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Packages/SparkMac.pkg
+productbuild: Supported OS versions: [Min: 14.0, Before: None]
+2026-06-30 02:46:50 +0000 [MT] /usr/bin/productbuild exited with 0
+2026-06-30 02:46:50 +0000 [MT] Processing step: IDEDistributionAppStoreInformationStep
+2026-06-30 02:46:50 +0000 [MT] Skipping step: IDEDistributionAppStoreInformationStep because it said so
+2026-06-30 02:46:50 +0000 [MT] Processing step: IDEDistributionGenerateProcessedDistributionItems
+2026-06-30 02:46:50 +0000 [MT] IDEDistributionItem init <DVTFilePath:0x8f4680850:'/var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Root/Applications/SparkMac.app/Contents/PlugIns/SparkWidgets.appex'>
+2026-06-30 02:46:50 +0000 [MT] [OPTIONAL] Didn't find embedded provisioning profile for <DVTFilePath:0x8f4680850:'/var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Root/Applications/SparkMac.app/Contents/PlugIns/SparkWidgets.appex'>: Error Domain=NSCocoaErrorDomain Code=4 "No file at <DVTFilePath:0x8f4680620:'/var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Root/Applications/SparkMac.app/Contents/PlugIns/SparkWidgets.appex/Contents/embedded.provisionprofile'>" UserInfo={NSLocalizedDescription=No file at <DVTFilePath:0x8f4680620:'/var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Root/Applications/SparkMac.app/Contents/PlugIns/SparkWidgets.appex/Contents/embedded.provisionprofile'>}
+2026-06-30 02:46:50 +0000 [MT] IDEDistributionItem init <DVTFilePath:0x8f4342580:'/var/folders/vk/dmj39y_n1n7gs0wclbyqkfn40000gn/T/XcodeDistPipeline.~~~kPCYqj/Root/Applications/SparkMac.app'>
+2026-06-30 02:46:50 +0000 [MT] Processing step: IDEDistributionCreateManifestStep
+2026-06-30 02:46:50 +0000 [MT] Skipping step: IDEDistributionCreateManifestStep because it said so
