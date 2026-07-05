@@ -61,14 +61,14 @@ describe('Seed posts', () => {
 
 describe('Login handler', () => {
   it('should return 405 for non-POST', async () => {
-    const handler = require('../api/auth/login');
+    const handler = require('../api/_lib/auth/login');
     const res = createMockRes();
     await handler({ method: 'GET', body: {} }, res);
     expect(res.statusCode).toBe(405);
   });
 
   it('should require username and password', async () => {
-    const handler = require('../api/auth/login');
+    const handler = require('../api/_lib/auth/login');
     const res = createMockRes();
     await handler({ method: 'POST', body: { username: 'test' } }, res);
     expect(res.statusCode).toBe(400);
@@ -76,7 +76,7 @@ describe('Login handler', () => {
 
   it('should login with valid credentials', async () => {
     await createUser({ username: 'logintest', password: 'password123' });
-    const handler = require('../api/auth/login');
+    const handler = require('../api/_lib/auth/login');
     const res = createMockRes();
     await handler({ method: 'POST', body: { username: 'logintest', password: 'password123' } }, res);
     expect(res.statusCode).toBe(200);
@@ -86,7 +86,7 @@ describe('Login handler', () => {
 
   it('should reject wrong password', async () => {
     await createUser({ username: 'wrongpass', password: 'correct' });
-    const handler = require('../api/auth/login');
+    const handler = require('../api/_lib/auth/login');
     const res = createMockRes();
     await handler({ method: 'POST', body: { username: 'wrongpass', password: 'incorrect' } }, res);
     expect(res.statusCode).toBe(401);
@@ -95,7 +95,7 @@ describe('Login handler', () => {
 
 describe('Register handler', () => {
   it('should register a new user', async () => {
-    const handler = require('../api/auth/register');
+    const handler = require('../api/_lib/auth/register');
     const res = createMockRes();
     await handler({ method: 'POST', body: { username: 'newreg', password: 'password123' } }, res);
     expect(res.statusCode).toBe(201);
@@ -104,7 +104,7 @@ describe('Register handler', () => {
   });
 
   it('should reject short password', async () => {
-    const handler = require('../api/auth/register');
+    const handler = require('../api/_lib/auth/register');
     const res = createMockRes();
     await handler({ method: 'POST', body: { username: 'short', password: 'abc' } }, res);
     expect(res.statusCode).toBe(400);
@@ -112,7 +112,7 @@ describe('Register handler', () => {
 
   it('should reject duplicate username', async () => {
     await createUser({ username: 'existing', password: 'password123' });
-    const handler = require('../api/auth/register');
+    const handler = require('../api/_lib/auth/register');
     const res = createMockRes();
     await handler({ method: 'POST', body: { username: 'existing', password: 'password123' } }, res);
     expect(res.statusCode).toBe(409);
