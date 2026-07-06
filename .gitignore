@@ -2,3 +2,5 @@
 
 .DS_Store
 node_modules/.vite/
+.asc/artifacts/
+.asc/release/
