@@ -4,6 +4,77 @@ const { supabaseRequest } = require('./_lib/supabase');
 const { parseToken } = require('./posts');
 const { getIp, checkRateLimit } = require('./_lib/ratelimit');
 
+// --- gemma ---
+
+const GEMMA_MODEL = 'gemma-4-31b-it';
+
+async function callGemma(prompt, maxTokens = 800) {
+  const r = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/${GEMMA_MODEL}:generateContent`,
+    {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'x-goog-api-key': process.env.GEMMA_KEY },
+      body: JSON.stringify({
+        contents: [{ role: 'user', parts: [{ text: prompt }] }],
+        generationConfig: { temperature: 0.9, maxOutputTokens: maxTokens }
+      })
+    }
+  );
+  if (!r.ok) throw new Error('Gemma upstream ' + r.status);
+  const data = await r.json();
+  const parts = (data.candidates && data.candidates[0]?.content?.parts) || [];
+  // Gemma 4 emits reasoning parts flagged thought:true; the answer is the non-thought text.
+  return parts.filter(p => !p.thought).map(p => p.text).join('').trim();
+}
+
+// --- generate (cron: post one AI idea) ---
+
+const GEN_CATEGORIES = ['tech', 'productivity', 'finance', 'health', 'sustainability'];
+
+async function handleGenerate(req, res) {
+  // Vercel strips inbound x-vercel-* headers, so this only passes for real cron
+  // invocations. Manual trigger: daemon secret as bearer.
+  const auth = req.headers.authorization || '';
+  const isCron = !!req.headers['x-vercel-cron'];
+  const isDaemon = process.env.SPARK_DAEMON_SECRET && auth === 'Bearer ' + process.env.SPARK_DAEMON_SECRET;
+  if (!isCron && !isDaemon) return res.status(401).json({ error: 'Unauthorized' });
+
+  const category = GEN_CATEGORIES[Math.floor(Math.random() * GEN_CATEGORIES.length)];
+  const recent = await supabaseRequest('posts?select=title&order=created_at.desc&limit=20');
+  const recentTitles = (Array.isArray(recent) ? recent : []).map(r => '- ' + r.title).join('\n');
+
+  const text = await callGemma(
+    `You generate one startup/app idea for an idea-sharing board. Category: ${category}.\n` +
+    `Style: concrete, everyday problem, plain language, no buzzwords. Like these existing posts (do NOT duplicate any):\n${recentTitles}\n\n` +
+    `Reply with ONLY valid JSON, no markdown fences: {"title": "...", "content": "2-3 sentence description"}`
+  );
+
+  let idea;
+  try {
+    idea = JSON.parse(text.replace(/^```json?\s*|```\s*$/g, ''));
+  } catch {
+    return res.status(502).json({ error: 'Gemma returned unparseable idea', raw: text.slice(0, 200) });
+  }
+  if (!idea.title || !idea.content) return res.status(502).json({ error: 'Incomplete idea' });
+
+  const rows = await supabaseRequest('posts', {
+    method: 'POST',
+    body: {
+      id: 'post-' + Date.now() + '-' + Math.random().toString(36).slice(2, 8),
+      title: String(idea.title).slice(0, 200),
+      content: String(idea.content).slice(0, 2000),
+      category,
+      author_username: 'gemma',
+      author_user_id: 'system',
+      score: 0,
+      created_at: new Date().toISOString()
+    },
+    useServiceRole: true
+  });
+  const row = Array.isArray(rows) ? rows[0] : rows;
+  return res.status(201).json({ post: row });
+}
+
 // --- enrich ---
 
 async function handleEnrich(req, res) {
@@ -14,8 +85,30 @@ async function handleEnrich(req, res) {
       return res.status(429).json({ error: 'Too many requests' });
     }
 
-    const { id, spec, plan } = req.body || {};
-    if (!id || !spec || !plan) return res.status(400).json({ error: 'id, spec, plan required' });
+    let { id, spec, plan } = req.body || {};
+    if (!id) return res.status(400).json({ error: 'id required' });
+
+    // No client-supplied spec/plan (daemon path) -> generate them with Gemma.
+    if (!spec || !plan) {
+      const rows = await supabaseRequest(`posts?id=eq.${encodeURIComponent(id)}&select=title,content,category`);
+      if (!Array.isArray(rows) || !rows.length) return res.status(404).json({ error: 'Post not found' });
+      const p = rows[0];
+      const text = await callGemma(
+        `Idea: "${p.title}" (${p.category})\n${p.content}\n\n` +
+        `Write two short markdown sections to help build this idea.\n` +
+        `Reply with ONLY valid JSON, no markdown fences: {"spec": "what to build, key features, ~150 words", "plan": "step-by-step build plan, ~150 words"}`,
+        1200
+      );
+      let gen;
+      try {
+        gen = JSON.parse(text.replace(/^```json?\s*|```\s*$/g, ''));
+      } catch {
+        return res.status(502).json({ error: 'Gemma returned unparseable enrichment' });
+      }
+      spec = gen.spec;
+      plan = gen.plan;
+      if (!spec || !plan) return res.status(502).json({ error: 'Incomplete enrichment' });
+    }
 
     await supabaseRequest(`posts?id=eq.${encodeURIComponent(id)}`, {
       method: 'PATCH',
@@ -172,7 +265,8 @@ module.exports = async function handler(req, res) {
     if (type === 'idea-base') return await handleIdeaBase(req, res);
     if (type === 'notes') return await handleNotes(req, res);
     if (type === 'rfs') return await handleRfs(req, res);
-    return res.status(400).json({ error: 'type required: enrich | idea-base | notes | rfs' });
+    if (type === 'generate') return await handleGenerate(req, res);
+    return res.status(400).json({ error: 'type required: enrich | idea-base | notes | rfs | generate' });
   } catch (err) {
     console.error('[AI]', err.message);
     return res.status(500).json({ error: 'Internal server error' });
