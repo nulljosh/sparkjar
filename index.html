@@ -37,7 +37,7 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { overflow-x: hidden; }
-        body { font-family: var(--font); font-weight: 400; background: var(--bg); color: var(--text); padding: 20px; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; transition: background 0.2s, color 0.2s; }
+        body { font-family: var(--font-body, var(--font)); font-weight: 400; background: var(--bg); color: var(--text); padding: 20px; min-height: 100vh; display: flex; flex-direction: column; overflow-x: hidden; transition: background 0.2s, color 0.2s; }
         main { flex: 1; }
         .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         .header-left h1 { font-size: 48px; }
