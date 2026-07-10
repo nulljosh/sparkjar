@@ -4,6 +4,7 @@ struct IdeaBaseView: View {
     @Environment(AppState.self) private var appState
 
     @State private var ideaBases: [IdeaBase] = []
+    @State private var rfs: [RFSEntry] = []
     @State private var topic = ""
     @State private var description = ""
     @State private var isCreating = false
@@ -77,6 +78,28 @@ struct IdeaBaseView: View {
                         Spacer()
                     }
                 }
+
+                if !rfs.isEmpty {
+                    Section("Inspiration \u{2014} YC Requests for Startups") {
+                        ForEach(rfs) { entry in
+                            Link(destination: URL(string: entry.url)!) {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text(entry.title)
+                                        .font(.subheadline.weight(.medium))
+                                        .foregroundStyle(.primary)
+                                    Text("By \(entry.author)")
+                                        .font(.caption2)
+                                        .foregroundStyle(.secondary)
+                                    Text(entry.description)
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                        .lineLimit(2)
+                                }
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                }
             }
             .formStyle(.grouped)
         }
@@ -90,6 +113,7 @@ struct IdeaBaseView: View {
     private func load() async {
         isLoading = true
         ideaBases = (try? await appState.fetchIdeaBases()) ?? []
+        rfs = (try? await appState.fetchRfs()) ?? []
         isLoading = false
     }
 

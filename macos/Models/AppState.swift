@@ -111,6 +111,10 @@ final class AppState {
         try await api.createIdeaBase(topic: topic, description: description)
     }
 
+    func fetchRfs() async throws -> [RFSEntry] {
+        try await api.fetchRfs()
+    }
+
     func deletePost(id: String) async throws {
         try await api.deletePost(id: id)
         posts.removeAll { $0.id == id }

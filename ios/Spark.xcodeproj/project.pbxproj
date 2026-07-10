@@ -26,6 +26,7 @@
 		406DB6B6C2317DDE3A7A0A46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255A33F3F797DB0BCEA702E8 /* ContentView.swift */; };
 		47A294EE4FE183EBBF7397CD /* UserProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B888EDFCBF793441DF737D48 /* UserProfileTests.swift */; };
 		4EFC1638CAD5D0389BB4B23D /* SparkWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252262F74DC4F74094B9E99F /* SparkWidgets.swift */; };
+		5007BDF70ECAB68A25A52AA9 /* RFSEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250A1A3E452EAFE4CFA20022 /* RFSEntry.swift */; };
 		54E0B9930C9FD58228F4CDB9 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669DF90C12CC52B9665EF8A4 /* Comment.swift */; };
 		5BB9DD6838440BC8EADDA9B3 /* WhatsNewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C2205B519C65D90BAA74 /* WhatsNewSheet.swift */; };
 		5CD2F5C284CF86DFA30CE546 /* SparkWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FCC6BAE9EE29681504AD6344 /* SparkWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -86,6 +87,7 @@
 		14BFFB055F5D3AFB05491CA4 /* Spark.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Spark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20FCF2189B78982DF62F743E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		23E258503065A71D2CA27D42 /* WidgetModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetModels.swift; sourceTree = "<group>"; };
+		250A1A3E452EAFE4CFA20022 /* RFSEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RFSEntry.swift; sourceTree = "<group>"; };
 		252262F74DC4F74094B9E99F /* SparkWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparkWidgets.swift; sourceTree = "<group>"; };
 		255A33F3F797DB0BCEA702E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		38B305B02C1805F1432B0604 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				669DF90C12CC52B9665EF8A4 /* Comment.swift */,
 				705DF762743CB17D523378AB /* IdeaBase.swift */,
 				7C1FA48B378FBAE5DEC3C7E7 /* Post.swift */,
+				250A1A3E452EAFE4CFA20022 /* RFSEntry.swift */,
 				20FCF2189B78982DF62F743E /* User.swift */,
 				E5DA0EC06F704242AF7E70B0 /* UserProfile.swift */,
 			);
@@ -329,13 +332,14 @@
 				TargetAttributes = {
 					40D76FD763A5379E193137FA = {
 						DevelopmentTeam = QMM486NPYC;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					6DCB7D5BCB215413B6058CD8 = {
 						DevelopmentTeam = QMM486NPYC;
 					};
 					876303B57E6FD004BCF64818 = {
 						DevelopmentTeam = QMM486NPYC;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -411,6 +415,7 @@
 				F3249EC16F76847B4ABE6791 /* KeychainHelper.swift in Sources */,
 				28617124CC44BDFAF05DAAF3 /* Post.swift in Sources */,
 				D96B6B932EA576313377BD54 /* PostDetailView.swift in Sources */,
+				5007BDF70ECAB68A25A52AA9 /* RFSEntry.swift in Sources */,
 				7FE504150AE2C080933FDAFF /* SparkAPI.swift in Sources */,
 				FE88C42776901721A0504CC8 /* SparkApp.swift in Sources */,
 				0E2765A7FD73D38A2AF87709 /* User.swift in Sources */,
@@ -458,13 +463,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Spark.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.spark;
+				PROVISIONING_PROFILE_SPECIFIER = "Spark iOS App Store";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -475,7 +482,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "../widgets-ios/SparkWidgets.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Spark Widgets";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2026 Joshua Trommel";
@@ -486,6 +494,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.spark.widgets;
 				PRODUCT_NAME = SparkWidgets;
+				PROVISIONING_PROFILE_SPECIFIER = "Spark Widgets App Store";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -496,7 +505,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "../widgets-ios/SparkWidgets.entitlements";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Spark Widgets";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2026 Joshua Trommel";
@@ -507,6 +517,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.spark.widgets;
 				PRODUCT_NAME = SparkWidgets;
+				PROVISIONING_PROFILE_SPECIFIER = "Spark Widgets App Store";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -563,7 +574,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = QMM486NPYC;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -639,7 +650,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = QMM486NPYC;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -677,13 +688,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Spark.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.spark;
+				PROVISIONING_PROFILE_SPECIFIER = "Spark iOS App Store";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

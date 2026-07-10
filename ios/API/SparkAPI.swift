@@ -34,6 +34,7 @@ protocol SparkAPIProtocol: Sendable {
     func requestEnrichment(postId: String) async throws
     func fetchIdeaBases() async throws -> [IdeaBase]
     func createIdeaBase(topic: String, description: String?) async throws -> IdeaBase
+    func fetchRfs() async throws -> [RFSEntry]
     func saveToken(_ token: String)
     func loadToken() -> String?
     func clearToken()
@@ -193,6 +194,13 @@ final class SparkAPI: SparkAPIProtocol, Sendable {
         struct Resp: Decodable { let ideaBase: IdeaBase }
         let result: Resp = try await perform(req)
         return result.ideaBase
+    }
+
+    func fetchRfs() async throws -> [RFSEntry] {
+        let req = try request("/api/ai?type=rfs")
+        struct Resp: Decodable { let rfs: [RFSEntry] }
+        let result: Resp = try await perform(req)
+        return result.rfs
     }
 
     func vote(postId: String, type: String) async throws {
