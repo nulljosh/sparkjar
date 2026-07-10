@@ -193,6 +193,13 @@
             border-top: 1px solid var(--border);
         }
         /* Apple Liquid Glass -- filter/sort buttons */
+        .rfs-strip { display: flex; gap: 12px; overflow-x: auto; padding: 4px 0 16px; margin-bottom: 8px; }
+        .rfs-card { flex: 0 0 260px; border: 1px solid var(--border); border-radius: 8px; padding: 14px; color: inherit; text-decoration: none; }
+        .rfs-card:hover { border-color: var(--text3); }
+        .rfs-card .rfs-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text3); }
+        .rfs-card h4 { margin: 4px 0 6px; font-size: 14px; }
+        .rfs-card p { margin: 0; font-size: 13px; color: var(--text3); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
         .filter-btn, .sort-btn {
             padding: 8px 14px;
             border-radius: 20px;
@@ -286,6 +293,7 @@
                 <button class="tag-filter-btn" onclick="filterByTag('random', event)">Random</button>
             </div>
         </div>
+        <div id="rfsStrip" class="rfs-strip hidden"></div>
         <div id="feed">Loading...</div>
     </main>
 
@@ -1078,9 +1086,28 @@
             }
         })();
 
+        async function loadRfs() {
+            const strip = document.getElementById('rfsStrip');
+            try {
+                const res = await fetch(`${API_BASE}/api/ai?type=rfs`);
+                const data = await res.json();
+                if (!data.rfs || !data.rfs.length) return;
+                const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+                strip.innerHTML = data.rfs.map(r => `
+                    <a class="rfs-card" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">
+                        <div class="rfs-label">YC RFS &middot; ${esc(r.author)}</div>
+                        <h4>${esc(r.title)}</h4>
+                        <p>${esc(r.description.slice(0, 160))}</p>
+                    </a>
+                `).join('');
+                strip.classList.remove('hidden');
+            } catch (e) { /* inspiration strip is non-critical, fail silently */ }
+        }
+
         // Initialize
         updateAuthUI();
         load();
+        loadRfs();
         setInterval(load, 30000);
 
         if ('serviceWorker' in navigator) {

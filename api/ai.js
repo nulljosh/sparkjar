@@ -76,6 +76,52 @@ async function handleIdeaBase(req, res) {
   return res.status(405).json({ error: 'Method not allowed' });
 }
 
+// --- rfs (YC Requests for Startups, scraped + cached) ---
+
+let rfsCache = { items: null, ts: 0 };
+const RFS_TTL_MS = 12 * 60 * 60 * 1000;
+const RFS_ENTRY_RE = /<div id="([\w-]+)"><div class="border[^"]*py-10[^"]*"><div class="w-full"><div class="mb-6"><h3[^>]*>([^<]+)<span.*?<\/h3><span[^>]*>By<!-- --> (.*?)<\/a><\/span><\/div>.*?whitespace-pre-wrap[^>]*>(.*?)<\/div><\/div><\/div><\/div><\/div><\/div>/gs;
+
+function stripTags(s) {
+  return s.replace(/<[^>]+>/g, '').replace(/&#x27;/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+}
+
+async function fetchRfs() {
+  const res = await fetch('https://www.ycombinator.com/rfs', { headers: { 'User-Agent': 'Mozilla/5.0' } });
+  if (!res.ok) throw new Error(`YC fetch failed: ${res.status}`);
+  const html = await res.text();
+  const items = [];
+  let m;
+  while ((m = RFS_ENTRY_RE.exec(html))) {
+    items.push({
+      slug: m[1],
+      title: m[2].trim(),
+      author: stripTags(m[3]),
+      description: stripTags(m[4]),
+      url: `https://www.ycombinator.com/rfs#${m[1]}`
+    });
+  }
+  return items;
+}
+
+async function handleRfs(req, res) {
+  if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed' });
+
+  const fresh = rfsCache.items && (Date.now() - rfsCache.ts) < RFS_TTL_MS;
+  if (!fresh) {
+    try {
+      const items = await fetchRfs();
+      if (items.length) rfsCache = { items, ts: Date.now() };
+    } catch (err) {
+      console.error('[AI] rfs fetch failed', err.message);
+      // ponytail: serve stale cache on fetch failure, only 500 if we have nothing
+      if (!rfsCache.items) return res.status(502).json({ error: 'Could not fetch YC RFS' });
+    }
+  }
+
+  return res.status(200).json({ rfs: rfsCache.items || [], cachedAt: rfsCache.ts });
+}
+
 // --- notes ---
 
 async function handleNotes(req, res) {
@@ -125,7 +171,8 @@ module.exports = async function handler(req, res) {
     if (type === 'enrich') return await handleEnrich(req, res);
     if (type === 'idea-base') return await handleIdeaBase(req, res);
     if (type === 'notes') return await handleNotes(req, res);
-    return res.status(400).json({ error: 'type required: enrich | idea-base | notes' });
+    if (type === 'rfs') return await handleRfs(req, res);
+    return res.status(400).json({ error: 'type required: enrich | idea-base | notes | rfs' });
   } catch (err) {
     console.error('[AI]', err.message);
     return res.status(500).json({ error: 'Internal server error' });
