@@ -413,6 +413,8 @@ struct CreateView: View {
                         Button("Sign In") { appState.showAuth = true }
                             .buttonStyle(.borderedProminent)
                     }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color(.systemGroupedBackground))
                 }
             }
         }
