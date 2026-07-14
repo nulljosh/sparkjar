@@ -13,3 +13,8 @@
 - [ ] Landing page + registration/onboarding flow
 - [ ] Fix broken Create view
 - [ ] Replace purple app icon with correct branding; bump version
+
+## App Store submission (parked 2026-07-14, wrap-up)
+- [ ] 4 screenshots (fastlane snapshot, iPhone 11 Pro Max / 14 Plus sims)
+- [ ] archive + upload build (asc workflow run ship-ios)
+- [ ] submit
