@@ -6,3 +6,10 @@
 ## From Icons.pdf / Asc.pdf (imported 2026-07-12)
 - [ ] Sparkjar iOS: 4 screenshots + archive/upload; App Group entitlement still empty on regenerated profiles
 - [ ] Spark Mac 1.0: build + metadata + submit
+
+## 2026-07-14 dump
+- [ ] Hook up AI (Gemini preferred — check existing integration; Qwen fallback) for idea generation
+- [ ] After AI works: infinite scroll + pagination on Ideas page
+- [ ] Landing page + registration/onboarding flow
+- [ ] Fix broken Create view
+- [ ] Replace purple app icon with correct branding; bump version
