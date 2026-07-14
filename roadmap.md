@@ -18,3 +18,6 @@
 - [ ] 4 screenshots (fastlane snapshot, iPhone 11 Pro Max / 14 Plus sims)
 - [ ] archive + upload build (asc workflow run ship-ios)
 - [ ] submit
+
+## From Spark.pdf (imported 2026-07-14)
+- [ ] Mac ASC: remove purple icon, replace with correct branding (same complaint as root roadmap purple-icon item, tracked here for Spark specifically)
