@@ -4,3 +4,4 @@
 node_modules/.vite/
 .asc/artifacts/
 .asc/release/
+.asc/runs/
