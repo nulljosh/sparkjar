@@ -85,3 +85,6 @@ Build with `xcodegen generate` in each platform dir. Screenshots in `screenshots
 ## Migration
 
 Run `supabase/migrations/20260410000006_llm_enrichment.sql` via Supabase SQL editor.
+
+## Roadmap (2026-07-18 nightly wrap)
+- **Sparkjar iOS app icon shows old purple in ASC grid**: This is a symptom of the pre-existing iOS App Group provisioning profile blocker (group.com.jt.spark entitlement not wired to iOS App ID profiles despite manual registration in developer.apple.com web UI). Once the App Group issue is resolved and a new iOS build uploads, the grid icon will auto-update on ASC. Not a separate bug — the icon source itself is correct (dark navy + white, matches current design).
