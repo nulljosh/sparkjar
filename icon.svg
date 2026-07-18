@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
-  <rect width="200" height="200" fill="#1c1c1e" rx="32"/>
+  <rect width="200" height="200" fill="#0c1220" rx="32"/>
   <!-- Bulb body (teardrop) -->
   <path d="M100 42 C78 42 62 58 62 78 C62 93 70 105 82 112 L82 122 L118 122 L118 112 C130 105 138 93 138 78 C138 58 122 42 100 42 Z" fill="white"/>
   <!-- Base segments -->
