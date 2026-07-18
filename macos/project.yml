@@ -29,7 +29,7 @@ targets:
           - "SparkWidgets-Info.plist"
     settings:
       INFOPLIST_FILE: ""
-      PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.spark.mac
+      PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.spark
       GENERATE_INFOPLIST_FILE: YES
       MACOSX_DEPLOYMENT_TARGET: "14.0"
       CODE_SIGN_STYLE: Automatic
@@ -51,7 +51,7 @@ targets:
     sources:
       - path: ../widgets-macos
     settings:
-      PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.spark.mac.widgets
+      PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.spark.widgets
       INFOPLIST_FILE: SparkWidgets-Info.plist
       GENERATE_INFOPLIST_FILE: YES
       MACOSX_DEPLOYMENT_TARGET: "14.0"
