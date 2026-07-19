@@ -94,7 +94,7 @@ vercel env add SPARK_DAEMON_SECRET
 
 | Platform | Dir | Bundle ID | Status |
 |---|---|---|---|
-| iOS | ios/ | com.heyitsmejosh.spark | Submission in progress, v2.1.0 build 2 |
+| iOS | ios/ | com.heyitsmejosh.spark | Submission in progress, v2.2.0 build 3 |
 | macOS | macos/ | com.heyitsmejosh.spark.mac | Submission in progress, v1.0.0 |
 | watchOS | watchos/ | com.heyitsmejosh.spark.watchos | Bundled with iOS; no login UI (view-only without iOS pre-auth) |
 

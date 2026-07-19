@@ -43,8 +43,8 @@ ideas, and the frontend falls back to seed data if Supabase is unreachable.
 
 | Platform | Version | Status |
 |---|---|---|
-| Web (PWA) | v2.1.0 | Live |
-| iOS | v2.1.0 | App Store submission in progress |
+| Web (PWA) | v2.2.0 | Live |
+| iOS | v2.2.0 | App Store submission in progress |
 | macOS | v1.0.0 | Uploaded to ASC, processing |
 | watchOS | v1.0.0 | Bundled with iOS |
 

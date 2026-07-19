@@ -2,7 +2,7 @@
 
 # Spark
 
-![version](https://img.shields.io/badge/version-v2.1.0-blue) ![license](https://img.shields.io/badge/license-MIT-green) [![GitHub](https://img.shields.io/badge/GitHub-nulljosh%2Fspark-black?logo=github)](https://github.com/nulljosh/spark)
+![version](https://img.shields.io/badge/version-v2.2.0-blue) ![license](https://img.shields.io/badge/license-MIT-green) [![GitHub](https://img.shields.io/badge/GitHub-nulljosh%2Fspark-black?logo=github)](https://github.com/nulljosh/spark)
 
 Idea-sharing platform with upvoting, comments, JWT auth, and AI enrichment. Native companions for iOS, macOS, and watchOS.
 
@@ -12,8 +12,8 @@ Idea-sharing platform with upvoting, comments, JWT auth, and AI enrichment. Nati
 
 | Platform | Version | Status |
 |---|---|---|
-| Web (PWA) | v2.1.0 | Live |
-| iOS | v2.1.0 | App Store submission in progress |
+| Web (PWA) | v2.2.0 | Live |
+| iOS | v2.2.0 | App Store submission in progress |
 | macOS | v1.0.0 | App Store submission in progress |
 | watchOS | v1.0.0 | Bundled with iOS |
 

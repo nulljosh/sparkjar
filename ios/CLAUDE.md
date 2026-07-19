@@ -1,5 +1,5 @@
 # Spark iOS
-v2.1.1
+v2.2.0
 ## Rules
 - Portrait-only, UIRequiresFullScreen
 - Apple Liquid Glass: .ultraThinMaterial, blur, rounded corners, system font
