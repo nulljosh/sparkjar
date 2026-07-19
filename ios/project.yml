@@ -70,8 +70,6 @@ targets:
           - "*.md"
           - "*.svg"
     settings:
-      GENERATE_INFOPLIST_FILE: YES
-      INFOPLIST_KEY_CFBundleDisplayName: Spark Widgets
       INFOPLIST_KEY_NSHumanReadableCopyright: "Copyright 2026 Joshua Trommel"
       PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.spark.widgets
       ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME: WidgetBackground
@@ -79,6 +77,14 @@ targets:
       CODE_SIGN_STYLE: Manual
       CODE_SIGN_IDENTITY: "iPhone Distribution"
       PROVISIONING_PROFILE_SPECIFIER: "Spark Widgets App Store"
+    info:
+      path: ../widgets-ios/Info.plist
+      properties:
+        CFBundleDisplayName: Spark Widgets
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
     entitlements:
       path: ../widgets-ios/SparkWidgets.entitlements
       properties:

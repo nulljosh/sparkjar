@@ -45,6 +45,7 @@
 		EA7BD427F8A1AD4589F89CFD /* IdeaBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705DF762743CB17D523378AB /* IdeaBase.swift */; };
 		F3249EC16F76847B4ABE6791 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496019FB70124614FA299B74 /* KeychainHelper.swift */; };
 		F3D3F06901EA346A79B0768D /* IntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0AE766ACE7A24B15BEB2FF /* IntegrationTests.swift */; };
+		FB8C3417091AAAFBD8BC6402 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DEDE7FBC9391B3EC90CE2136 /* .swiftlint.yml */; };
 		FE88C42776901721A0504CC8 /* SparkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A95B026567C272F91FC1DB10 /* SparkApp.swift */; };
 /* End PBXBuildFile section */
 
@@ -118,8 +119,10 @@
 		B965FAC4CDC7FEF516075210 /* CommentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTests.swift; sourceTree = "<group>"; };
 		C36144F6E413872BCE8C0CF6 /* WidgetAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetAPI.swift; sourceTree = "<group>"; };
 		C7196DDDC55BB4DD4A0CA7B9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		C7EE52D75E263CF3751C0C35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D097456B9B4019A62DAFD19A /* MockSparkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSparkAPI.swift; sourceTree = "<group>"; };
 		D7377E7C3D073081F7F4E862 /* StatsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsWidget.swift; sourceTree = "<group>"; };
+		DEDE7FBC9391B3EC90CE2136 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		DF0AE766ACE7A24B15BEB2FF /* IntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationTests.swift; sourceTree = "<group>"; };
 		E188B5AB14AB56062C850BD7 /* Spark.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spark.entitlements; sourceTree = "<group>"; };
 		E5DA0EC06F704242AF7E70B0 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
@@ -131,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				38B305B02C1805F1432B0604 /* Assets.xcassets */,
+				C7EE52D75E263CF3751C0C35 /* Info.plist */,
 				8491F451139C7AAA18A06A55 /* SparkWidgets.entitlements */,
 				252262F74DC4F74094B9E99F /* SparkWidgets.swift */,
 				D605AE80E87DBCD981E02CCB /* Models */,
@@ -237,6 +241,7 @@
 		9999C470A131215DD71ABE5A /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				DEDE7FBC9391B3EC90CE2136 /* .swiftlint.yml */,
 				7C960C5A9D0E4A37C066CE8E /* Assets.xcassets */,
 				255A33F3F797DB0BCEA702E8 /* ContentView.swift */,
 				942F904930D3F346344AB231 /* ExportOptions.plist */,
@@ -313,6 +318,7 @@
 			);
 			dependencies = (
 				DB4B00704A2F24EAF08EE007 /* PBXTargetDependency */,
+				EA104B0D6820BA01C36AC313 /* PBXTargetDependency */,
 			);
 			name = Spark;
 			packageProductDependencies = (
@@ -352,6 +358,9 @@
 			);
 			mainGroup = 3389F4D949ECD1C4C7A3FC0B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3A920BB16F8CD94BE31D4FD6 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 195613032D04F7C348176821 /* Products */;
 			projectDirPath = "";
@@ -377,6 +386,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB8C3417091AAAFBD8BC6402 /* .swiftlint.yml in Resources */,
 				3AA8B6E58C3E58DFFB03C361 /* Assets.xcassets in Resources */,
 				A4AF77286922A3F3F7B7D679 /* ExportOptions.plist in Resources */,
 				08125EF0204EB82912058BF8 /* PrivacyInfo.xcprivacy in Resources */,
@@ -454,6 +464,10 @@
 			target = 40D76FD763A5379E193137FA /* SparkWidgetsExtension */;
 			targetProxy = 38594060535259E9B411B653 /* PBXContainerItemProxy */;
 		};
+		EA104B0D6820BA01C36AC313 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 593E06E155469BEB0B12F8A5 /* SwiftLintBuildToolPlugin */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -484,8 +498,7 @@
 				CODE_SIGN_ENTITLEMENTS = "../widgets-ios/SparkWidgets.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Spark Widgets";
+				INFOPLIST_FILE = "../widgets-ios/Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2026 Joshua Trommel";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -507,8 +520,7 @@
 				CODE_SIGN_ENTITLEMENTS = "../widgets-ios/SparkWidgets.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Spark Widgets";
+				INFOPLIST_FILE = "../widgets-ios/Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2026 Joshua Trommel";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -574,7 +586,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = QMM486NPYC;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -650,7 +662,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = QMM486NPYC;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -742,6 +754,25 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A920BB16F8CD94BE31D4FD6 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.59.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		593E06E155469BEB0B12F8A5 /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A920BB16F8CD94BE31D4FD6 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B892AFA3F6F32DFDE1F2917B /* Project object */;
 }
