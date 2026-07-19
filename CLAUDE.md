@@ -2,6 +2,24 @@
 
 Version: v2.2.0
 
+## Monetization (defined 2026-07-18, not built yet)
+No payment infra exists — no Stripe, no `is_pro`/tier column, no schema for
+it. Decided what "Spark Pro" sells before building anything, so the eventual
+implementation has a real target instead of being invented mid-build:
+
+- **Free**: post, comment, browse. Current anti-spam limit is 10 posts per
+  60s per IP (`api/posts.js:143`, `checkRateLimit`) — not a real daily cap,
+  just spam protection.
+- **Spark Pro**: unlimited posts (raise/remove the rate-limit ceiling for
+  Pro accounts), plus 24h pinned/priority visibility on new posts.
+
+Not started: no Supabase migration for a pro/subscription column, no
+Stripe product, no checkout/webhook route, no auth-to-billing wiring
+(`api/auth.js`'s session pattern is the right hook point once this is
+built — see Epiphany's `server/api/stripe.js` + `gates.js` for the
+checkout/webhook/gate shape to copy). This is a multi-hour build on its
+own — don't attempt it as a quick follow-on to a docs pass.
+
 ## From Spark.pdf (imported 2026-07-01)
 - [ ] Sync app icon into portfolio (nulljosh.github.io) — icon was bumped in Spark repo but portfolio still shows the old one
 - [ ] Idea: self-regulating idea forum — infinite AI-generated ideas via a free model (Gemma/Qwen), with a second model (Owen?) filtering its own output; eventually add law/trademark search + monetization/commercialization hooks. Exploratory, no deadline.
