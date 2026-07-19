@@ -3,6 +3,10 @@ options:
   bundleIdPrefix: com.heyitsmejosh
   deploymentTarget:
     iOS: "17.0"
+packages:
+  SwiftLint:
+    url: https://github.com/realm/SwiftLint
+    from: 0.59.1
 settings:
   DEVELOPMENT_TEAM: QMM486NPYC
   SWIFT_VERSION: "6.0"
@@ -42,6 +46,9 @@ targets:
           - group.com.jt.spark
     dependencies:
       - target: SparkWidgetsExtension
+    buildToolPlugins:
+      - plugin: SwiftLintBuildToolPlugin
+        package: SwiftLint
   SparkTests:
     type: bundle.unit-test
     platform: iOS
