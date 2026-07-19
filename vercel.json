@@ -60,7 +60,7 @@
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
-          "value": "https://spark.heyitsmejosh.com"
+          "value": "https://sparkjar.heyitsmejosh.com"
         },
         {
           "key": "Access-Control-Allow-Methods",

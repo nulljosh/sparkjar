@@ -1,4 +1,4 @@
-# Spark
+# Sparkjar
 
 Version: v2.2.0
 
@@ -25,7 +25,7 @@ own — don't attempt it as a quick follow-on to a docs pass.
 - [ ] Idea: self-regulating idea forum — infinite AI-generated ideas via a free model (Gemma/Qwen), with a second model (Owen?) filtering its own output; eventually add law/trademark search + monetization/commercialization hooks. Exploratory, no deadline.
 
 ## Recovery note (2026-06-21)
-Local checkout and GitHub repo both went missing before this date (cause unconfirmed — no Time Machine/APFS snapshot/trash copy existed to check). Source was recovered from Vercel's deployment-files API (`GET /v8/deployments/{id}/files/{fileId}`, v6 of the same endpoint is disabled) against the latest deployment, plus the live-served frontend at spark.heyitsmejosh.com as a cross-check (the frontend is unbundled, so the served files are the actual source). Risk: any local edits made between the last deploy and the original deletion are not captured — this is the latest deployed snapshot, not necessarily the latest *written* code.
+Local checkout and GitHub repo both went missing before this date (cause unconfirmed — no Time Machine/APFS snapshot/trash copy existed to check). Source was recovered from Vercel's deployment-files API (`GET /v8/deployments/{id}/files/{fileId}`, v6 of the same endpoint is disabled) against the latest deployment, plus the live-served frontend at sparkjar.heyitsmejosh.com as a cross-check (the frontend is unbundled, so the served files are the actual source). Risk: any local edits made between the last deploy and the original deletion are not captured — this is the latest deployed snapshot, not necessarily the latest *written* code.
 
 ## Shipped (2026-06-28)
 - [x] ToS checkbox required on register (blocks submit if unchecked) — `index.html`, `/tos.html`

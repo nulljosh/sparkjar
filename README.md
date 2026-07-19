@@ -1,12 +1,12 @@
 <img src="icon.svg" width="80" style="border-radius:18px">
 
-# Spark
+# Sparkjar
 
-![version](https://img.shields.io/badge/version-v2.2.0-blue) ![license](https://img.shields.io/badge/license-MIT-green) [![GitHub](https://img.shields.io/badge/GitHub-nulljosh%2Fspark-black?logo=github)](https://github.com/nulljosh/spark)
+![version](https://img.shields.io/badge/version-v2.2.0-blue) ![license](https://img.shields.io/badge/license-MIT-green) [![GitHub](https://img.shields.io/badge/GitHub-nulljosh%2Fsparkjar-black?logo=github)](https://github.com/nulljosh/sparkjar)
 
 Idea-sharing platform with upvoting, comments, JWT auth, and AI enrichment. Native companions for iOS, macOS, and watchOS.
 
-[Live](https://spark.heyitsmejosh.com)
+[Live](https://sparkjar.heyitsmejosh.com)
 
 ## Platforms
 

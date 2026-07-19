@@ -1,5 +1,5 @@
 {
-  "name": "spark",
+  "name": "sparkjar",
   "version": "2.2.0",
   "description": "Idea-sharing platform with filters, voting, auth",
   "main": "index.html",

@@ -1,4 +1,4 @@
-# Spark iOS
+# Sparkjar iOS
 v2.2.0
 ## Rules
 - Portrait-only, UIRequiresFullScreen

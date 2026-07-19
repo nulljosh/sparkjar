@@ -15,7 +15,7 @@ const https = require('https');
 const http = require('http');
 const { enrichmentPrompt, ideaBasePrompt } = require('./prompts');
 
-const API_URL = process.env.SPARK_API_URL || 'https://spark.heyitsmejosh.com';
+const API_URL = process.env.SPARK_API_URL || 'https://sparkjar.heyitsmejosh.com';
 const SECRET = process.env.SPARK_DAEMON_SECRET;
 const POLL_INTERVAL_MS = 5 * 60 * 1000;
 const RUN_ONCE = process.argv.includes('--once');

@@ -28,7 +28,7 @@ async function sendResetEmail(email, token) {
     console.warn('[password-reset] SMTP not configured — skipping email send');
     return;
   }
-  const baseUrl = process.env.APP_URL || 'https://spark.heyitsmejosh.com';
+  const baseUrl = process.env.APP_URL || 'https://sparkjar.heyitsmejosh.com';
   const resetLink = `${baseUrl}/reset-password?token=${token}`;
   const from = process.env.SMTP_FROM || process.env.SMTP_USER;
   await transport.sendMail({

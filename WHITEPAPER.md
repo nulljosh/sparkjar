@@ -4,7 +4,7 @@
 
 Spark is an idea-sharing platform: post an idea, vote it up, argue in the
 comments, and let an LLM turn the good ones into build plans. Live at
-[spark.heyitsmejosh.com](https://spark.heyitsmejosh.com), with native iOS,
+[sparkjar.heyitsmejosh.com](https://sparkjar.heyitsmejosh.com), with native iOS,
 macOS, and watchOS companions.
 
 ## Core Mechanic: Ideas as First-Class Objects
