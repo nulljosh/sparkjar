@@ -458,6 +458,7 @@ struct CreateView: View {
 struct ProfileView: View {
     @Environment(AppState.self) private var appState
     @Environment(\.colorScheme) private var colorScheme
+    @State private var confirmingDeleteAccount = false
 
     var myPosts: [Post] {
         guard let username = appState.user?.username else { return [] }
@@ -528,6 +529,16 @@ struct ProfileView: View {
                             Label("Sign Out", systemImage: "arrow.right.square")
                         }
                     }
+
+                    Section {
+                        Button(role: .destructive) {
+                            confirmingDeleteAccount = true
+                        } label: {
+                            Label("Delete Account", systemImage: "trash")
+                        }
+                    } footer: {
+                        Text("Permanently deletes your account. This cannot be undone.")
+                    }
                 } else {
                     Section {
                         VStack(spacing: 12) {
@@ -549,6 +560,18 @@ struct ProfileView: View {
                 }
             }
             .navigationTitle("Profile")
+            .confirmationDialog(
+                "Delete your account?",
+                isPresented: $confirmingDeleteAccount,
+                titleVisibility: .visible
+            ) {
+                Button("Delete Account", role: .destructive) {
+                    Task { _ = await appState.deleteAccount() }
+                }
+                Button("Cancel", role: .cancel) {}
+            } message: {
+                Text("This permanently deletes your account. This cannot be undone.")
+            }
         }
     }
 }

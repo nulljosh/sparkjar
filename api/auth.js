@@ -1,6 +1,7 @@
 // ponytail: one function for all auth routes — Vercel Hobby caps deployments at 12 fns
 const handlers = {
   apple: require('./_lib/auth/apple'),
+  'delete-account': require('./_lib/auth/delete-account'),
   github: require('./_lib/auth/github'),
   'github-callback': require('./_lib/auth/github-callback'),
   login: require('./_lib/auth/login'),

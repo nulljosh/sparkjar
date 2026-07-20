@@ -23,6 +23,7 @@ enum APIError: LocalizedError, Equatable {
 protocol SparkAPIProtocol: Sendable {
     func login(username: String, password: String) async throws -> AuthResponse
     func register(username: String, email: String?, password: String) async throws -> AuthResponse
+    func deleteAccount() async throws
     func fetchPosts() async throws -> [Post]
     func createPost(title: String, content: String, category: String, linkedRepo: String?) async throws -> Post
     func vote(postId: String, type: String) async throws
@@ -147,6 +148,12 @@ final class SparkAPI: SparkAPIProtocol, Sendable {
         let result: AuthResponse = try await perform(req)
         saveToken(result.token)
         return result
+    }
+
+    func deleteAccount() async throws {
+        let req = try request("/api/auth?action=delete-account", method: "POST", auth: true)
+        try await performVoid(req)
+        clearToken()
     }
 
     // MARK: - Posts

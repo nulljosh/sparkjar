@@ -3,6 +3,7 @@ import SwiftUI
 struct ProfileView: View {
     @Environment(AppState.self) private var appState
     @State private var postToDelete: Post?
+    @State private var confirmingDeleteAccount = false
 
     var myPosts: [Post] {
         guard let username = appState.user?.username else { return [] }
@@ -73,6 +74,14 @@ struct ProfileView: View {
                             Label("Sign Out", systemImage: "arrow.right.square")
                         }
                     }
+
+                    Section {
+                        Button(role: .destructive) {
+                            confirmingDeleteAccount = true
+                        } label: {
+                            Label("Delete Account", systemImage: "trash")
+                        }
+                    }
                 }
                 .listStyle(.inset(alternatesRowBackgrounds: true))
             } else {
@@ -114,6 +123,18 @@ struct ProfileView: View {
             Button("Cancel", role: .cancel) {
                 postToDelete = nil
             }
+        }
+        .confirmationDialog(
+            "Delete your account?",
+            isPresented: $confirmingDeleteAccount,
+            titleVisibility: .visible
+        ) {
+            Button("Delete Account", role: .destructive) {
+                Task { _ = await appState.deleteAccount() }
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("This permanently deletes your account. This cannot be undone.")
         }
     }
 }

@@ -71,6 +71,17 @@ final class AppState {
         errorBanner = nil
     }
 
+    func deleteAccount() async -> Bool {
+        do {
+            try await api.deleteAccount()
+            logout()
+            return true
+        } catch {
+            errorBanner = error.localizedDescription
+            return false
+        }
+    }
+
     func loadPosts() async {
         isFeedLoading = true
         do {

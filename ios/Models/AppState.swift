@@ -104,6 +104,17 @@ final class AppState {
         errorBanner = nil
     }
 
+    func deleteAccount() async -> Bool {
+        do {
+            try await api.deleteAccount()
+            logout()
+            return true
+        } catch {
+            errorBanner = error.localizedDescription
+            return false
+        }
+    }
+
     func biometricBiometryType() -> LABiometryType {
         let context = LAContext()
         guard context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) else {
