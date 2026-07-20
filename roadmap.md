@@ -21,3 +21,7 @@
 
 ## From Spark.pdf (imported 2026-07-14)
 - [ ] Mac ASC: remove purple icon, replace with correct branding (same complaint as root roadmap purple-icon item, tracked here for Spark specifically)
+
+## From Sparkjar.pdf (imported 2026-07-19)
+- [ ] Duplicate of existing item above (Mac ASC purple icon) but reconfirmed still broken in TestFlight as of 2026-07-19 — icon still showing purple placeholder instead of correct branding.
+- [ ] URL needs fixing — stale domain/name reference somewhere in-app or in metadata (repo/app renamed spark→sparkjar 2026-07-18, bundle ID com.heyitsmejosh.spark→sparkjar rename still pending per root roadmap). Likely the same underlying rename-in-progress issue, not a separate bug — check support URL / in-app links against `sparkjar.heyitsmejosh.com` once bundle ID rename lands.
