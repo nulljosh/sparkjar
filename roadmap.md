@@ -29,3 +29,6 @@
 - [x] ship-ios workflow fixed: archive step needed --xcodebuild-flag=-skipPackagePluginValidation (SwiftLint plugin); archive+export now succeed
 - [x] ship-ios publish step broken: ExportOptions.plist uses destination:upload so no local IPA exists — fixed 2026-07-20, `ios/ExportOptions.plist` destination changed to `export`; next `ship-ios` run should produce a local IPA for `asc builds upload` to attach. Not re-run/verified this pass (heavy archive step, out of scope for this fork).
 - [ ] iOS 1.0 is WAITING_FOR_REVIEW (since 06-27) while 2.2.0 builds (4,5 + today) sit unattached — decide: let 1.0 review land, or cancel and submit 2.2.0. Not auto-decided.
+
+## Account deletion audit 2026-07-20
+- [x] Added delete-account parity (Guideline 5.1.1(v)) — sparkjar has its own JWT auth (not Supabase Auth), so added a new `delete-account` action to the existing consolidated api/auth.js handler (no new Vercel fn slot used). Wired deleteAccount() through SparkAPI/AppState + ProfileView on both iOS and macOS. Both build-verified.
