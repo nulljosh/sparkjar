@@ -100,6 +100,12 @@ function buildRes() {
       return headers.get(k);
     },
     status(code) { statusCode = code; return res; },
+    // Node-style: github*.js and verify-email.js redirect via writeHead + end.
+    writeHead(code, hdrs) {
+      statusCode = code;
+      for (const [k, v] of Object.entries(hdrs || {})) res.setHeader(k, v);
+      return res;
+    },
     json(payload) {
       headers.set('content-type', 'application/json');
       resolve(new Response(JSON.stringify(payload), { status: statusCode, headers }));
