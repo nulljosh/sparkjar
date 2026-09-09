@@ -1,5 +1,9 @@
 # Sparkjar Roadmap
 
+## 2026-09-09, iOS 1.0 approved and live on App Store
+
+The 4.3(a) appeal filed 2026-08-27 was approved. iOS 1.0 is now available on the App Store.
+
 ## 2026-09-06, feed seeded with 12 hand-written ideas + AI enrichment
 
 Posted 12 ideas as user "josh" (password in macOS Keychain), each enriched with spec + plan via Workers AI:
