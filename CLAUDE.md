@@ -105,8 +105,8 @@ post that has no spec yet. One-off, not scheduled.
 
 | Platform | Dir | Bundle ID | Status |
 |---|---|---|---|
-| iOS | ios/ | com.heyitsmejosh.spark | Submission in progress, v2.2.0 build 3 |
-| macOS | macos/ | com.heyitsmejosh.spark.mac | Submission in progress, v1.0.0 |
+| iOS | ios/ | com.heyitsmejosh.spark | Approved, live on App Store (2026-09-09), v1.0 |
+| macOS | macos/ | com.heyitsmejosh.spark | Submission in progress, v1.0.0 |
 | watchOS | watchos/ | com.heyitsmejosh.spark.watchos | Bundled with iOS; no login UI (view-only without iOS pre-auth) |
 
 Build with `xcodegen generate` in each platform dir. Screenshots in `screenshots/`.
