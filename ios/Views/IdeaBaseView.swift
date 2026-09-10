@@ -8,6 +8,8 @@ struct IdeaBaseView: View {
     @State private var message: String?
     @State private var ideaBases: [IdeaBase] = []
     @State private var rfs: [RFSEntry] = []
+    @State private var isLoadingMore = false
+    @State private var reachedEnd = false
 
     var body: some View {
         NavigationStack {
@@ -76,15 +78,31 @@ struct IdeaBaseView: View {
                                         .foregroundStyle(.secondary)
                                 }
                             }
+                            .onAppear {
+                                if ib.id == ideaBases.last?.id { loadMore() }
+                            }
+                        }
+                        if isLoadingMore {
+                            ProgressView().frame(maxWidth: .infinity)
                         }
                     }
                 }
             }
             .navigationTitle("Idea Base")
             .task {
-                ideaBases = (try? await appState.api.fetchIdeaBases()) ?? []
+                ideaBases = (try? await appState.api.fetchIdeaBases(offset: 0)) ?? []
                 rfs = (try? await appState.api.fetchRfs()) ?? []
             }
+        }
+    }
+
+    private func loadMore() {
+        guard !isLoadingMore, !reachedEnd else { return }
+        isLoadingMore = true
+        Task {
+            let more = (try? await appState.api.fetchIdeaBases(offset: ideaBases.count)) ?? []
+            if more.isEmpty { reachedEnd = true } else { ideaBases.append(contentsOf: more) }
+            isLoadingMore = false
         }
     }
 
@@ -100,7 +118,7 @@ struct IdeaBaseView: View {
                 message = "Queued. Ideas will appear in feed within 5 minutes."
                 topic = ""
                 description = ""
-                ideaBases = (try? await appState.api.fetchIdeaBases()) ?? []
+                ideaBases = (try? await appState.api.fetchIdeaBases(offset: 0)) ?? []
             } catch {
                 message = error.localizedDescription
             }

@@ -34,7 +34,7 @@ protocol SparkAPIProtocol: Sendable {
     func fetchCommentCounts(postIds: [String]) async throws -> [String: Int]
     func fetchUserProfile(username: String) async throws -> UserProfile
     func requestEnrichment(postId: String) async throws
-    func fetchIdeaBases() async throws -> [IdeaBase]
+    func fetchIdeaBases(offset: Int) async throws -> [IdeaBase]
     func createIdeaBase(topic: String, description: String?) async throws -> IdeaBase
     func fetchRfs() async throws -> [RFSEntry]
     func saveToken(_ token: String)
@@ -204,8 +204,8 @@ final class SparkAPI: SparkAPIProtocol, Sendable {
         try await performVoid(req)
     }
 
-    func fetchIdeaBases() async throws -> [IdeaBase] {
-        let req = try request("/api/ai?type=idea-base")
+    func fetchIdeaBases(offset: Int = 0) async throws -> [IdeaBase] {
+        let req = try request("/api/ai?type=idea-base&offset=\(offset)")
         struct Resp: Decodable { let ideaBases: [IdeaBase] }
         let result: Resp = try await perform(req)
         return result.ideaBases
@@ -246,14 +246,18 @@ final class SparkAPI: SparkAPIProtocol, Sendable {
     func fetchComments(postId: String) async throws -> [Comment] {
         let id = try encodedId(postId)
         let req = try request("/api/comments?post_id=\(id)")
-        return try await perform(req)
+        struct Resp: Decodable { let comments: [Comment] }
+        let result: Resp = try await perform(req)
+        return result.comments
     }
 
     func addComment(postId: String, content: String) async throws -> Comment {
         let payload: [String: String] = ["post_id": postId, "content": content]
         let body = try JSONSerialization.data(withJSONObject: payload)
         let req = try request("/api/comments", method: "POST", body: body, auth: true)
-        return try await perform(req)
+        struct Resp: Decodable { let comment: Comment }
+        let result: Resp = try await perform(req)
+        return result.comment
     }
 
     func fetchCommentCounts(postIds: [String]) async throws -> [String: Int] {
@@ -261,8 +265,10 @@ final class SparkAPI: SparkAPIProtocol, Sendable {
         guard let encoded = joined.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             throw APIError.invalidURL
         }
-        let req = try request("/api/comment-counts?post_ids=\(encoded)")
-        return try await perform(req)
+        let req = try request("/api/comments?post_ids=\(encoded)")
+        struct Resp: Decodable { let counts: [String: Int] }
+        let result: Resp = try await perform(req)
+        return result.counts
     }
 
     // MARK: - User Profiles

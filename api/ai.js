@@ -147,7 +147,8 @@ async function handleEnrich(req, res) {
 
 async function handleIdeaBase(req, res) {
   if (req.method === 'GET') {
-    const rows = await supabaseRequest('idea_bases?order=created_at.desc&limit=50');
+    const offset = Number.parseInt(req.query && req.query.offset, 10) || 0;
+    const rows = await supabaseRequest(`idea_bases?order=created_at.desc&limit=50&offset=${offset}`);
     return res.status(200).json({ ideaBases: Array.isArray(rows) ? rows : [] });
   }
 
