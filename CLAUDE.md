@@ -106,7 +106,7 @@ post that has no spec yet. One-off, not scheduled.
 | Platform | Dir | Bundle ID | Status |
 |---|---|---|---|
 | iOS | ios/ | com.heyitsmejosh.spark | Approved, live on App Store (2026-09-09), v1.0 |
-| macOS | macos/ | com.heyitsmejosh.spark | Submission in progress, v1.0.0 |
+| macOS | macos/ | com.heyitsmejosh.spark | Submission in progress, v1.0.0. Apple sign-in added, matching iOS (`macos/API/SparkAPI.swift`, `macos/Models/AppState.swift`, `macos/Views/AuthSheet.swift`) |
 | watchOS | watchos/ | com.heyitsmejosh.spark.watchos | Bundled with iOS; no login UI (view-only without iOS pre-auth) |
 
 Build with `xcodegen generate` in each platform dir. Screenshots in `screenshots/`.
