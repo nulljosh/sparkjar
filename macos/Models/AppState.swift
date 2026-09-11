@@ -1,3 +1,4 @@
+import AuthenticationServices
 import Foundation
 import Observation
 
@@ -60,6 +61,28 @@ final class AppState {
     func register(username: String, email: String?, password: String) async {
         await authenticate {
             try await self.api.register(username: username, email: email, password: password)
+        }
+    }
+
+    func handleAppleSignIn(result: Result<ASAuthorization, Error>) async {
+        switch result {
+        case .failure(let err):
+            error = err.localizedDescription
+        case .success(let auth):
+            guard let cred = auth.credential as? ASAuthorizationAppleIDCredential else { return }
+            guard let tokenData = cred.identityToken,
+                  let identityToken = String(data: tokenData, encoding: .utf8) else {
+                error = "Apple did not return an identity token."
+                return
+            }
+            await authenticate {
+                try await self.api.appleSignIn(
+                    identityToken: identityToken,
+                    givenName: cred.fullName?.givenName,
+                    familyName: cred.fullName?.familyName,
+                    email: cred.email
+                )
+            }
         }
     }
 

@@ -1,3 +1,4 @@
+import AuthenticationServices
 import SwiftUI
 
 struct AuthSheet: View {
@@ -20,6 +21,20 @@ struct AuthSheet: View {
             }
             .pickerStyle(.segmented)
             .labelsHidden()
+
+            SignInWithAppleButton(.signIn) { request in
+                request.requestedScopes = [.email, .fullName]
+            } onCompletion: { result in
+                Task { await appState.handleAppleSignIn(result: result) }
+            }
+            .signInWithAppleButtonStyle(.black)
+            .frame(height: 40)
+
+            HStack {
+                Rectangle().frame(height: 1).foregroundStyle(.quaternary)
+                Text("or").font(.caption).foregroundStyle(.secondary)
+                Rectangle().frame(height: 1).foregroundStyle(.quaternary)
+            }
 
             VStack(spacing: 12) {
                 TextField("Username", text: $username)
