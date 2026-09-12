@@ -189,6 +189,14 @@
 
 <div class="hero">
   <div class="hero-wall" id="heroWall" aria-hidden="true"></div>
+  <script>
+  (function(){
+    var wall=document.getElementById('heroWall'),reduced=matchMedia('(prefers-reduced-motion: reduce)').matches,ticking=false;
+    if(reduced)return;
+    function onScroll(){if(ticking)return;ticking=true;requestAnimationFrame(function(){wall.style.transform='translateY('+(scrollY*0.15)+'px)';ticking=false;});}
+    addEventListener('scroll',onScroll,{passive:true});
+  })();
+  </script>
   <div class="hero-copy">
     <div class="eyebrow">Idea forum</div>
     <h1>Where ideas become reality</h1>
