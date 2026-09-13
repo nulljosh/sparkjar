@@ -4,8 +4,11 @@
 
 A jar of ideas.
 
-Post one, vote on others, argue in the comments. A model turns the good ones into
-build plans, and every morning a new idea shows up on its own. Live at
+Most ideas die because turning "someone should build X" into an actual plan
+is the part nobody wants to do. Sparkjar exists to close that gap: post one, vote on others, argue in the comments. A model turns the good ones into
+build plans, so an idea does not need its poster to already know how to
+scope it, and every morning a new idea shows up on its own, so the feed
+is never empty even before anyone else contributes. Live at
 [sparkjar.heyitsmejosh.com](https://sparkjar.heyitsmejosh.com), with native iOS,
 macOS, and watchOS companions.
 
@@ -17,9 +20,10 @@ AI-generated attachments:
 - **Enrichment (SPEC + PLAN)**: a Claude daemon
   (`daemon/spark-daemon.js`) picks up new ideas and writes a product spec and
   an implementation plan for each, turning a one-liner into something
-  buildable.
+  buildable, because the gap between "someone should build X" and actually
+  starting is usually just nobody having written the plan down.
 - **Idea Bases**: AI-generated idea clusters seeded from a topic, so an empty
-  feed can bootstrap itself.
+  feed can bootstrap itself instead of asking the first visitor to populate it.
 
 Ranking is Hot/New with optimistic-UI upvotes; category and tag filters
 (tech, design, business, random) slice the feed. New users see curated seed
@@ -33,14 +37,15 @@ ideas, and the frontend falls back to seed data if Supabase is unreachable.
 - **API**: Cloudflare Pages Functions. The site moved off Vercel on
   2026-08-17, which retired the old 12-function Hobby-plan cap that had forced
   auth into consolidated shared handlers; the consolidation stayed because it
-  is simpler, but new endpoints are no longer budgeted against a limit.
+  is simpler than splitting endpoints back out for no functional gain, but new endpoints are no longer budgeted against a limit.
 - **Auth**: JWT with sign up/login, GitHub OAuth, ToS gate on register, and
   Face ID / Touch ID on iOS.
 - **Database**: Supabase PostgreSQL with RLS enabled. This project is the
   shared free-tier database, lexly and other apps ride on it, so migrations
   here are effectively multi-tenant changes.
 - **Daemon**: `spark-daemon.js` runs on demand (`--once`) rather than as a
-  resident process, per the no-background-automation house rule.
+  resident process, per the no-background-automation house rule, since a
+  process nobody is watching is a process that can silently misbehave.
 
 ## Platforms
 
