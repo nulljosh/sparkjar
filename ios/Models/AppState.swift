@@ -42,7 +42,11 @@ final class AppState {
 
     init(api: SparkAPIProtocol = SparkAPI.shared) {
         self.api = api
-        restoreSession()
+        if CommandLine.arguments.contains("UITEST_SNAPSHOT") {
+            user = AuthResponse(token: "preview-token", username: "gemma", userId: "preview-user")
+        } else {
+            restoreSession()
+        }
         observeUnauthorized()
     }
 

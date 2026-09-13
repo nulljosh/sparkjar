@@ -7,7 +7,7 @@ import UIKit
 
 struct ContentView: View {
     @Environment(AppState.self) private var appState
-    @State private var selectedTab = 0
+    @State private var selectedTab = Int(ProcessInfo.processInfo.environment["UITEST_TAB"] ?? "") ?? 0
 
     var body: some View {
         @Bindable var appState = appState

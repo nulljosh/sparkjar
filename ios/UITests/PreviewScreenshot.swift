@@ -2,29 +2,53 @@ import XCTest
 
 @MainActor
 final class PreviewScreenshot: XCTestCase {
-    func testCaptureScreenshots() {
+    private func launchApp(tab: Int? = nil) -> XCUIApplication {
         let app = XCUIApplication()
         setupSnapshot(app)
-        app.launch()
-
-        sleep(3)
-        snapshot("01-feed")
-
-        app.buttons["tabbar_profile"].tap()
-        sleep(1)
-        app.buttons["signin_button"].tap()
-        sleep(1)
-        snapshot("02-signin")
-        if app.buttons["Cancel"].exists {
-            app.buttons["Cancel"].tap()
-        } else if app.navigationBars.buttons.firstMatch.exists {
-            app.navigationBars.buttons.firstMatch.tap()
+        app.launchArguments += ["UITEST_SNAPSHOT"]
+        if let tab {
+            app.launchEnvironment["UITEST_TAB"] = String(tab)
         }
-        sleep(1)
-        snapshot("03-profile")
+        app.launch()
+        return app
+    }
 
-        app.buttons["tabbar_ideas"].tap()
-        sleep(2)
-        snapshot("04-ideas")
+    func testCaptureScreenshots() {
+        // Tab bar is a custom floating overlay, not the system tab bar —
+        // tapping it mid-test has mistapped underlying list content (a post
+        // row, an RFS link) and captured the wrong screen entirely. Launching
+        // fresh per tab via UITEST_TAB sidesteps tapping it altogether.
+        let feed = launchApp()
+        sleep(3)
+        if feed.buttons["Got it"].waitForExistence(timeout: 2) {
+            feed.buttons["Got it"].tap()
+            sleep(1)
+        }
+        snapshot("01-feed")
+        if feed.buttons["Technology"].isHittable {
+            feed.buttons["Technology"].tap()
+            sleep(1)
+        }
+        snapshot("02-feed-filtered")
+        feed.terminate()
+
+        let create = launchApp(tab: 1)
+        sleep(3)
+        snapshot("03-create")
+        create.terminate()
+
+        let profile = launchApp(tab: 2)
+        sleep(3)
+        snapshot("04-profile")
+        profile.terminate()
+
+        let ideas = launchApp(tab: 3)
+        sleep(3)
+        ideas.swipeUp()
+        ideas.swipeUp()
+        ideas.swipeUp()
+        sleep(1)
+        snapshot("05-ideas")
+        ideas.terminate()
     }
 }
