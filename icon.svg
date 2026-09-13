@@ -1,7 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
-  <rect width="1024" height="1024" rx="224" fill="#271614"/>
-  <rect x="372" y="300" width="280" height="90" rx="30" fill="#fff"/>
-  <rect x="282" y="380" width="461" height="521" rx="80" fill="#fff"/>
-  <path d="M512 520 L540 615 L635 645 L540 675 L512 770 L484 675 L389 645 L484 615 Z" fill="#01FF70"/>
-  <path d="M655 480 L667 516 L703 528 L667 540 L655 576 L643 540 L607 528 L643 516 Z" fill="#01FF70"/>
+  <rect width="1024" height="1024" rx="224" fill="#0a1a33"/>
+  <rect x="352" y="176" width="320" height="72" rx="20" fill="#fdfaf3"/>
+  <path d="M352 248 h320 v40 a40 40 0 0 1 -20 35 q-30 20 -30 55 v422 a80 80 0 0 1 -80 80 h-60 a80 80 0 0 1 -80 -80 v-422 q0 -35 -30 -55 a40 40 0 0 1 -20 -35 z"
+        fill="none" stroke="#fdfaf3" stroke-width="24"/>
+  <circle cx="512" cy="620" r="115" fill="#f7c948"/>
+  <rect x="472" y="720" width="80" height="60" rx="10" fill="#f7c948"/>
+  <g stroke="#f7c948" stroke-width="22" stroke-linecap="round">
+    <line x1="512" y1="440" x2="512" y2="480"/>
+    <line x1="385" y1="495" x2="415" y2="520"/>
+    <line x1="639" y1="495" x2="609" y2="520"/>
+    <line x1="345" y1="620" x2="390" y2="620"/>
+    <line x1="679" y1="620" x2="634" y2="620"/>
+  </g>
 </svg>
