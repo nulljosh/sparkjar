@@ -102,7 +102,11 @@
         .new-btn.hidden { display: none; }
         .modal { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--modal-bg); padding: 20px; z-index: 1000; }
         .modal.show { display: flex; align-items: center; justify-content: center; }
-        .modal-box { background: var(--surface); padding: 30px; border-radius: 15px; width: 100%; max-width: 500px; border: 1px solid var(--border); }
+        .modal-box { background: var(--surface); padding: 30px; border-radius: 15px; width: 100%; max-width: 500px; border: 1px solid var(--border); overflow-y: auto; max-height: 85vh; }
+        #whats-new-modal .modal-box { max-width: 420px; }
+        #whats-new-modal .modal-box h2 { margin-bottom: 20px; font-size: 18px; }
+        #whats-new-modal .modal-box ul { margin: 0 0 24px; padding-left: 20px; line-height: 1.8; color: var(--text2); font-size: 14px; }
+        #whats-new-modal .modal-box li { margin-bottom: 8px; }
         .tabs { display: flex; gap: 10px; margin-bottom: 20px; }
         .tab { background: transparent; color: var(--text3); border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 16px; }
         .tab.active { background: var(--surface2); color: var(--text); }
@@ -145,6 +149,18 @@
         .notif-item:last-child { border-bottom: none; }
         .notif-time { font-size: 11px; color: var(--text3); margin-top: 4px; }
         .notif-empty { padding: 24px 16px; text-align: center; color: var(--text3); font-size: 13px; }
+
+        /* Profile/Settings menu */
+        .profile-menu { position: relative; }
+        .profile-menu-btn { background: var(--surface2); color: var(--text); border: none; width: 36px; height: 36px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+        .profile-menu-btn:hover { background: var(--surface3); }
+        .profile-dropdown { display: none; position: absolute; top: 44px; right: 0; width: 180px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; z-index: 999; }
+        .profile-dropdown.open { display: block; }
+        .profile-dropdown-item { padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text2); cursor: pointer; }
+        .profile-dropdown-item:hover { background: var(--surface2); color: var(--text); }
+        .profile-dropdown-item:last-child { border-bottom: none; }
+        .profile-dropdown-item.danger { color: #ff453a; }
+        .profile-dropdown-item.danger:hover { background: rgba(255, 69, 58, 0.1); }
 
         /* Tag pills */
         .tag-selector { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
@@ -472,12 +488,20 @@
                     const usernameSpan = document.createElement('span');
                     usernameSpan.textContent = `@${user.username}`;
                     profileLink.appendChild(usernameSpan);
-                    const logoutBtn = document.createElement('button');
-                    logoutBtn.className = 'auth-btn';
-                    logoutBtn.textContent = 'Logout';
-                    logoutBtn.onclick = logout;
                     navDiv.appendChild(profileLink);
-                    navDiv.appendChild(logoutBtn);
+                    const menuDiv = document.createElement('div');
+                    menuDiv.className = 'profile-menu';
+                    const menuBtn = document.createElement('button');
+                    menuBtn.className = 'profile-menu-btn';
+                    menuBtn.textContent = '...';
+                    menuBtn.onclick = (e) => { e.stopPropagation(); document.getElementById('profileDropdown').classList.toggle('open'); };
+                    const dropdown = document.createElement('div');
+                    dropdown.id = 'profileDropdown';
+                    dropdown.className = 'profile-dropdown';
+                    dropdown.innerHTML = `<div class="profile-dropdown-item" onclick="logout()">Logout</div>`;
+                    menuDiv.appendChild(menuBtn);
+                    menuDiv.appendChild(dropdown);
+                    navDiv.appendChild(menuDiv);
                     authUI.innerHTML = '';
                     authUI.appendChild(navDiv);
                     newIdeaBtn.classList.remove('hidden');
@@ -490,10 +514,23 @@
                     return;
                 }
             } else {
-                authUI.innerHTML = `<div style="display:flex;gap:10px">
-                    <button class="auth-btn" onclick="showAuthModal('register')">Register</button>
-                    <button class="auth-btn" onclick="showAuthModal('login')">Sign In</button>
-                </div>`;
+                const menuDiv = document.createElement('div');
+                menuDiv.className = 'profile-menu';
+                const menuBtn = document.createElement('button');
+                menuBtn.className = 'profile-menu-btn';
+                menuBtn.textContent = '...';
+                menuBtn.onclick = (e) => { e.stopPropagation(); document.getElementById('profileDropdown').classList.toggle('open'); };
+                const dropdown = document.createElement('div');
+                dropdown.id = 'profileDropdown';
+                dropdown.className = 'profile-dropdown';
+                dropdown.innerHTML = `
+                    <div class="profile-dropdown-item" onclick="showAuthModal('register')">Register</div>
+                    <div class="profile-dropdown-item" onclick="showAuthModal('login')">Sign In</div>
+                `;
+                menuDiv.appendChild(menuBtn);
+                menuDiv.appendChild(dropdown);
+                authUI.innerHTML = '';
+                authUI.appendChild(menuDiv);
                 newIdeaBtn.classList.add('hidden');
                 document.getElementById('ideaBaseBtn').classList.add('hidden');
                 document.getElementById('bellWrap').style.display = 'none';
@@ -691,27 +728,64 @@
             loadCommentCounts(batch.map(p => p.id));
         }
 
-        // ponytail: paginates the already-fetched array client-side (whole feed is one API
-        // call); switch to real server-side offset paging (api/posts.js already accepts
-        // ?limit&offset) if the feed grows large enough that fetching it all up front is slow.
+        // Infinite scroll: loads next page when sentinel is visible
+        let feedLoading = false;
         const feedScrollObserver = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) renderNextFeedBatch();
+            if (entries[0].isIntersecting && !feedLoading && window.feedHasMore) {
+                loadNextFeedPage();
+            }
         });
         document.addEventListener('DOMContentLoaded', () => {
             const sentinel = document.getElementById('feedSentinel');
             if (sentinel) feedScrollObserver.observe(sentinel);
         });
 
+        async function loadNextFeedPage() {
+            if (feedLoading || !window.feedHasMore) return;
+            feedLoading = true;
+            try {
+                const offset = window.feedOffset || 0;
+                const limit = FEED_BATCH_SIZE;
+                const url = new URL(`${API_BASE}/api/posts`, window.location.origin);
+                url.searchParams.set('offset', offset);
+                url.searchParams.set('limit', limit);
+                const res = await fetch(url.toString());
+                const data = await res.json();
+                if (data.posts && data.posts.length > 0) {
+                    let posts = data.posts;
+                    // Filter by category
+                    if (window.currentFilter && window.currentFilter !== 'all') {
+                        posts = posts.filter(p => p.category === window.currentFilter);
+                    }
+                    // Filter by tag
+                    if (window.currentTagFilter && window.currentTagFilter !== 'all') {
+                        posts = posts.filter(p => p.tags && p.tags.includes(window.currentTagFilter));
+                    }
+                    window.feedPosts = (window.feedPosts || []).concat(posts);
+                    window.feedOffset = offset + limit;
+                    window.feedHasMore = posts.length === limit;
+                    renderNextFeedBatch();
+                } else {
+                    window.feedHasMore = false;
+                }
+            } catch (e) {
+                window.feedHasMore = false;
+            } finally {
+                feedLoading = false;
+            }
+        }
+
         async function load() {
             try {
-                const res = await fetch(`${API_BASE}/api/posts`);
+                const res = await fetch(`${API_BASE}/api/posts?limit=${FEED_BATCH_SIZE}&offset=0`);
                 const data = await res.json();
                 if (data.error || !data.posts || data.posts.length === 0) {
                     document.getElementById('feed').innerHTML = `<div style="color:var(--text3);text-align:center;padding:40px">No ideas yet. Be the first to share one!</div>`;
+                    window.feedHasMore = false;
                     return;
                 }
                 let posts = data.posts;
-                
+
                 // Filter by category
                 if (window.currentFilter && window.currentFilter !== 'all') {
                     posts = posts.filter(p => p.category === window.currentFilter);
@@ -733,11 +807,14 @@
                         return ((b.score || 0) / Math.pow(hoursB, 1.5)) - ((a.score || 0) / Math.pow(hoursA, 1.5)) || (hoursA - hoursB);
                     });
                 }
-                
+
                 window.feedPosts = posts;
                 window.feedRendered = 0;
+                window.feedOffset = FEED_BATCH_SIZE;
+                window.feedHasMore = posts.length === FEED_BATCH_SIZE;
                 if (posts.length === 0) {
                     document.getElementById('feed').innerHTML = `<div style="color:var(--text3);text-align:center;padding:40px">No ideas in this category.</div>`;
+                    window.feedHasMore = false;
                     return;
                 }
                 document.getElementById('feed').innerHTML = '';
@@ -1159,6 +1236,43 @@
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js');
         }
+
+        // What's New modal
+        (function() {
+            const KEY = 'spark_whats_new_seen', VER = '2.2.0';
+            if (localStorage.getItem(KEY) !== VER) {
+                const m = document.getElementById('whats-new-modal');
+                m.classList.add('show');
+                m.addEventListener('click', function(e) {
+                    if (e.target === this) dismissWhatsNew();
+                });
+            }
+        })();
+        function dismissWhatsNew() {
+            localStorage.setItem('spark_whats_new_seen', '2.2.0');
+            document.getElementById('whats-new-modal').classList.remove('show');
+        }
+
+        // Close profile dropdown when clicking outside
+        document.addEventListener('click', function() {
+            const dropdown = document.getElementById('profileDropdown');
+            if (dropdown) dropdown.classList.remove('open');
+        });
     </script>
+
+    <!-- What's New Modal -->
+    <div class="modal" id="whats-new-modal">
+        <div class="modal-box">
+            <span class="close" onclick="dismissWhatsNew()">&times;</span>
+            <h2>What's New in v2.2.0</h2>
+            <ul>
+                <li>GitHub Sign In / Sign Up</li>
+                <li>Terms of Service on registration</li>
+                <li>AI-powered idea enrichment daemon</li>
+                <li>Notifications &amp; comments</li>
+            </ul>
+            <button class="btn" onclick="dismissWhatsNew()">Got it</button>
+        </div>
+    </div>
 </body>
 </html>
