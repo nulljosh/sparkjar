@@ -5,10 +5,7 @@
 iOS finally cleared Apple review after weeks of back-and-forth on the 4.3(a) wave. Forum concept: idea generator with eventual IP protection / law integration, users build ideas together with copyright + trademark hooks (ties into the exploratory "self-regulating idea forum" note above).
 
 - [ ] Icon + app name redesign, feeds into landing page refresh too
-- [x] "What's New" modal glitch: layout/padding still broken (screenshot confirms), thought this was fixed before -- check git history for a prior fix that regressed or never shipped
 - [ ] UI pass, current screens are barebones/placeholder-looking
-- [x] Move Sign In button out of the top bar into profile/settings
-- [x] Feed needs infinite scroll (currently a flat list)
 - [ ] Custom nav bar is unreliable on touch, taps sometimes don't register. Pattern repeats across multiple apps ("we've been wrestling with it for months") -- consider falling back to native TabView/UITabBar instead of continuing to patch the custom one. Worth a fleet-wide look, not just Sparkjar.
 
 ## 2026-09-09, iOS 1.0 approved and live on App Store
