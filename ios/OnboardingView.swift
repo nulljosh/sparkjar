@@ -109,7 +109,17 @@ private struct OnboardingModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .onAppear { showing = !seen && !signedIn && !slides.isEmpty }
+            // ponytail: the wait is the whole point. Apps restore their session
+            // asynchronously at launch, so signedIn reads false for the first frames and
+            // deciding on .onAppear would flash onboarding at signed-in users. Decide once
+            // auth has had a moment, and back out if it resolves late.
+            .task {
+                try? await Task.sleep(for: .milliseconds(700))
+                showing = !seen && !signedIn && !slides.isEmpty
+            }
+            .onChange(of: signedIn) { _, nowSignedIn in
+                if nowSignedIn { showing = false }
+            }
             .fullScreenCoverCompat(isPresented: $showing) {
                 OnboardingView(slides: slides, finishLabel: finishLabel) {
                     seen = true
