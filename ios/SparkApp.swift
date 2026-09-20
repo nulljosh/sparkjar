@@ -11,6 +11,10 @@ struct SparkApp: App {
                 ContentView()
                     .environment(appState)
                     .overlay { WhatsNewSheet() }
+                    .onboarding(key: "spark",
+                                signedIn: appState.isLoggedIn,
+                                slides: sparkOnboardingSlides,
+                                finishLabel: "Create an account") { appState.showAuth = true }
 
                 if showSplash {
                     SplashView()

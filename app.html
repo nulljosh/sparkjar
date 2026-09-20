@@ -11,6 +11,7 @@
          keeps this in step with the chosen theme instead. -->
     <meta name="theme-color" content="#111">
     <script src="/theme.js"></script>
+<script src="/onboarding.js"></script>
     <script src="/webmcp.js" defer></script>
     <link rel="apple-touch-icon" href="/icon-192.svg">
     <title>Sparkjar</title>
@@ -1225,6 +1226,28 @@
                 `).join('');
                 strip.classList.remove('hidden');
             } catch (e) { /* inspiration strip is non-critical, fail silently */ }
+        }
+
+        // First-run onboarding. Only for signed-out newcomers; shows once per browser.
+        if (Onboarding.start({
+            key: 'spark',
+            signedIn: isLoggedIn(),
+            finishLabel: 'Create an account',
+            onDone: () => showAuthModal('signup'),
+            slides: [
+                { title: 'Ideas, out loud',
+                  body: 'Sparkjar is a running feed of startup and project ideas. Read one, riff on it, or post your own.',
+                  art: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9V16h7v-2.1A6 6 0 0 0 12 3z"/></svg>' },
+                { title: 'Vote the good ones up',
+                  body: 'Every idea can be upvoted and argued about in the comments. The best rise to the top of the feed.',
+                  art: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>' },
+                { title: 'Build one for real',
+                  body: 'Claim an idea, track what you ship, and let the rest of the jar follow along.',
+                  art: '<svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M6 20V9l6-5 6 5v11"/><path d="M10 20v-5h4v5"/></svg>' }
+            ]
+        })) {
+            // A brand new visitor has no "what's new" to catch up on.
+            try { localStorage.setItem('spark_whats_new_seen', '2.2.0'); } catch (e) {}
         }
 
         // Initialize

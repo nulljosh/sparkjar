@@ -14,6 +14,10 @@ struct SparkApp: App {
                 .frame(minWidth: 820, minHeight: 520)
                 .preferredColorScheme(ProcessInfo.processInfo.arguments.contains("-dark") ? .dark : nil)
                 .shareApp("https://sparkjar.heyitsmejosh.com")
+                .onboarding(key: "spark",
+                            signedIn: appState.isLoggedIn,
+                            slides: sparkOnboardingSlides,
+                            finishLabel: "Create an account") { appState.showAuth = true }
         }
         .windowStyle(.titleBar)
         .defaultSize(width: 900, height: 650)
