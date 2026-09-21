@@ -10,6 +10,8 @@ Each idea gets turned into a build spec and a step-by-step plan, server-side. Up
 
 [Live](https://sparkjar.heyitsmejosh.com)
 
+<img src="progress.svg" width="460">
+
 ## Platforms
 
 | Platform | Version | Status |
