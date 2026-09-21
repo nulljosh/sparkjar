@@ -8,7 +8,7 @@ Description (247): Sparkjar is a minimal idea forum. Post an idea, vote on the o
 
 Topics: Productivity, Artificial Intelligence, Social Networking
 
-Pricing: Free.
+Pricing: Free. Spark Pro is $1 once, on the web.
 
 Links
 Web: https://sparkjar.heyitsmejosh.com
@@ -23,4 +23,4 @@ I wanted a place to drop half-formed ideas without the pressure of a full pitch 
 
 It runs as a PWA on the web and as native apps on iOS, macOS, and watchOS, with Face ID or Touch ID sign-in on iOS. Filter by category, sort by Hot or New, cluster related ideas into Idea Bases, export a thread as markdown. No ads, no growth hacks, just a fast feed and a way to see if an idea has legs before you commit a weekend to it.
 
-macOS is live on the Mac App Store, iOS is in review, web works everywhere right now. Free.
+macOS is live on the Mac App Store, iOS is in review, web works everywhere right now. Free, with Spark Pro at $1 once on the web for anyone who wants to tip in for extras. The iOS build stays silent on that, App Review wants IAP for that kind of thing.
