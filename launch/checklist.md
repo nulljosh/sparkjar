@@ -1,4 +1,4 @@
-# Launch checklist — Sparkjar
+# Launch checklist, Sparkjar
 
 - [ ] Pick a launch day (Tue–Thu)
 - [ ] Pick a hunter
