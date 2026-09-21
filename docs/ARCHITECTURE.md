@@ -212,6 +212,28 @@ Bundled with iOS app. View-only companion. No login UI (requires iOS pre-auth vi
 |---|---|
 | (Shared with iOS) | watchOS accesses the same API endpoints as iOS. Auth token stored in shared app group UserDefaults. No separate Keychain store on watch. |
 
+## iOS Widgets
+
+Home screen widgets for iOS. Three widget types: Hot posts, New posts, and stats summary. Shared app group storage for auth token and cached data.
+
+| Dir | What it owns |
+|---|---|
+| `widgets-ios/SparkWidgets.swift` | Widget bundle entry point. Declares the three available widgets. |
+| `widgets-ios/Models/` | WidgetAPI (fetches posts and stats from API, caches to UserDefaults), WidgetModels (SparkPost, SparkStats data shapes). |
+| `widgets-ios/Providers/` | Timeline providers for each widget: HotPostsProvider, NewPostsProvider, StatsProvider. Fetch, cache, and refresh on schedule. |
+| `widgets-ios/Views/` | Widget UI: HotPostsWidget, NewPostsWidget, StatsWidget. Each renders timeline entries with proper sizing. |
+
+## macOS Widgets
+
+Home screen widgets for macOS. Same three types as iOS (Hot, New, Stats) with layouts optimized for larger widget sizes and additional interaction patterns.
+
+| Dir | What it owns |
+|---|---|
+| `widgets-macos/SparkWidgets.swift` | Widget bundle entry point. |
+| `widgets-macos/Models/` | SparkWidgetAPI (fetch posts and stats, cache to UserDefaults), WidgetModels (WidgetPost, SparkStats). |
+| `widgets-macos/Providers/` | Timeline providers: HotPostsProvider, NewPostsProvider, StatsProvider. Same refresh patterns as iOS. |
+| `widgets-macos/Views/` | Widget UI: HotPostsWidget, NewPostsWidget, StatsWidget. SmallPostRow, mediumPostRow, largePostRow layouts for macOS sizes. SharedComponents defines Spark brand colors and category pills. |
+
 ## Kotlin Multiplatform (Android)
 
 Not yet shipped. Gradle-based project with shared common code + platform-specific UI (Compose).
@@ -234,6 +256,16 @@ Not yet shipped. Gradle-based project with shared common code + platform-specifi
 | `kmp/gradle.properties` | Gradle properties. JVM version, Compose version, plugin versions. |
 | `kmp/settings.gradle.kts` | Root settings. Includes composeApp and shared modules. Declares plugin versions (Kotlin, Compose, Android). |
 
+## Database Schema & Migrations
+
+Database migrations define schema changes applied in order. Two copies exist for historical reasons.
+
+| Dir/File | What it owns |
+|---|---|
+| `schema.sql` | Legacy base schema. Replaced by migrations system but kept for reference. |
+| `migrations/` | 8 historical SQL migration files (001 through 008). Copy of supabase/migrations for backup. Rarely used now. |
+| `supabase/migrations/` | Authoritative Supabase migrations, version-dated. Run via `supabase db push`. Covers: password reset tokens, comments table, RLS policies, score increment RPC, GitHub OAuth columns, Apple signin columns, email verification, LLM enrichment (idea bases, spec/plan columns), avatar URL, date/time fields, anon-key security tightening. |
+
 ## Database (Supabase)
 
 | Table | Purpose |
@@ -244,6 +276,36 @@ Not yet shipped. Gradle-based project with shared common code + platform-specifi
 | `votes` | Post/comment votes (id, user_id, post_id, comment_id, direction [1 or -1]). |
 | `notifications` | User notifications (id, user_id, type, related_id, message, read, created_at). |
 | `idea_base` | Enrichment prompts and inspiration data (id, category, title, content). |
+
+## Testing
+
+Vitest for backend/adapter testing. Playwright for browser-based onboarding verification. Some tests skip if env vars are not set.
+
+| File | What it owns |
+|---|---|
+| `tests/adapter.test.mjs` | Verifies Cloudflare Pages adapter translation contract. Tests that (req, res) doubles are built and handled correctly. |
+| `tests/ai.test.mjs` | Tests AI generation and enrichment endpoints. Mocks Supabase and mail transport to exercise business logic. |
+| `tests/auth.test.mjs` | Tests login, registration, GitHub/Apple OAuth flows, tokens, sessions, password reset. Verifies auth state correctness. |
+| `tests/comments.test.mjs` | Tests comment creation, retrieval, and thread nesting. Verifies rate limiting on comment posts. |
+| `tests/full-workflow.test.mjs` | End-to-end test: signup, create post, vote, comment. Runs against live API (skipped if API_URL not set). |
+| `tests/posts.test.mjs` | Tests post creation, feed pagination, voting, deletion. Covers seed data fallback and rate limiting. |
+| `tests/theme.test.mjs` | Tests theme.js DOM behavior. Stubbed browser APIs verify light/dark toggle, localStorage persistence, selector queries. |
+| `tests/user-workflow.test.mjs` | Tests user creation flow and posting workflow. Creates dummy user, posts ideas, verifies retrieval. |
+| `tests/onboarding.check.mjs` | Playwright-based test. Verifies onboarding.js carousel shows/hides correctly for new vs returning users. |
+| `vitest.config.js` | Vitest configuration. Runs tests in parallel (except where sequential is required). Sets JWT_SECRET for tests. |
+
+## Scripts & Build
+
+Utility scripts for development, deployment, and screenshot capture.
+
+| File | What it owns |
+|---|---|
+| `scripts/build-static.sh` | Assembles `dist/` directory for Cloudflare Pages deployment. Copies publishable files (HTML, JS, CSS, icons) from repo root that also contains node_modules/ and native platform folders. |
+| `scripts/make-appicon.sh` | Regenerates all app icon PNGs from `icon.svg`. Renders at 1024 full-bleed, flattens onto icon background, then scales down for macOS, iOS, and watchOS sizes. Must use this script, never hand-export. |
+| `scripts/screenshots.mjs` | Captures hero screenshots in light and dark themes. Serves repo over localhost, uses Playwright to navigate and screenshot the feed view. Outputs PNG files for landing page and app store. |
+| `scripts/set-resend-key.sh` | Validates Resend API key against Resend API before storing it. Prevents silent failures from invalid keys lingering in production. |
+| `scripts/backfill-enrich.sh` | One-off enrichment backfill. Enriches every post that never got a spec or build plan. Not scheduled, run manually when needed. |
+| `scripts/simplify.sh` | Ensures standard folder structure. Creates docs/, scripts/, src/, tests/, assets/ directories if missing. |
 
 ## Deployment & Secrets
 
